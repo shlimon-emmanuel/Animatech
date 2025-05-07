@@ -1,0 +1,13 @@
+# Permettre l'accès direct aux fichiers statiques
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+</IfModule>
+
+# Permettre la mise en cache des fichiers statiques
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+</IfModule> 

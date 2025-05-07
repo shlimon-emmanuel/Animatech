@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Allow direct access to assets directory and its contents
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^assets/(.*) assets/$1 [L]
+
+# Redirect all other requests to the app
+RewriteRule ^$ app/public/index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ app/public/$1 [L] 
+# Permettre les uploads de fichiers volumineux
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300

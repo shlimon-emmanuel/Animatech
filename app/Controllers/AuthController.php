@@ -194,6 +194,46 @@ class AuthController {
             $tab = 'favorites';
         }
         
+        // Préparation des données pour chaque onglet
+        $activeTab = $tab;
+        $pageTitle = 'Profil de ' . ($userInfo['username'] ?? 'Utilisateur');
+        $username = $userInfo['username'] ?? 'Utilisateur';
+        $isOwnProfile = !isset($_GET['user_id']);
+        
+        // Initialiser les compteurs
+        $favoriteCount = 0;
+        $commentCount = 0;
+        $replyCount = 0;
+        
+        // Charger les favoris si c'est l'onglet actif ou pour les compteurs
+        $favorites = [];
+        require_once APP_PATH . '/Models/FavoriteModel.php';
+        require_once APP_PATH . '/Models/MovieModel.php';
+        
+        $favoriteModel = new \App\Models\FavoriteModel();
+        $movieModel = new \App\Models\MovieModel(OMDB_API_KEY);
+        
+        // Récupérer les IDs des films favoris
+        $favoriteMovieIds = $favoriteModel->getUserFavorites($userId);
+        $favoriteCount = count($favoriteMovieIds);
+        
+        // Si l'onglet actif est "favorites", récupérer les détails des films
+        if ($activeTab === 'favorites') {
+            foreach ($favoriteMovieIds as $movieId) {
+                $movie = $movieModel->getMovieById($movieId);
+                if ($movie) {
+                    // Convertir l'objet en tableau associatif si nécessaire
+                    if (is_object($movie)) {
+                        $favorites[] = json_decode(json_encode($movie), true);
+                    } else {
+                        $favorites[] = $movie;
+                    }
+                }
+            }
+        }
+        
+        // TODO: Charger les commentaires et réponses si nécessaire
+        
         require_once APP_PATH . '/Views/auth/profile.php';
     }
 

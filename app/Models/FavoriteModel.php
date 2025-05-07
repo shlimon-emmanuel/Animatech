@@ -31,7 +31,7 @@ class FavoriteModel {
     private function createFavoritesTable() {
         try {
             $this->db->exec("
-                CREATE TABLE IF NOT EXISTS simple_favorites (
+                CREATE TABLE IF NOT EXISTS favorites (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     user_id INT NOT NULL,
                     movie_id INT NOT NULL,
@@ -39,9 +39,9 @@ class FavoriteModel {
                     UNIQUE KEY unique_favorite (user_id, movie_id)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
             ");
-            error_log("Table simple_favorites vérifiée/créée avec succès");
+            error_log("Table favorites vérifiée/créée avec succès");
         } catch (PDOException $e) {
-            error_log("Erreur lors de la création de la table simple_favorites: " . $e->getMessage());
+            error_log("Erreur lors de la création de la table favorites: " . $e->getMessage());
         }
     }
     
@@ -62,7 +62,7 @@ class FavoriteModel {
             }
             
             // Insérer dans les favoris
-            $stmt = $this->db->prepare("INSERT INTO simple_favorites (user_id, movie_id) VALUES (?, ?)");
+            $stmt = $this->db->prepare("INSERT INTO favorites (user_id, movie_id) VALUES (?, ?)");
             $success = $stmt->execute([$userId, $movieId]);
             
             if ($success) {
@@ -88,7 +88,7 @@ class FavoriteModel {
         }
         
         try {
-            $stmt = $this->db->prepare("DELETE FROM simple_favorites WHERE user_id = ? AND movie_id = ?");
+            $stmt = $this->db->prepare("DELETE FROM favorites WHERE user_id = ? AND movie_id = ?");
             $success = $stmt->execute([$userId, $movieId]);
             
             if ($success) {
@@ -114,7 +114,7 @@ class FavoriteModel {
         }
         
         try {
-            $stmt = $this->db->prepare("SELECT COUNT(*) FROM simple_favorites WHERE user_id = ? AND movie_id = ?");
+            $stmt = $this->db->prepare("SELECT COUNT(*) FROM favorites WHERE user_id = ? AND movie_id = ?");
             $stmt->execute([$userId, $movieId]);
             $count = $stmt->fetchColumn();
             
@@ -137,11 +137,21 @@ class FavoriteModel {
         }
         
         try {
-            $stmt = $this->db->prepare("SELECT movie_id FROM simple_favorites WHERE user_id = ?");
+            error_log("FavoriteModel::getUserFavorites - Tentative de récupération des favoris pour l'utilisateur $userId");
+            
+            // Vérifier si la table existe
+            $tableCheck = $this->db->query("SHOW TABLES LIKE 'favorites'")->rowCount();
+            if ($tableCheck == 0) {
+                error_log("FavoriteModel::getUserFavorites - La table favorites n'existe pas, création en cours");
+                $this->createFavoritesTable();
+            }
+            
+            $stmt = $this->db->prepare("SELECT movie_id FROM favorites WHERE user_id = ?");
             $stmt->execute([$userId]);
             $movieIds = $stmt->fetchAll(PDO::FETCH_COLUMN);
             
             error_log("FavoriteModel::getUserFavorites - " . count($movieIds) . " favoris trouvés pour l'utilisateur $userId");
+            error_log("FavoriteModel::getUserFavorites - Liste des IDs de films: " . implode(", ", $movieIds ?: []));
             
             return $movieIds;
         } catch (PDOException $e) {

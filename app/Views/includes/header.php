@@ -1,7 +1,7 @@
 <nav class="nav-menu">
     <div class="logo-container">
-        <img src="assets/img/logo.svg" alt="Cinetech Logo" class="logo">
-        <h1 class="site-title">Cinetech</h1>
+        <img src="assets/img/logo.svg" alt="ANIMATECH Logo" class="logo">
+        <h1 class="site-title">ANIMATECH</h1>
     </div>
     
     <div class="nav-links">

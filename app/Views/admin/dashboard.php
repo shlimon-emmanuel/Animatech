@@ -76,7 +76,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.php">MANGA API</a>
+        <a class="navbar-brand" href="index.php">ANIMATECH</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -241,7 +241,7 @@
 
 <footer class="bg-dark text-light py-3 mt-5">
     <div class="container">
-        <p class="text-center">&copy; <?= date('Y') ?> Manga API - Panel Admin</p>
+        <p class="text-center">&copy; <?= date('Y') ?> ANIMATECH - Panel Admin</p>
     </div>
 </footer>
 

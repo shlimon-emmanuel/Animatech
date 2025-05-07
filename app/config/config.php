@@ -26,7 +26,7 @@ if (!defined('BASE_URL')) {
 }
 
 // Configuration générale
-if (!defined('SITE_NAME')) define('SITE_NAME', 'Manga API');
+if (!defined('SITE_NAME')) define('SITE_NAME', 'ANIMATECH');
 if (!defined('DEFAULT_CONTROLLER')) define('DEFAULT_CONTROLLER', 'MovieController');
 if (!defined('DEFAULT_ACTION')) define('DEFAULT_ACTION', 'listMovies');
 

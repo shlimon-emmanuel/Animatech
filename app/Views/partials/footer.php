@@ -2,7 +2,7 @@
 
 <footer class="bg-dark text-light py-3 mt-5">
     <div class="container">
-        <p class="text-center">&copy; <?= date('Y') ?> Manga API - Panel Admin</p>
+        <p class="text-center">&copy; <?= date('Y') ?> ANIMATECH - Panel Admin</p>
     </div>
 </footer>
 

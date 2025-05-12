@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - Cinetech</title>
+    <meta name="description" content="Connexion à votre compte ANIMATECH - Plateforme de films d'animation">
+    <title>Connexion - ANIMATECH</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,6 +46,8 @@
             top: 42px; /* Position après le label */
             color: var(--neon-purple);
             font-size: 18px; /* Icône légèrement plus grande */
+            pointer-events: none; /* Pour accessibilité */
+            aria-hidden: true; /* Pour lecteurs d'écran */
         }
         
         /* Animation cohérente pour le focus */
@@ -121,35 +124,58 @@
             margin-top: 0;
             color: #00ccff;
         }
+        
+        /* Amélioration de l'accessibilité */
+        .alert {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .alert-error {
+            background-color: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #f8d7da;
+        }
+        
+        .alert-success {
+            background-color: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #d4edda;
+        }
     </style>
 </head>
 <body>
-    <div class="auth-container">
+    <div class="auth-container" role="main">
         <h1 class="auth-title">Connexion</h1>
         
         <?php if (isset($_SESSION['error'])): ?>
-            <div class="alert alert-error">
+            <div class="alert alert-error" role="alert" aria-live="assertive">
                 <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
             </div>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['success'])): ?>
-            <div class="alert alert-success">
+            <div class="alert alert-success" role="alert" aria-live="polite">
                 <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
             </div>
         <?php endif; ?>
 
-        <form action="index.php?action=login" method="POST" class="auth-form">
+        <form action="index.php?action=login" method="POST" class="auth-form" aria-labelledby="login-heading">
+            <!-- Champ caché pour le token CSRF -->
+            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?? ''; ?>">
+            
             <div class="form-group">
-                <label for="email">Email</label>
-                <i class="fas fa-envelope form-icon"></i>
-                <input type="email" name="email" id="email" required value="admin@example.com">
+                <label for="email" id="email-label">Email</label>
+                <i class="fas fa-envelope form-icon" aria-hidden="true"></i>
+                <input type="email" name="email" id="email" required aria-required="true" aria-labelledby="email-label" value="admin@example.com" aria-describedby="email-format">
+                <span id="email-format" class="sr-only">Format attendu: exemple@domaine.com</span>
             </div>
             
             <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <i class="fas fa-lock form-icon"></i>
-                <input type="password" name="password" id="password" required value="superadmin123">
+                <label for="password" id="password-label">Mot de passe</label>
+                <i class="fas fa-lock form-icon" aria-hidden="true"></i>
+                <input type="password" name="password" id="password" required aria-required="true" aria-labelledby="password-label" value="superadmin123">
             </div>
             
             <button type="submit" class="neon-button">Se connecter</button>
@@ -161,11 +187,26 @@
         </div>
         
         <!-- Information de debug -->
-        <div class="debug-info">
+        <div class="debug-info" aria-label="Informations de connexion pour développement uniquement">
             <h3>Information de connexion superadmin</h3>
             <p><strong>Email:</strong> admin@example.com</p>
             <p><strong>Mot de passe:</strong> superadmin123</p>
         </div>
     </div>
+    
+    <!-- Ajout de styles pour lecteurs d'écran -->
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </body>
 </html>

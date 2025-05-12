@@ -103,7 +103,7 @@
         /* Grille de films */
         .movie-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 30px;
             padding: 40px 5%;
             margin-top: 20px;
@@ -115,7 +115,7 @@
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 0 5px var(--neon-purple);
-            height: 100%;
+            height: 420px;
             display: flex;
             flex-direction: column;
         }
@@ -134,7 +134,7 @@
 
         .movie-card img {
             width: 100%;
-            height: 320px;
+            height: 350px;
             object-fit: cover;
         }
 
@@ -527,12 +527,17 @@
                 padding: 20px 5%;
             }
             
+            .movie-card {
+                height: 300px;
+            }
+            
             .movie-card img {
                 height: 240px;
             }
             
             .movie-card h3 {
                 font-size: 14px;
+                padding: 10px 5px;
             }
             
             #searchInput {

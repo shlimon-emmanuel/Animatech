@@ -68,8 +68,9 @@ require_once APP_PATH . '/Views/partials/header.php';
                             <tr>
                                 <td><?= $user['id'] ?></td>
                                 <td>
-                                    <?php if (!empty($user['profile_picture']) && file_exists($user['profile_picture'])): ?>
-                                        <img src="<?= $user['profile_picture'] ?>" alt="Photo de profil" class="admin-user-pic">
+                                    <?php if (!empty($user['profile_picture']) && $user['profile_picture'] !== 'assets/img/default-profile.png'): ?>
+                                        <img src="<?= $user['profile_picture'] ?>" alt="Photo de profil" class="admin-user-pic"
+                                             onerror="this.onerror=null; this.src='assets/img/default-profile.png';">
                                     <?php else: ?>
                                         <img src="assets/img/default-profile.png" alt="Photo par défaut" class="admin-user-pic">
                                     <?php endif; ?>
@@ -128,6 +129,9 @@ require_once APP_PATH . '/Views/partials/header.php';
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
+    background-color: #1a1a2e;
+    border: 2px solid #323232;
+    box-shadow: 0 0 5px rgba(110, 84, 255, 0.3);
 }
 
 .admin-users .btn-group .btn {
@@ -153,4 +157,17 @@ require_once APP_PATH . '/Views/partials/header.php';
 
 <?php
 require_once APP_PATH . '/Views/partials/footer.php';
-?> 
+?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gestion des erreurs de chargement d'images de profil
+        const profileImages = document.querySelectorAll('.admin-user-pic');
+        profileImages.forEach(img => {
+            img.addEventListener('error', function() {
+                console.log('Erreur de chargement de l\'image de profil:', this.src);
+                this.src = 'assets/img/default-profile.png';
+            });
+        });
+    });
+</script> 

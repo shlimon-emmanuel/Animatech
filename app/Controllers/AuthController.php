@@ -10,16 +10,41 @@ class AuthController {
         $this->userModel = new UserModel();
     }
 
+    // Méthode pour générer un token CSRF
+    private function generateCsrfToken() {
+        if (!isset($_SESSION['csrf_token'])) {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+        return $_SESSION['csrf_token'];
+    }
+
+    // Méthode pour valider un token CSRF
+    private function validateCsrfToken($token) {
+        if (!isset($_SESSION['csrf_token']) || !$token || $_SESSION['csrf_token'] !== $token) {
+            return false;
+        }
+        return true;
+    }
+
     public function showLoginForm() {
+        $csrf_token = $this->generateCsrfToken();
         require_once APP_PATH . '/Views/auth/login.php';
     }
 
     public function showRegisterForm() {
+        $csrf_token = $this->generateCsrfToken();
         require_once APP_PATH . '/Views/auth/register.php';
     }
 
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérification CSRF
+            if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
+                $_SESSION['error'] = 'Erreur de sécurité. Veuillez réessayer.';
+                header('Location: index.php?action=login');
+                exit;
+            }
+            
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
 
@@ -43,6 +68,9 @@ class AuthController {
                     $_SESSION['profile_picture'] = $user['profile_picture'];
                 }
                 
+                // Régénérer le token CSRF après connexion réussie
+                $this->generateCsrfToken();
+                
                 error_log("Connexion réussie pour l'utilisateur ID: {$user['id']}, Rôle: {$user['role']}");
                 
                 // Rediriger vers le tableau de bord admin si superadmin
@@ -63,6 +91,13 @@ class AuthController {
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérification CSRF
+            if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
+                $_SESSION['error'] = 'Erreur de sécurité. Veuillez réessayer.';
+                header('Location: index.php?action=register');
+                exit;
+            }
+            
             $username = trim($_POST['username'] ?? '');
             $email = trim($_POST['email'] ?? '');
             $password = $_POST['password'] ?? '';
@@ -285,55 +320,57 @@ class AuthController {
             
             // Traitement de l'upload de la photo de profil
             if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-                // Utiliser des chemins relatifs pour résoudre les problèmes Windows
+                // S'assurer que le répertoire existe
                 $uploadDir = 'assets/uploads/profiles/';
-                
-                // Vérifier que le dossier existe, sinon le créer
                 if (!file_exists($uploadDir)) {
                     if (!mkdir($uploadDir, 0777, true)) {
+                        error_log("Erreur: Impossible de créer le dossier d'upload " . $uploadDir);
                         $_SESSION['error'] = "Erreur: Impossible de créer le dossier d'upload";
                         header('Location: index.php?action=profile');
                         exit;
                     }
                 }
                 
-                // Générer un nom de fichier unique basé sur l'ID utilisateur
-                $fileExtension = pathinfo($_FILES['profile_picture']['name'], PATHINFO_EXTENSION);
-                $fileName = 'user_' . $userId . '_' . time() . '.' . $fileExtension;
-                $targetFile = $uploadDir . $fileName;
-                $dbFilePath = $targetFile; // Chemin pour la base de données
-                
-                // Limiter aux types d'images courants
+                // Validation du type MIME
                 $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-                $fileType = $_FILES['profile_picture']['type'];
+                $finfo = new \finfo(FILEINFO_MIME_TYPE);
+                $fileType = $finfo->file($_FILES['profile_picture']['tmp_name']);
                 
-                if (in_array($fileType, $allowedTypes)) {
-                    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
-                        $profilePicture = $dbFilePath;
-                        
-                        // Supprimer l'ancienne image si elle existe
-                        $oldProfilePicture = '';
-                        if (isset($_SESSION['user']['profile_picture'])) {
-                            $oldProfilePicture = $_SESSION['user']['profile_picture'];
-                        } elseif (isset($_SESSION['profile_picture'])) {
-                            $oldProfilePicture = $_SESSION['profile_picture'];
-                        } elseif (isset($userInfo['profile_picture'])) {
-                            $oldProfilePicture = $userInfo['profile_picture'];
-                        }
-                        
-                        if (!empty($oldProfilePicture) && 
-                            $oldProfilePicture != 'assets/img/default-profile.png' &&
-                            strpos($oldProfilePicture, 'assets/uploads/profiles/') === 0 &&
-                            file_exists($oldProfilePicture)) {
-                                unlink($oldProfilePicture);
-                        }
-                    } else {
-                        $_SESSION['error'] = "Erreur: Impossible de déplacer le fichier uploadé. Vérifiez les permissions des dossiers.";
-                        header('Location: index.php?action=profile');
-                        exit;
+                if (!in_array($fileType, $allowedTypes)) {
+                    $_SESSION['error'] = "Type de fichier non autorisé. Utilisez JPG, PNG, GIF ou WEBP.";
+                    header('Location: index.php?action=profile');
+                    exit;
+                }
+                
+                // Générer un nom de fichier unique
+                $extension = pathinfo($_FILES['profile_picture']['name'], PATHINFO_EXTENSION);
+                $newFilename = 'user_' . $userId . '_' . time() . '.' . $extension;
+                $targetFile = $uploadDir . $newFilename;
+                
+                // Déplacer le fichier uploadé
+                if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
+                    // Succès - Définir le chemin pour la base de données
+                    $profilePicture = $targetFile;
+                    error_log("Image uploadée avec succès: " . $profilePicture);
+                    
+                    // Supprimer l'ancienne image si elle existe
+                    $oldProfilePicture = '';
+                    if (isset($_SESSION['user']['profile_picture'])) {
+                        $oldProfilePicture = $_SESSION['user']['profile_picture'];
+                    } elseif (isset($_SESSION['profile_picture'])) {
+                        $oldProfilePicture = $_SESSION['profile_picture'];
+                    }
+                    
+                    // Vérifier si l'ancienne image n'est pas l'image par défaut
+                    if (!empty($oldProfilePicture) && 
+                        $oldProfilePicture != 'assets/img/default-profile.png' &&
+                        file_exists($oldProfilePicture)) {
+                            unlink($oldProfilePicture);
+                            error_log("Ancienne image supprimée: " . $oldProfilePicture);
                     }
                 } else {
-                    $_SESSION['error'] = "Erreur: Le format d'image n'est pas supporté. Formats acceptés: JPEG, PNG, GIF, WEBP";
+                    error_log("Erreur lors du déplacement du fichier uploadé vers " . $targetFile);
+                    $_SESSION['error'] = "Erreur lors de l'upload de l'image";
                     header('Location: index.php?action=profile');
                     exit;
                 }
@@ -354,12 +391,10 @@ class AuthController {
                     $userData['password'] = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
                 }
                 
-                error_log("DEBUG - Données utilisateur à mettre à jour: " . print_r($userData, true));
-                error_log("DEBUG - ID utilisateur pour la mise à jour: " . $userId);
+                error_log("Données utilisateur à mettre à jour: " . print_r($userData, true));
                 
                 // Mettre à jour l'utilisateur
                 $updateResult = $this->userModel->updateUser($userId, $userData);
-                error_log("DEBUG - Résultat de la mise à jour: " . ($updateResult ? "Succès" : "Échec"));
                 
                 if ($updateResult) {
                     // Mettre à jour les données de session
@@ -370,27 +405,23 @@ class AuthController {
                         if ($profilePicture) {
                             $_SESSION['user']['profile_picture'] = $profilePicture;
                         }
-                    } else {
-                        // Cas où on utilise le format alternatif de session
-                        $_SESSION['username'] = $username;
-                        $_SESSION['email'] = $email;
-                        
-                        if ($profilePicture) {
-                            $_SESSION['profile_picture'] = $profilePicture;
-                        }
                     }
                     
-                    // Récupérer les informations mises à jour
-                    $updatedUserInfo = $this->userModel->getUserById($userId);
-                    error_log("DEBUG - Informations utilisateur après mise à jour: " . print_r($updatedUserInfo, true));
+                    // Mettre à jour aussi le format alternatif de session
+                    $_SESSION['username'] = $username;
+                    $_SESSION['email'] = $email;
+                    
+                    if ($profilePicture) {
+                        $_SESSION['profile_picture'] = $profilePicture;
+                    }
                     
                     $_SESSION['success'] = "Profil mis à jour avec succès";
                 } else {
-                    $_SESSION['error'] = "Erreur lors de la mise à jour du profil dans la base de données";
+                    $_SESSION['error'] = "Erreur lors de la mise à jour du profil";
                 }
             } catch (\Exception $e) {
-                error_log("DEBUG - Exception lors de la mise à jour: " . $e->getMessage());
-                $_SESSION['error'] = "Exception: " . $e->getMessage();
+                error_log("Exception lors de la mise à jour du profil: " . $e->getMessage());
+                $_SESSION['error'] = "Une erreur est survenue: " . $e->getMessage();
             }
             
             header('Location: index.php?action=profile');

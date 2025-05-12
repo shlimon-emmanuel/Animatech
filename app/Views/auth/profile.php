@@ -95,71 +95,13 @@ $activeTab = isset($_GET['tab']) ? $_GET['tab'] : 'favorites';
 if (!in_array($activeTab, ['favorites', 'reviews', 'replies'])) {
     $activeTab = 'favorites';
 }
+
+// Inclure le header qui contient la structure HTML et le menu de navigation
+require_once APP_PATH . '/Views/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $pageTitle ?></title>
-    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
-    <link rel="icon" href="assets/images/logo.png" type="image/png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Variables CSS personnalisées pour l'aspect neon/cyberpunk de l'application -->
-    <style>
-        :root {
-            --neon-blue: #05d9e8;
-            --neon-purple: #9d4edd;
-            --neon-pink: #ff2a6d;
-            --neon-green: #39ff14;
-            --neon-red: #ff2a6d;
-            --darker-bg: #0f0f1a;
-            --dark-bg: #1a1a2e;
-            --text-color: #e4e4e4;
-            --text-glow: 0 0 5px rgba(5, 217, 232, 0.7);
-        }
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            font-family: 'Rajdhani', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
-        .neon-button {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--neon-purple);
-            border: 1px solid var(--neon-purple);
-            border-radius: 5px;
-            padding: 0.7rem 1.5rem;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 8px rgba(157, 78, 221, 0.5);
-            text-shadow: 0 0 5px rgba(157, 78, 221, 0.5);
-        }
-        .neon-button:hover {
-            background-color: var(--neon-purple);
-            color: #fff;
-            box-shadow: 0 0 15px var(--neon-purple);
-        }
-        .neon-button.small {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <?php require_once APP_PATH . '/Views/includes/header.php'; ?>
-    </header>
+
+<!-- CSS spécifique pour la page de profil -->
+<link rel="stylesheet" href="assets/css/profile.css">
 
     <div class="profile-container">
         <?php if (!empty($successMessage)): ?>
@@ -198,9 +140,13 @@ if (!in_array($activeTab, ['favorites', 'reviews', 'replies'])) {
                 <div class="profile-avatar<?= $isOwnProfile ? ' own-profile' : '' ?>">
                     <?php if (isset($userInfo['profile_picture']) && !empty($userInfo['profile_picture']) && $userInfo['profile_picture'] !== 'assets/img/default-profile.png'): ?>
                         <?php if ($isOwnProfile): ?>
-                            <img src="<?= htmlspecialchars($userInfo['profile_picture']) ?>" alt="Photo de profil" loading="lazy">
+                        <img src="<?= htmlspecialchars($userInfo['profile_picture']) ?>" alt="Photo de profil" loading="lazy" 
+                             onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'default-avatar\'><i class=\'fa-solid fa-user\'></i></div>';">
                         <?php else: ?>
-                            <img src="<?= htmlspecialchars($userInfo['profile_picture']) ?>" alt="Photo de profil" loading="lazy" onclick="openProfileImageModal(this.src)" class="zoomable-profile-image">
+                        <img src="<?= htmlspecialchars($userInfo['profile_picture']) ?>" alt="Photo de profil" loading="lazy" 
+                             onclick="openProfileImageModal(this.src)" 
+                             class="zoomable-profile-image"
+                             onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'default-avatar\'><i class=\'fa-solid fa-user\'></i></div>';">
                         <?php endif; ?>
                     <?php else: ?>
                         <div class="default-avatar">
@@ -1250,5 +1196,5 @@ if (!in_array($activeTab, ['favorites', 'reviews', 'replies'])) {
             document.body.style.overflow = 'auto';
         }
     </script>
-</body>
-</html>
+
+<?php require_once APP_PATH . '/Views/includes/footer.php'; ?>

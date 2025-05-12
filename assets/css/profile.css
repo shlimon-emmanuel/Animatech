@@ -1,0 +1,253 @@
+/* Styles spécifiques pour la page de profil */
+
+/* Conteneur de l'avatar */
+.profile-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    border: 3px solid var(--neon-purple);
+}
+
+/* Image de profil */
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Avatar par défaut */
+.default-avatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darker-bg);
+    color: var(--neon-purple);
+    font-size: 3rem;
+}
+
+/* Superposition lors du survol (pour les profils personnels) */
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-avatar:hover .avatar-overlay {
+    opacity: 1;
+}
+
+.change-avatar-link {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Structure du header de profil */
+.profile-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--darker-bg);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.profile-info h1 {
+    color: var(--neon-blue);
+    margin: 0 0 10px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(5, 217, 232, 0.7);
+}
+
+.profile-joined {
+    color: #aaa;
+    margin: 0 0 15px;
+}
+
+/* Statistiques du profil */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.stat-card {
+    text-align: center;
+    background-color: rgba(15, 15, 26, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 80px;
+}
+
+.stat-value {
+    color: var(--neon-purple);
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+/* Favoris */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.favorite-card {
+    background-color: var(--darker-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+}
+
+.movie-poster {
+    position: relative;
+    height: 250px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-poster {
+    width: 100%;
+    height: 100%;
+    background-color: var(--darker-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 3rem;
+}
+
+.movie-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--darker-bg);
+    color: #ffcc00;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.movie-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-info h3 {
+    margin: 0 0 5px;
+    color: var(--neon-blue);
+    font-size: 1rem;
+    height: 2.4em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.movie-year {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+/* Onglets */
+.profile-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: var(--darker-bg);
+    color: var(--text-color);
+    border: 1px solid var(--neon-blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: rgba(5, 217, 232, 0.1);
+}
+
+.tab-button.active {
+    background-color: rgba(5, 217, 232, 0.2);
+    box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-bottom: 20px;
+    }
+    
+    .profile-info {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .profile-stats {
+        width: 100%;
+    }
+    
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .movie-poster {
+        height: 200px;
+    }
+} 

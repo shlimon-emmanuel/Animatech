@@ -252,7 +252,7 @@ try {
             case 'getUpcomingPopular':
                 $movieController->getUpcomingPopular();
                 break;
-                
+            
             // Routes d'administration
             case 'admin':
                 $subaction = $_GET['subaction'] ?? 'dashboard';
@@ -276,7 +276,17 @@ try {
                         $adminController->dashboard();
                 }
                 break;
-                
+            
+            // Route pour les mentions légales
+            case 'mentions-legales':
+                require_once APP_PATH . '/Views/legal/mentions-legales.php';
+                break;
+            
+            // Route pour la page RGPD
+            case 'rgpd':
+                require_once APP_PATH . '/Views/legal/rgpd.php';
+                break;
+            
             default:
                 $movieController->listMovies();
         }

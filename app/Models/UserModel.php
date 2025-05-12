@@ -130,10 +130,24 @@ class UserModel {
             
             if ($user) {
                 unset($user['password']);
+                
+                // Vérifier si l'image de profil existe sans la remplacer
+                if (isset($user['profile_picture']) && !empty($user['profile_picture'])) {
+                    // On ajoute une propriété pour indiquer si l'image existe physiquement
+                    $user['image_exists'] = file_exists($user['profile_picture']);
+                    
+                    if (!$user['image_exists']) {
+                        error_log("Image de profil non trouvée: " . $user['profile_picture'] . " pour l'utilisateur ID: " . $userId);
+                    }
+                } else {
+                    $user['image_exists'] = false;
+                    $user['profile_picture'] = 'assets/img/default-profile.png';
+                }
             }
             
             return $user;
         } catch(PDOException $e) {
+            error_log("Erreur lors de la récupération de l'utilisateur ID " . $userId . ": " . $e->getMessage());
             return false;
         }
     }

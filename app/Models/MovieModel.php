@@ -113,10 +113,26 @@ class MovieModel {
     }
 
     private function makeApiCall($url) {
+        // Validation d'URL pour prévenir l'injection d'URL malveillantes
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            error_log("URL invalide dans makeApiCall: " . $url);
+            return null;
+        }
+        
+        // Configuration sécurisée du contexte
         $context = stream_context_create([
             'http' => [
-                'timeout' => 30, // Set a longer timeout (30 seconds)
-                'ignore_errors' => true
+                'timeout' => 30, // Timeout augmenté (30 secondes)
+                'ignore_errors' => true,
+                'user_agent' => 'ANIMATECH/1.0', // User-agent personnalisé
+                'header' => [
+                    'Accept: application/json', 
+                    'Connection: close'
+                ]
+            ],
+            'ssl' => [
+                'verify_peer' => true,
+                'verify_peer_name' => true
             ]
         ]);
         
@@ -128,7 +144,7 @@ class MovieModel {
             return null;
         }
         
-        // Check HTTP response headers
+        // Vérification des headers HTTP
         $statusLine = $http_response_header[0] ?? '';
         preg_match('{HTTP\/\S*\s(\d{3})}', $statusLine, $match);
         $status = $match[1] ?? 500;
@@ -138,7 +154,10 @@ class MovieModel {
             return null;
         }
         
-        // Decode the JSON response
+        // Protection contre les injections JSON
+        $response = preg_replace('/[[:cntrl:]]/', '', $response);
+        
+        // Décodage du JSON avec vérification
         $decoded = json_decode($response);
         
         if (json_last_error() !== JSON_ERROR_NONE) {

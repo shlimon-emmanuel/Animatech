@@ -1,7 +1,7 @@
-# 🎬 Cinetech - Plateforme de Films d'Animation
+# 🎬 Animatech - Plateforme de Films d'Animation
 
 ## 📝 Description
-Cinetech est une application web permettant de découvrir et suivre les films d'animation du monde entier. Elle utilise l'API TMDB pour fournir une base de données riche en contenu d'animation.
+Animatech est une application web permettant de découvrir et suivre les films d'animation du monde entier. Elle utilise l'API TMDB pour fournir une base de données riche en contenu d'animation.
 
 ## 🚀 Fonctionnalités
 - Recherche de films d'animation

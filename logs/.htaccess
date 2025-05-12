@@ -1,0 +1,11 @@
+# Empêcher l'accès direct aux fichiers de logs
+<Files *>
+    Order deny,allow
+    Deny from all
+</Files>
+
+# Protection supplémentaire
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule .* - [F,L]
+</IfModule> 

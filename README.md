@@ -11,6 +11,7 @@ Animatech est une application web permettant de découvrir et suivre les films d
 - Commentaires et notes
 - Visualisation des bandes-annonces
 - Interface responsive et moderne
+- Panel d'administration sécurisé
 
 ## 📋 Prérequis
 - PHP 7.4 ou supérieur
@@ -22,3 +23,58 @@ Animatech est une application web permettant de découvrir et suivre les films d
 ## ⚙️ Installation
 
 ### 1. Cloner le projet
+```bash
+git clone https://github.com/shlimon-emmanuel/Animatech.git
+cd Animatech
+```
+
+### 2. Configuration
+```bash
+# Copier le fichier d'exemple de configuration
+cp .env-example .env
+
+# Éditer le fichier .env avec vos propres paramètres
+nano .env
+```
+
+### 3. Base de données
+- Créez une base de données MySQL pour l'application
+- Les tables seront créées automatiquement au premier lancement
+
+### 4. Permissions
+```bash
+# Donner les droits d'écriture aux dossiers d'upload et de logs
+chmod 755 assets/uploads/profiles
+chmod 755 logs
+```
+
+### 5. Accès
+- Ouvrez votre navigateur et accédez à l'application
+- Créez un compte utilisateur (le premier utilisateur peut être promu administrateur)
+
+## 🔒 Sécurité
+
+L'application implémente plusieurs mesures de sécurité :
+
+- Protection CSRF avec tokens uniques par formulaire
+- Validation rigoureuse des entrées utilisateur
+- Hachage sécurisé des mots de passe
+- En-têtes de sécurité HTTP (CSP, X-XSS-Protection, etc.)
+- Contrôle des types de fichiers uploadés
+- Protection contre les injections SQL via PDO
+- Séparation des configurations dev/prod
+
+## 🌐 Configuration pour la production
+
+Pour un déploiement en production, veillez à :
+
+1. Définir `APP_ENV=production` dans votre fichier `.env`
+2. Utiliser des identifiants de base de données sécurisés
+3. Configurer un certificat SSL (HTTPS)
+4. Utiliser des variables d'environnement pour les informations sensibles
+5. Vérifier que les logs d'erreurs sont correctement configurés
+
+## 🤝 Crédits
+- API de films : [The Movie Database (TMDB)](https://www.themoviedb.org/)
+- Icônes : [Font Awesome](https://fontawesome.com/)
+- Polices : [Google Fonts](https://fonts.google.com/) (Orbitron, Rajdhani)

@@ -14,3 +14,30 @@ php_value upload_max_filesize 10M
 php_value post_max_size 10M
 php_value max_execution_time 300
 php_value max_input_time 300
+
+# Ajout d'en-têtes de sécurité pour protéger contre les attaques XSS et autres vulnérabilités
+<IfModule mod_headers.c>
+    # Protection contre le clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Protection contre les attaques MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Protection contre les attaques XSS
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Politique de sécurité du contenu (CSP)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.youtube.com; connect-src 'self'; img-src 'self' data: https://image.tmdb.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; frame-src https://www.youtube.com; object-src 'none'"
+    
+    # Référer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Protection des fichiers sensibles
+<FilesMatch "(^\.env|\.gitignore|^\.ht|composer\.json|composer\.lock)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes

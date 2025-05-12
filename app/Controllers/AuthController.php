@@ -12,17 +12,44 @@ class AuthController {
 
     // Méthode pour générer un token CSRF
     private function generateCsrfToken() {
-        if (!isset($_SESSION['csrf_token'])) {
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        // Utiliser un token unique pour chaque formulaire avec une durée de vie limitée
+        $token = bin2hex(random_bytes(32));
+        
+        // Stocker le token avec son expiration (1 heure)
+        $_SESSION['csrf_tokens'][$token] = time() + 3600;
+        
+        // Nettoyer les anciens tokens expirés
+        $this->cleanExpiredCsrfTokens();
+        
+        return $token;
+    }
+
+    // Méthode pour nettoyer les tokens CSRF expirés
+    private function cleanExpiredCsrfTokens() {
+        if (isset($_SESSION['csrf_tokens']) && is_array($_SESSION['csrf_tokens'])) {
+            foreach ($_SESSION['csrf_tokens'] as $token => $expiry) {
+                if (time() > $expiry) {
+                    unset($_SESSION['csrf_tokens'][$token]);
+                }
+            }
         }
-        return $_SESSION['csrf_token'];
     }
 
     // Méthode pour valider un token CSRF
     private function validateCsrfToken($token) {
-        if (!isset($_SESSION['csrf_token']) || !$token || $_SESSION['csrf_token'] !== $token) {
+        if (!isset($_SESSION['csrf_tokens']) || !is_array($_SESSION['csrf_tokens']) || 
+            !isset($_SESSION['csrf_tokens'][$token])) {
             return false;
         }
+        
+        // Vérifier si le token n'a pas expiré
+        if (time() > $_SESSION['csrf_tokens'][$token]) {
+            unset($_SESSION['csrf_tokens'][$token]);
+            return false;
+        }
+        
+        // Utilisation unique - supprimer le token après utilisation
+        unset($_SESSION['csrf_tokens'][$token]);
         return true;
     }
 

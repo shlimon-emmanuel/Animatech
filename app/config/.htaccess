@@ -1,0 +1,2 @@
+# Empêcher l'accès direct au dossier de configuration
+Deny from all 

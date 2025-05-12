@@ -1,0 +1,32 @@
+# Fichiers de configuration sensibles
+.env
+/app/config/config.prod.php
+
+# Dossiers de logs et caches
+/logs/*
+!/logs/.htaccess
+/vendor/*
+!/vendor/autoload.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers temporaires
+*.tmp
+*.swp
+*~
+*.bak
+
+# Fichiers d'upload utilisateurs
+/assets/uploads/profiles/*
+!/assets/uploads/profiles/.htaccess
+!/assets/uploads/profiles/index.html
+
+# Fichiers d'IDE
+/.idea/
+/.vscode/
+*.sublime-*
+
+# Fichiers de dépendances installées par npm ou yarn
+/node_modules/ 

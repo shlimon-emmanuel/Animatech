@@ -10,14 +10,14 @@ class MovieModel {
     private $apiKey;
     private $baseUrl;
     private $db;
-    private $cache; // Nouveau: Modèle de cache Redis (NoSQL)
+    private $cache; // Système de cache NoSQL basé sur JSON
 
     public function __construct($apiKey) {
         $this->apiKey = $apiKey;
         $this->baseUrl = OMDB_API_URL;
         
-        // Initialisation du cache Redis (NoSQL)
-        $this->cache = new CacheModel();
+        // Initialisation du cache NoSQL JSON
+        $this->cache = new JsonDbModel();
         
         // Initialisation de la connexion à la base de données
         try {
@@ -36,10 +36,10 @@ class MovieModel {
         // Créer une clé de cache unique pour cette requête
         $cacheKey = "popular_movies:$page:$sortBy:$minVoteCount";
         
-        // Essayer de récupérer depuis le cache Redis (NoSQL)
-        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        // Essayer de récupérer depuis le cache NoSQL
+        $cachedData = $this->cache->get('movies', $cacheKey);
         if ($cachedData) {
-            error_log("Récupération des films populaires depuis le cache Redis");
+            error_log("Récupération des films populaires depuis le cache JSON");
             return (object)$cachedData;
         }
         
@@ -58,8 +58,8 @@ class MovieModel {
             return null;
         }
         
-        // Stocker dans le cache Redis pour les requêtes futures (2 heures)
-        $this->cache->cacheApiResult($cacheKey, $response, 7200);
+        // Stocker dans le cache NoSQL pour les requêtes futures (2 heures)
+        $this->cache->store('movies', $cacheKey, $response, 7200);
         
         return $response;
     }
@@ -84,10 +84,10 @@ class MovieModel {
         // Créer une clé de cache unique basée sur les paramètres de filtrage
         $cacheKey = "filtered_movies:$page:" . md5(serialize($params));
         
-        // Essayer de récupérer depuis le cache Redis (NoSQL)
-        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        // Essayer de récupérer depuis le cache NoSQL
+        $cachedData = $this->cache->get('search', $cacheKey);
         if ($cachedData) {
-            error_log("Récupération des films filtrés depuis le cache Redis");
+            error_log("Récupération des films filtrés depuis le cache JSON");
             return (object)$cachedData;
         }
         
@@ -132,8 +132,8 @@ class MovieModel {
         
         error_log("API returned " . count($response->results) . " results");
         
-        // Stocker dans le cache Redis pour les requêtes futures (2 heures)
-        $this->cache->cacheApiResult($cacheKey, $response, 7200);
+        // Stocker dans le cache NoSQL pour les requêtes futures (2 heures)
+        $this->cache->store('search', $cacheKey, $response, 7200);
         
         return $response;
     }
@@ -142,10 +142,10 @@ class MovieModel {
         // Créer une clé de cache unique pour ce film
         $cacheKey = "movie:$id";
         
-        // Essayer de récupérer depuis le cache Redis (NoSQL)
-        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        // Essayer de récupérer depuis le cache NoSQL
+        $cachedData = $this->cache->get('details', $cacheKey);
         if ($cachedData) {
-            error_log("Récupération du film #$id depuis le cache Redis");
+            error_log("Récupération du film #$id depuis le cache JSON");
             return (object)$cachedData;
         }
         
@@ -153,9 +153,9 @@ class MovieModel {
         $url = $this->baseUrl . "movie/" . $id . "?api_key=" . $this->apiKey . "&language=fr-FR";
         $movie = $this->makeApiCall($url);
         
-        // Stocker dans le cache Redis pour les requêtes futures (24 heures - les films changent rarement)
+        // Stocker dans le cache NoSQL pour les requêtes futures (24 heures - les films changent rarement)
         if ($movie) {
-            $this->cache->cacheApiResult($cacheKey, $movie, 86400);
+            $this->cache->store('details', $cacheKey, $movie, 86400);
         }
         
         return $movie;

@@ -12,12 +12,11 @@ Animatech est une application web permettant de découvrir et suivre les films d
 - Visualisation des bandes-annonces
 - Interface responsive et moderne
 - Panel d'administration sécurisé
-- Cache Redis (NoSQL) pour optimiser les performances
+- Cache NoSQL basé sur JSON pour optimiser les performances
 
 ## 📋 Prérequis
 - PHP 7.4 ou supérieur
 - MySQL 5.7 ou supérieur
-- Redis (recommandé, mais optionnel pour le cache NoSQL)
 - Composer
 - Serveur web (Apache/Nginx)
 - Clé API TMDB
@@ -43,19 +42,15 @@ nano .env
 - Créez une base de données MySQL pour l'application
 - Les tables seront créées automatiquement au premier lancement
 
-### 4. Redis (NoSQL)
-- Installez Redis sur votre serveur (optionnel mais recommandé)
-- Par défaut, l'application cherchera Redis sur 127.0.0.1:6379
-- Si Redis n'est pas disponible, l'application fonctionnera quand même, mais sans le bénéfice du cache
-
-### 5. Permissions
+### 4. Permissions
 ```bash
 # Donner les droits d'écriture aux dossiers d'upload et de logs
 chmod 755 assets/uploads/profiles
 chmod 755 logs
+chmod 755 storage/nosql
 ```
 
-### 6. Accès
+### 5. Accès
 - Ouvrez votre navigateur et accédez à l'application
 - Créez un compte utilisateur (le premier utilisateur peut être promu administrateur)
 
@@ -76,9 +71,9 @@ L'application implémente plusieurs mesures de sécurité :
 Animatech utilise une architecture hybride de base de données :
 
 - **MySQL (SQL)** : Stockage principal pour les données structurées (utilisateurs, favoris, commentaires)
-- **Redis (NoSQL)** : Cache performant pour les résultats de l'API TMDB
+- **NoSQL (JSON)** : Cache performant pour les résultats de l'API TMDB, basé sur des fichiers JSON
 
-Cette approche offre le meilleur des deux mondes : la fiabilité et l'intégrité de SQL pour les données critiques, et la rapidité de NoSQL pour améliorer les performances.
+Cette approche offre le meilleur des deux mondes : la fiabilité et l'intégrité de SQL pour les données critiques, et la rapidité de NoSQL pour améliorer les performances, sans nécessiter d'installations supplémentaires.
 
 ## 🌐 Configuration pour la production
 

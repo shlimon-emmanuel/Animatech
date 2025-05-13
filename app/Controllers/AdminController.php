@@ -207,161 +207,145 @@ class AdminController {
     }
     
     /**
-     * Affiche la page de gestion du cache Redis (NoSQL)
+     * Affiche la page de gestion du cache NoSQL (JSON)
      */
-    public function manageCache() {
-        // Vérification des droits d'administration déjà effectuée dans le constructeur
+    public function showCacheManagement() {
+        // Vérifier que l'utilisateur est administrateur
+        $this->requireAdmin();
         
-        // Initialiser les variables par défaut au cas où Redis ne serait pas disponible
-        $redisStatus = false;
-        $cacheCount = 0;
-        $memoryUsage = '0 MB';
-        $uptime = '0 sec';
-        $cacheHits = 0;
-        $hitRate = 0;
-        $timeSaved = 0;
-        $apiRequestsAvoided = 0;
+        // Initialiser les variables par défaut au cas où le cache ne serait pas disponible
+        $cacheStatus = false;
+        $info = [
+            'collections' => [],
+            'document_count' => 0,
+            'total_size' => 0,
+            'total_size_formatted' => '0 B',
+            'uptime' => 0,
+            'uptime_formatted' => '-'
+        ];
+        $stats = [
+            'hits' => 0,
+            'misses' => 0,
+            'time_saved' => 0,
+            'requests_avoided' => 0
+        ];
         
         try {
-            // Charger le modèle de cache
-            require_once APP_PATH . '/Models/CacheModel.php';
-            $cacheModel = new \App\Models\CacheModel();
+            // Initialiser le modèle JsonDbModel
+            $jsonDb = new \App\Models\JsonDbModel();
             
-            // Récupérer les statistiques Redis
-            $redisStatus = true;
+            // Vérifier la disponibilité du cache
+            $cacheStatus = $jsonDb->isAvailable();
             
-            // Ces lignes peuvent échouer si Redis n'est pas disponible
-            // mais c'est OK, on utilise les valeurs par défaut
-            try {
-                $redisClient = \App\Config\Redis::getClient();
-                $info = $redisClient->info();
+            if ($cacheStatus) {
+                // Récupérer les informations sur le cache
+                $info = $jsonDb->getInfo();
                 
-                // Statistiques de base
-                $dbSize = $redisClient->dbSize();
-                $cacheCount = $dbSize;
-                
-                // Mémoire utilisée
-                $memoryBytes = $info['Memory']['used_memory'] ?? 0;
-                $memoryUsage = round($memoryBytes / (1024 * 1024), 2) . ' MB';
-                
-                // Temps de fonctionnement
-                $uptimeSeconds = $info['Server']['uptime_in_seconds'] ?? 0;
-                if ($uptimeSeconds < 60) {
-                    $uptime = $uptimeSeconds . ' sec';
-                } elseif ($uptimeSeconds < 3600) {
-                    $uptime = round($uptimeSeconds / 60, 1) . ' min';
-                } else {
-                    $uptime = round($uptimeSeconds / 3600, 1) . ' heures';
-                }
-                
-                // Statistiques de performance (simulées pour l'exemple)
-                $stats = $redisClient->get('api:stats') ?: json_encode([
-                    'hits' => 0,
-                    'misses' => 0,
-                    'time_saved' => 0,
-                    'requests_avoided' => 0
-                ]);
-                
-                $stats = json_decode($stats, true);
-                $cacheHits = $stats['hits'] ?? 0;
-                $cacheMisses = $stats['misses'] ?? 0;
-                $totalRequests = $cacheHits + $cacheMisses;
-                $hitRate = $totalRequests > 0 ? round(($cacheHits / $totalRequests) * 100, 1) : 0;
-                $timeSaved = round($stats['time_saved'] ?? 0, 2);
-                $apiRequestsAvoided = $stats['requests_avoided'] ?? 0;
-            } catch (\Exception $e) {
-                error_log("Erreur lors de la récupération des statistiques Redis: " . $e->getMessage());
-                // On continue avec les valeurs par défaut
+                // Récupérer les statistiques 
+                $stats = $jsonDb->getStats();
             }
-            
         } catch (\Exception $e) {
-            // En cas d'erreur, journaliser mais ne pas faire planter l'application
-            error_log("Erreur dans AdminController::manageCache: " . $e->getMessage());
+            error_log("Erreur lors de la récupération des statistiques du cache: " . $e->getMessage());
         }
         
         // Afficher la vue
-        require_once APP_PATH . '/Views/admin/cache.php';
+        $this->view('admin/cache', [
+            'title' => 'Gestion du Cache',
+            'cacheStatus' => $cacheStatus,
+            'info' => $info,
+            'stats' => $stats
+        ]);
     }
     
     /**
-     * Traite les actions de nettoyage du cache Redis
+     * Traite les actions de nettoyage du cache NoSQL
      */
     public function clearCache() {
-        // Vérification du jeton CSRF
-        if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
-            $_SESSION['error'] = "Erreur de sécurité. Veuillez réessayer.";
-            header("Location: index.php?action=admin&subaction=cache");
-            exit;
+        // Vérifier que l'utilisateur est administrateur
+        $this->requireAdmin();
+        
+        // Vérifier le jeton CSRF
+        if (!$this->validateCsrfToken()) {
+            $_SESSION['error'] = 'Jeton CSRF invalide. Veuillez réessayer.';
+            $this->redirect('/admin/cache');
+            return;
         }
+        
+        $cacheType = $_POST['cache_type'] ?? 'all';
         
         try {
-            // Charger le modèle de cache
-            require_once APP_PATH . '/Models/CacheModel.php';
-            $cacheModel = new \App\Models\CacheModel();
+            $jsonDb = new \App\Models\JsonDbModel();
             
-            // Vider tout le cache
-            if (isset($_POST['clear_all']) && $_POST['clear_all'] == 1) {
-                $success = $cacheModel->clearAllApiCache();
-                if ($success) {
-                    $_SESSION['success'] = "Le cache Redis a été vidé avec succès.";
-                } else {
-                    $_SESSION['error'] = "Erreur lors du vidage du cache Redis.";
-                }
-            }
-            
-            // Vider uniquement le cache des films
-            if (isset($_POST['clear_movies']) && $_POST['clear_movies'] == 1) {
-                $success = true;
-                $keys = ['popular_movies:', 'filtered_movies:', 'movie:'];
-                
-                foreach ($keys as $keyPrefix) {
-                    try {
-                        $redisClient = \App\Config\Redis::getClient();
-                        $keysToDelete = $redisClient->keys("api:tmdb:$keyPrefix*");
-                        
-                        if (!empty($keysToDelete)) {
-                            $redisClient->del($keysToDelete);
+            switch ($cacheType) {
+                case 'all':
+                    // Vider toutes les collections
+                    $collections = array_keys($jsonDb->getInfo()['collections']);
+                    $success = true;
+                    
+                    foreach ($collections as $collection) {
+                        if (!$jsonDb->clearCollection($collection)) {
+                            $success = false;
                         }
-                    } catch (\Exception $e) {
-                        error_log("Erreur lors de la suppression des clés $keyPrefix: " . $e->getMessage());
-                        $success = false;
                     }
-                }
-                
-                if ($success) {
-                    $_SESSION['success'] = "Le cache des films a été vidé avec succès.";
-                } else {
-                    $_SESSION['error'] = "Erreur lors du vidage du cache des films.";
-                }
+                    
+                    if ($success) {
+                        $_SESSION['success'] = "Le cache NoSQL a été entièrement vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage complet du cache NoSQL.";
+                    }
+                    break;
+                    
+                case 'movies':
+                    // Vider le cache des films populaires
+                    if ($jsonDb->clearCollection('movies')) {
+                        $_SESSION['success'] = "Le cache des films populaires a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des films populaires.";
+                    }
+                    break;
+                    
+                case 'search':
+                    // Vider le cache des recherches
+                    if ($jsonDb->clearCollection('search')) {
+                        $_SESSION['success'] = "Le cache des recherches a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des recherches.";
+                    }
+                    break;
+                    
+                case 'details':
+                    // Vider le cache des détails de films
+                    if ($jsonDb->clearCollection('details')) {
+                        $_SESSION['success'] = "Le cache des détails de films a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des détails de films.";
+                    }
+                    break;
             }
-            
         } catch (\Exception $e) {
             $_SESSION['error'] = "Une erreur est survenue: " . $e->getMessage();
-            error_log("Erreur dans AdminController::clearCache: " . $e->getMessage());
         }
         
-        // Rediriger vers la page de gestion du cache
-        header("Location: index.php?action=admin&subaction=cache");
-        exit;
+        $this->redirect('/admin/cache');
     }
     
     /**
      * Vérifie si le jeton CSRF est valide
      */
-    private function validateCsrfToken($token) {
+    private function validateCsrfToken() {
         if (!isset($_SESSION['csrf_tokens']) || !is_array($_SESSION['csrf_tokens']) || 
-            !isset($_SESSION['csrf_tokens'][$token])) {
+            !isset($_SESSION['csrf_tokens'][$_POST['csrf_token']])) {
             return false;
         }
         
         // Vérifier si le token n'a pas expiré
-        if (time() > $_SESSION['csrf_tokens'][$token]) {
-            unset($_SESSION['csrf_tokens'][$token]);
+        if (time() > $_SESSION['csrf_tokens'][$_POST['csrf_token']]) {
+            unset($_SESSION['csrf_tokens'][$_POST['csrf_token']]);
             return false;
         }
         
         // Utilisation unique - supprimer le token après utilisation
-        unset($_SESSION['csrf_tokens'][$token]);
+        unset($_SESSION['csrf_tokens'][$_POST['csrf_token']]);
         return true;
     }
 } 

@@ -10,10 +10,14 @@ class MovieModel {
     private $apiKey;
     private $baseUrl;
     private $db;
+    private $cache; // Nouveau: Modèle de cache Redis (NoSQL)
 
     public function __construct($apiKey) {
         $this->apiKey = $apiKey;
         $this->baseUrl = OMDB_API_URL;
+        
+        // Initialisation du cache Redis (NoSQL)
+        $this->cache = new CacheModel();
         
         // Initialisation de la connexion à la base de données
         try {
@@ -29,6 +33,17 @@ class MovieModel {
     }
 
     public function getPopularMovies($page = 1, $sortBy = 'popularity.desc', $minVoteCount = 100) {
+        // Créer une clé de cache unique pour cette requête
+        $cacheKey = "popular_movies:$page:$sortBy:$minVoteCount";
+        
+        // Essayer de récupérer depuis le cache Redis (NoSQL)
+        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        if ($cachedData) {
+            error_log("Récupération des films populaires depuis le cache Redis");
+            return (object)$cachedData;
+        }
+        
+        // Si pas en cache, faire l'appel API normal
         $url = $this->baseUrl . "discover/movie?api_key=" . $this->apiKey 
              . "&language=fr-FR"
              . "&page=" . $page 
@@ -42,6 +57,9 @@ class MovieModel {
         if (!$response || !isset($response->results)) {
             return null;
         }
+        
+        // Stocker dans le cache Redis pour les requêtes futures (2 heures)
+        $this->cache->cacheApiResult($cacheKey, $response, 7200);
         
         return $response;
     }
@@ -62,6 +80,16 @@ class MovieModel {
         
         // Fusionne les paramètres par défaut avec ceux fournis
         $params = array_merge($defaultParams, $params);
+        
+        // Créer une clé de cache unique basée sur les paramètres de filtrage
+        $cacheKey = "filtered_movies:$page:" . md5(serialize($params));
+        
+        // Essayer de récupérer depuis le cache Redis (NoSQL)
+        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        if ($cachedData) {
+            error_log("Récupération des films filtrés depuis le cache Redis");
+            return (object)$cachedData;
+        }
         
         $url = $this->baseUrl . "discover/movie?api_key=" . $this->apiKey 
              . "&language=fr-FR"
@@ -104,12 +132,33 @@ class MovieModel {
         
         error_log("API returned " . count($response->results) . " results");
         
+        // Stocker dans le cache Redis pour les requêtes futures (2 heures)
+        $this->cache->cacheApiResult($cacheKey, $response, 7200);
+        
         return $response;
     }
 
     public function getMovieById($id) {
+        // Créer une clé de cache unique pour ce film
+        $cacheKey = "movie:$id";
+        
+        // Essayer de récupérer depuis le cache Redis (NoSQL)
+        $cachedData = $this->cache->getCachedApiResult($cacheKey);
+        if ($cachedData) {
+            error_log("Récupération du film #$id depuis le cache Redis");
+            return (object)$cachedData;
+        }
+        
+        // Si pas en cache, faire l'appel API normal
         $url = $this->baseUrl . "movie/" . $id . "?api_key=" . $this->apiKey . "&language=fr-FR";
-        return $this->makeApiCall($url);
+        $movie = $this->makeApiCall($url);
+        
+        // Stocker dans le cache Redis pour les requêtes futures (24 heures - les films changent rarement)
+        if ($movie) {
+            $this->cache->cacheApiResult($cacheKey, $movie, 86400);
+        }
+        
+        return $movie;
     }
 
     private function makeApiCall($url) {

@@ -49,7 +49,10 @@ class JsonDbModel {
         // Créer le dossier de la collection s'il n'existe pas
         $collectionDir = $this->baseDir . '/' . $this->sanitizePath($collection);
         if (!file_exists($collectionDir)) {
-            mkdir($collectionDir, 0755);
+            if (!mkdir($collectionDir, 0755, true)) {
+                error_log("Erreur: Impossible de créer le dossier de collection: " . $collectionDir);
+                return false;
+            }
         }
         
         // Préparer les données avec métadonnées
@@ -65,7 +68,12 @@ class JsonDbModel {
         
         // Enregistrer les données en JSON
         try {
-            return file_put_contents($filePath, json_encode($document, JSON_PRETTY_PRINT));
+            $result = file_put_contents($filePath, json_encode($document, JSON_PRETTY_PRINT));
+            if ($result === false) {
+                error_log("Erreur lors de l'écriture des données JSON: " . $filePath);
+                return false;
+            }
+            return true;
         } catch (\Exception $e) {
             error_log("Erreur lors du stockage des données JSON: " . $e->getMessage());
             return false;
@@ -252,8 +260,12 @@ class JsonDbModel {
      * @return string Chemin sécurisé
      */
     private function sanitizePath($path) {
+        // Remplacer les deux-points qui sont particulièrement problématiques sous Windows
+        $path = str_replace(':', '_', $path);
+        
         // Remplacer les caractères non autorisés
-        $path = preg_replace('/[^a-zA-Z0-9_\-:]/', '_', $path);
+        $path = preg_replace('/[^a-zA-Z0-9_\-.]/', '_', $path);
+        
         // Éviter les noms de fichiers vides
         if (empty($path)) {
             $path = 'default';

@@ -1,0 +1,333 @@
+/* Admin Panel Styling for ANIMATECH */
+
+/* Base styling */
+body {
+    background-color: #121212 !important;
+    color: #f8f9fa !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    padding-top: 60px !important;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    padding: 0.8rem 1rem !important;
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif !important;
+    color: #7b2cbf !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 0 10px rgba(123, 44, 191, 0.5) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: all 0.3s ease !important;
+    padding: 0.8rem 1rem !important;
+    margin: 0 0.2rem !important;
+    border-radius: 4px !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #fff !important;
+    background-color: rgba(123, 44, 191, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link i {
+    color: #7b2cbf !important;
+    font-size: 1.1rem !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover i,
+.navbar-dark .navbar-nav .nav-link.active i {
+    color: #9d50e8 !important;
+}
+
+/* Card styling */
+.card {
+    background-color: #1e1e1e !important;
+    border: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 20px !important;
+}
+
+.card-header {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Text alignment fixes */
+.card-body h3, 
+.card-body h4, 
+.card-body h5 {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Center specific elements */
+.card-body.text-center * {
+    text-align: center !important;
+}
+
+.card-body.text-center h3,
+.card-body.text-center h5 {
+    text-align: center !important;
+}
+
+/* Admin dashboard */
+.admin-dashboard .card {
+    transition: all 0.3s ease !important;
+}
+
+.admin-dashboard .admin-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.admin-dashboard .fa-3x {
+    color: #7b2cbf !important;
+}
+
+/* Badge styling */
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.badge.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+/* User profile images */
+.admin-user-pic {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    background-color: #1a1a2e !important;
+    border: 2px solid #323232 !important;
+    box-shadow: 0 0 5px rgba(110, 84, 255, 0.3) !important;
+}
+
+.user-avatar {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.user-avatar-container {
+    position: relative !important;
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Table styling */
+.table {
+    color: #f8f9fa !important;
+    width: 100% !important;
+}
+
+.table thead th {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: none !important;
+    text-align: left !important;
+}
+
+.table-hover > tbody > tr:hover td {
+    background-color: #272b30 !important;
+    color: #f8f9fa !important;
+}
+
+.table-hover > tbody > tr:hover a:not(.btn) {
+    color: #7b2cbf !important;
+}
+
+.table-hover > tbody > tr:hover .badge {
+    opacity: 1 !important;
+}
+
+.table td, .table th {
+    vertical-align: middle !important;
+    padding: 0.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    text-align: left !important;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #7b2cbf !important;
+    border-color: #7b2cbf !important;
+}
+
+.btn-primary:hover {
+    background-color: #6a24a6 !important;
+    border-color: #6a24a6 !important;
+}
+
+.btn-group .btn {
+    margin-right: 2px !important;
+}
+
+.btn {
+    margin: 2px !important;
+}
+
+.return-to-site {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    margin-right: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+.return-to-site:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Layout Fixes */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-md-end {
+    justify-content: flex-end !important;
+}
+
+.justify-content-md-start {
+    justify-content: flex-start !important;
+}
+
+/* Form styling */
+.form-control, .form-select {
+    background-color: #2c2c2c !important;
+    border: 1px solid #444 !important;
+    color: #fff !important;
+    width: 100% !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #333 !important;
+    border-color: #7b2cbf !important;
+    color: #fff !important;
+    box-shadow: 0 0 0 0.25rem rgba(123, 44, 191, 0.25) !important;
+}
+
+.form-label {
+    color: #f8f9fa !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+    text-align: left !important;
+}
+
+.form-text {
+    color: #aaa !important;
+    font-size: 0.875rem !important;
+    margin-top: 0.25rem !important;
+    text-align: left !important;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1e1e1e !important;
+    padding: 15px 0 !important;
+    margin-top: 30px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-brand {
+    font-family: 'Orbitron', sans-serif !important;
+    color: #7b2cbf !important;
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 1px !important;
+}
+
+.text-purple {
+    color: #7b2cbf !important;
+}
+
+footer .footer-links a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.9rem !important;
+}
+
+footer .footer-links a:hover {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.container {
+    width: 100% !important;
+    padding-right: var(--bs-gutter-x, 0.75rem) !important;
+    padding-left: var(--bs-gutter-x, 0.75rem) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem !important;
+    --bs-gutter-y: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-top: calc(var(--bs-gutter-y) * -1) !important;
+    margin-right: calc(var(--bs-gutter-x) * -.5) !important;
+    margin-left: calc(var(--bs-gutter-x) * -.5) !important;
+}
+
+.col-12 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+}
+
+.col-md-4 {
+    flex: 0 0 auto !important;
+    width: 33.33333333% !important;
+}
+
+.col-md-8 {
+    flex: 0 0 auto !important;
+    width: 66.66666667% !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: none !important;
+    }
+    
+    .col-md-4, .col-md-8 {
+        width: 100% !important;
+    }
+    
+    .d-md-flex {
+        display: flex !important;
+    }
+} 

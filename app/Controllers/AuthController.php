@@ -118,56 +118,67 @@ class AuthController {
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Vérification CSRF
-            if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
-                $_SESSION['error'] = 'Erreur de sécurité. Veuillez réessayer.';
+            try {
+                // Vérification CSRF
+                if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
+                    throw new \Exception('Erreur de sécurité. Veuillez réessayer.');
+                }
+                
+                // Nettoyage et validation des entrées
+                $username = filter_var(trim($_POST['username'] ?? ''), FILTER_SANITIZE_STRING);
+                $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+                $password = $_POST['password'] ?? '';
+                
+                // Validation approfondie
+                if (empty($username) || empty($email) || empty($password)) {
+                    throw new \Exception('Tous les champs sont obligatoires');
+                }
+                
+                // Validation du nom d'utilisateur
+                if (strlen($username) < 3 || strlen($username) > 50) {
+                    throw new \Exception('Le nom d\'utilisateur doit contenir entre 3 et 50 caractères');
+                }
+                
+                if (!preg_match('/^[a-zA-Z0-9_-]+$/', $username)) {
+                    throw new \Exception('Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores');
+                }
+                
+                // Validation de l'email
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    throw new \Exception('Format d\'email invalide');
+                }
+                
+                // Validation du mot de passe
+                if (strlen($password) < 8) {
+                    throw new \Exception('Le mot de passe doit contenir au moins 8 caractères');
+                }
+                
+                if (!preg_match('/[A-Z]/', $password) || 
+                    !preg_match('/[a-z]/', $password) || 
+                    !preg_match('/[0-9]/', $password)) {
+                    throw new \Exception('Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre');
+                }
+                
+                // Tentative d'inscription
+                if ($this->userModel->register($username, $email, $password)) {
+                    $_SESSION['success'] = 'Inscription réussie ! Vous pouvez maintenant vous connecter.';
+                    header('Location: index.php?action=login');
+                    exit;
+                } else {
+                    throw new \Exception('L\'email ou le nom d\'utilisateur est peut-être déjà utilisé');
+                }
+                
+            } catch (\Exception $e) {
+                error_log("Erreur d'inscription: " . $e->getMessage());
+                $_SESSION['error'] = $e->getMessage();
                 header('Location: index.php?action=register');
                 exit;
             }
-            
-            $username = trim($_POST['username'] ?? '');
-            $email = trim($_POST['email'] ?? '');
-            $password = $_POST['password'] ?? '';
-
-            error_log("Tentative d'inscription - POST data: " . print_r($_POST, true));
-
-            // Validation des données
-            if (empty($username) || empty($email) || empty($password)) {
-                $_SESSION['error'] = 'Tous les champs sont obligatoires';
-                error_log("Échec de l'inscription - Champs manquants");
-                header('Location: index.php?action=register');
-                exit;
-            }
-
-            // Validation de l'email
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $_SESSION['error'] = 'Format d\'email invalide';
-                error_log("Échec de l'inscription - Email invalide: $email");
-                header('Location: index.php?action=register');
-                exit;
-            }
-
-            // Validation du mot de passe
-            if (strlen($password) < 6) {
-                $_SESSION['error'] = 'Le mot de passe doit contenir au moins 6 caractères';
-                error_log("Échec de l'inscription - Mot de passe trop court");
-                header('Location: index.php?action=register');
-                exit;
-            }
-
-            // Tentative d'inscription
-            if ($this->userModel->register($username, $email, $password)) {
-                $_SESSION['success'] = 'Inscription réussie ! Vous pouvez maintenant vous connecter.';
-                error_log("Inscription réussie pour l'utilisateur: $username");
-                header('Location: index.php?action=login');
-                exit;
-            }
-            
-            $_SESSION['error'] = 'Erreur lors de l\'inscription. L\'email ou le nom d\'utilisateur est peut-être déjà utilisé.';
-            error_log("Échec de l'inscription - Erreur dans le modèle");
-            header('Location: index.php?action=register');
-            exit;
         }
+        
+        // Afficher le formulaire d'inscription
+        $csrf_token = $this->generateCsrfToken();
+        require_once APP_PATH . '/Views/auth/register.php';
     }
 
     public function logout() {

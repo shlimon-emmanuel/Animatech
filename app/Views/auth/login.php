@@ -168,14 +168,14 @@
             <div class="form-group">
                 <label for="email" id="email-label">Email</label>
                 <i class="fas fa-envelope form-icon" aria-hidden="true"></i>
-                <input type="email" name="email" id="email" required aria-required="true" aria-labelledby="email-label" value="admin@example.com" aria-describedby="email-format">
+                <input type="email" name="email" id="email" required aria-required="true" aria-labelledby="email-label" aria-describedby="email-format">
                 <span id="email-format" class="sr-only">Format attendu: exemple@domaine.com</span>
             </div>
             
             <div class="form-group">
                 <label for="password" id="password-label">Mot de passe</label>
                 <i class="fas fa-lock form-icon" aria-hidden="true"></i>
-                <input type="password" name="password" id="password" required aria-required="true" aria-labelledby="password-label" value="superadmin123">
+                <input type="password" name="password" id="password" required aria-required="true" aria-labelledby="password-label">
             </div>
             
             <button type="submit" class="neon-button">Se connecter</button>
@@ -184,13 +184,6 @@
         <div class="auth-links">
             <p>Pas encore de compte ? <a href="index.php?action=register" class="neon-link">S'inscrire</a></p>
             <a href="index.php" class="neon-link">Retour à l'accueil</a>
-        </div>
-        
-        <!-- Information de debug -->
-        <div class="debug-info" aria-label="Informations de connexion pour développement uniquement">
-            <h3>Information de connexion superadmin</h3>
-            <p><strong>Email:</strong> admin@example.com</p>
-            <p><strong>Mot de passe:</strong> superadmin123</p>
         </div>
     </div>
     

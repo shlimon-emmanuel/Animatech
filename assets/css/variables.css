@@ -1,0 +1,62 @@
+/* Variables CSS globales */
+:root {
+    /* Couleurs */
+    --neon-blue: #00f3ff;
+    --neon-purple: #9d4edd;
+    --dark-bg: #0a0a1f;
+    --darker-bg: #050510;
+    --text-light: #ffffff;
+    --text-muted: #a0a0a0;
+    
+    /* Effets */
+    --text-glow: 0 0 10px var(--neon-blue);
+    --box-glow: 0 0 15px var(--neon-blue);
+    --box-glow-purple: 0 0 15px var(--neon-purple);
+    
+    /* Espacement */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+    
+    /* Border Radius */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    
+    /* Dimensions */
+    --max-width-container: 1400px;
+    --header-height: 70px;
+    --card-width: 280px;
+    --card-height: 400px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index */
+    --z-header: 100;
+    --z-modal: 1000;
+    --z-overlay: 900;
+    
+    /* Typography */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 2rem;      /* 32px */
+    
+    /* Font Families */
+    --font-primary: 'Rajdhani', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+}
+
+/* Media Query Breakpoints */
+@custom-media --mobile (max-width: 480px);
+@custom-media --tablet (max-width: 768px);
+@custom-media --desktop (max-width: 1200px);
+@custom-media --large-desktop (min-width: 1201px); 

@@ -1,19 +1,17 @@
 <?php
-// Démarrer la session si ce n'est pas déjà fait
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Activer l'affichage des erreurs en développement
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // Définir les chemins si ce n'est pas déjà fait
 if (!defined('ROOT_PATH')) define('ROOT_PATH', dirname(dirname(__DIR__)));
 if (!defined('APP_PATH')) define('APP_PATH', dirname(__DIR__));
 if (!defined('CONFIG_PATH')) define('CONFIG_PATH', APP_PATH . '/config');
 if (!defined('VIEW_PATH')) define('VIEW_PATH', APP_PATH . '/Views');
 if (!defined('ASSET_PATH')) define('ASSET_PATH', ROOT_PATH . '/assets');
+
+// Inclure la configuration des sessions
+require_once APP_PATH . '/config/session.php';
+
+// Activer l'affichage des erreurs en développement
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Vérifier si l'URL de base est définie
 if (!defined('BASE_URL')) {

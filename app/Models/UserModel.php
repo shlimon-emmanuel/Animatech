@@ -11,54 +11,68 @@ class UserModel {
     public function __construct() {
         try {
             $this->db = new PDO(
-                "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8",
+                "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
                 DB_USER,
                 DB_PASS,
-                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_EMULATE_PREPARES => false,
+                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+                ]
             );
         } catch(PDOException $e) {
-            die("Erreur de connexion : " . $e->getMessage());
+            error_log("Erreur de connexion à la base de données: " . $e->getMessage());
+            throw new \Exception("Erreur de connexion à la base de données");
         }
     }
 
     public function register($username, $email, $password) {
         try {
-            error_log("Tentative d'inscription - Username: $username, Email: $email");
+            // Début de la transaction
+            $this->db->beginTransaction();
+            
+            // Vérifications de sécurité supplémentaires
+            $username = substr(trim($username), 0, 50);
+            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
             
             // Vérifier si l'email existe déjà
-            $stmt = $this->db->prepare("SELECT id FROM users WHERE email = ?");
+            $stmt = $this->db->prepare("SELECT id FROM users WHERE email = ? LIMIT 1");
             $stmt->execute([$email]);
             if ($stmt->fetch()) {
-                error_log("Échec de l'inscription - Email déjà utilisé: $email");
-                return false;
+                throw new \Exception("Cet email est déjà utilisé");
             }
             
             // Vérifier si le nom d'utilisateur existe déjà
-            $stmt = $this->db->prepare("SELECT id FROM users WHERE username = ?");
+            $stmt = $this->db->prepare("SELECT id FROM users WHERE username = ? LIMIT 1");
             $stmt->execute([$username]);
             if ($stmt->fetch()) {
-                error_log("Échec de l'inscription - Nom d'utilisateur déjà utilisé: $username");
-                return false;
+                throw new \Exception("Ce nom d'utilisateur est déjà utilisé");
             }
             
-            // Hasher le mot de passe
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            // Hasher le mot de passe avec un coût approprié
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
             
             // Insérer le nouvel utilisateur
-            $stmt = $this->db->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-            $result = $stmt->execute([$username, $email, $hashedPassword]);
+            $stmt = $this->db->prepare("
+                INSERT INTO users (username, email, password, created_at) 
+                VALUES (?, ?, ?, NOW())
+            ");
             
-            if ($result) {
-                $userId = $this->db->lastInsertId();
-                error_log("Inscription réussie - Nouvel utilisateur créé avec l'ID: $userId");
-                return true;
-            } else {
-                error_log("Échec de l'inscription - Erreur lors de l'insertion dans la base de données");
-                return false;
+            $success = $stmt->execute([$username, $email, $hashedPassword]);
+            
+            if (!$success) {
+                throw new \Exception("Erreur lors de l'insertion de l'utilisateur");
             }
-        } catch(PDOException $e) {
-            error_log("Exception PDO lors de l'inscription: " . $e->getMessage());
-            return false;
+            
+            // Valider la transaction
+            $this->db->commit();
+            return true;
+            
+        } catch (\Exception $e) {
+            // Annuler la transaction en cas d'erreur
+            $this->db->rollBack();
+            error_log("Erreur d'inscription: " . $e->getMessage());
+            throw $e;
         }
     }
 

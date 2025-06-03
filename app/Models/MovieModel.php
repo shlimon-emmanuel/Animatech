@@ -113,59 +113,63 @@ class MovieModel {
     }
 
     private function makeApiCall($url) {
-        // Validation d'URL pour prévenir l'injection d'URL malveillantes
-        if (!filter_var($url, FILTER_VALIDATE_URL)) {
-            error_log("URL invalide dans makeApiCall: " . $url);
-            return null;
-        }
-        
-        // Configuration sécurisée du contexte
-        $context = stream_context_create([
-            'http' => [
-                'timeout' => 30, // Timeout augmenté (30 secondes)
-                'ignore_errors' => true,
-                'user_agent' => 'ANIMATECH/1.0', // User-agent personnalisé
-                'header' => [
-                    'Accept: application/json', 
-                    'Connection: close'
+        try {
+            // Validation d'URL pour prévenir l'injection d'URL malveillantes
+            if (!filter_var($url, FILTER_VALIDATE_URL)) {
+                throw new \Exception("URL invalide dans makeApiCall: " . $url);
+            }
+            
+            // Configuration sécurisée du contexte
+            $context = stream_context_create([
+                'http' => [
+                    'timeout' => 30,
+                    'ignore_errors' => true,
+                    'user_agent' => 'ANIMATECH/1.0',
+                    'header' => [
+                        'Accept: application/json',
+                        'Connection: close'
+                    ]
+                ],
+                'ssl' => [
+                    'verify_peer' => true,
+                    'verify_peer_name' => true,
+                    'allow_self_signed' => false
                 ]
-            ],
-            'ssl' => [
-                'verify_peer' => true,
-                'verify_peer_name' => true
-            ]
-        ]);
-        
-        $response = @file_get_contents($url, false, $context);
-        
-        if ($response === false) {
-            $error = error_get_last();
-            error_log("Erreur lors de l'appel API: " . $url . " - " . ($error ? $error['message'] : 'Erreur inconnue'));
+            ]);
+            
+            // Tentative de récupération avec gestion des timeouts
+            $response = @file_get_contents($url, false, $context);
+            
+            if ($response === false) {
+                $error = error_get_last();
+                throw new \Exception("Erreur lors de l'appel API: " . ($error ? $error['message'] : 'Erreur inconnue'));
+            }
+            
+            // Vérification des headers HTTP
+            $statusLine = $http_response_header[0] ?? '';
+            preg_match('{HTTP\/\S*\s(\d{3})}', $statusLine, $match);
+            $status = $match[1] ?? 500;
+            
+            if ($status >= 400) {
+                throw new \Exception("Erreur HTTP $status lors de l'appel API");
+            }
+            
+            // Protection contre les injections JSON
+            $response = preg_replace('/[[:cntrl:]]/', '', $response);
+            
+            // Décodage du JSON avec vérification
+            $decoded = json_decode($response);
+            
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new \Exception("Erreur de décodage JSON: " . json_last_error_msg());
+            }
+            
+            return $decoded;
+            
+        } catch (\Exception $e) {
+            error_log("MovieModel::makeApiCall - Exception: " . $e->getMessage() . " - URL: " . $url);
             return null;
         }
-        
-        // Vérification des headers HTTP
-        $statusLine = $http_response_header[0] ?? '';
-        preg_match('{HTTP\/\S*\s(\d{3})}', $statusLine, $match);
-        $status = $match[1] ?? 500;
-        
-        if ($status >= 400) {
-            error_log("Erreur HTTP $status lors de l'appel API: $url - Réponse: $response");
-            return null;
-        }
-        
-        // Protection contre les injections JSON
-        $response = preg_replace('/[[:cntrl:]]/', '', $response);
-        
-        // Décodage du JSON avec vérification
-        $decoded = json_decode($response);
-        
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            error_log("Erreur de décodage JSON: " . json_last_error_msg() . " pour l'URL: " . $url);
-            return null;
-        }
-        
-        return $decoded;
     }
 
     public function addToFavorites($userId, $movieId) {

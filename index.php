@@ -1,4 +1,9 @@
 <?php
+// Charger l'autoloader Composer
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 // Définir les constantes globales
 if (!defined('ROOT_PATH')) define('ROOT_PATH', __DIR__);
 if (!defined('APP_PATH')) define('APP_PATH', __DIR__ . '/app');

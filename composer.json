@@ -1,7 +1,14 @@
 {
+    "name": "animatech/web-app",
+    "description": "Application web pour découvrir les films d'animation",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4"
+    },
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         }
     }
-} 
+}

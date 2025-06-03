@@ -205,4 +205,147 @@ class AdminController {
         header('Location: index.php?action=admin&subaction=users');
         exit;
     }
+    
+    /**
+     * Affiche la page de gestion du cache NoSQL (JSON)
+     */
+    public function showCacheManagement() {
+        // Vérifier que l'utilisateur est administrateur
+        $this->requireAdmin();
+        
+        // Initialiser les variables par défaut au cas où le cache ne serait pas disponible
+        $cacheStatus = false;
+        $info = [
+            'collections' => [],
+            'document_count' => 0,
+            'total_size' => 0,
+            'total_size_formatted' => '0 B',
+            'uptime' => 0,
+            'uptime_formatted' => '-'
+        ];
+        $stats = [
+            'hits' => 0,
+            'misses' => 0,
+            'time_saved' => 0,
+            'requests_avoided' => 0
+        ];
+        
+        try {
+            // Initialiser le modèle JsonDbModel
+            $jsonDb = new \App\Models\JsonDbModel();
+            
+            // Vérifier la disponibilité du cache
+            $cacheStatus = $jsonDb->isAvailable();
+            
+            if ($cacheStatus) {
+                // Récupérer les informations sur le cache
+                $info = $jsonDb->getInfo();
+                
+                // Récupérer les statistiques 
+                $stats = $jsonDb->getStats();
+            }
+        } catch (\Exception $e) {
+            error_log("Erreur lors de la récupération des statistiques du cache: " . $e->getMessage());
+        }
+        
+        // Afficher la vue
+        $this->view('admin/cache', [
+            'title' => 'Gestion du Cache',
+            'cacheStatus' => $cacheStatus,
+            'info' => $info,
+            'stats' => $stats
+        ]);
+    }
+    
+    /**
+     * Traite les actions de nettoyage du cache NoSQL
+     */
+    public function clearCache() {
+        // Vérifier que l'utilisateur est administrateur
+        $this->requireAdmin();
+        
+        // Vérifier le jeton CSRF
+        if (!$this->validateCsrfToken()) {
+            $_SESSION['error'] = 'Jeton CSRF invalide. Veuillez réessayer.';
+            $this->redirect('/admin/cache');
+            return;
+        }
+        
+        $cacheType = $_POST['cache_type'] ?? 'all';
+        
+        try {
+            $jsonDb = new \App\Models\JsonDbModel();
+            
+            switch ($cacheType) {
+                case 'all':
+                    // Vider toutes les collections
+                    $collections = array_keys($jsonDb->getInfo()['collections']);
+                    $success = true;
+                    
+                    foreach ($collections as $collection) {
+                        if (!$jsonDb->clearCollection($collection)) {
+                            $success = false;
+                        }
+                    }
+                    
+                    if ($success) {
+                        $_SESSION['success'] = "Le cache NoSQL a été entièrement vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage complet du cache NoSQL.";
+                    }
+                    break;
+                    
+                case 'movies':
+                    // Vider le cache des films populaires
+                    if ($jsonDb->clearCollection('movies')) {
+                        $_SESSION['success'] = "Le cache des films populaires a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des films populaires.";
+                    }
+                    break;
+                    
+                case 'search':
+                    // Vider le cache des recherches
+                    if ($jsonDb->clearCollection('search')) {
+                        $_SESSION['success'] = "Le cache des recherches a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des recherches.";
+                    }
+                    break;
+                    
+                case 'details':
+                    // Vider le cache des détails de films
+                    if ($jsonDb->clearCollection('details')) {
+                        $_SESSION['success'] = "Le cache des détails de films a été vidé avec succès.";
+                    } else {
+                        $_SESSION['error'] = "Erreur lors du vidage du cache des détails de films.";
+                    }
+                    break;
+            }
+        } catch (\Exception $e) {
+            $_SESSION['error'] = "Une erreur est survenue: " . $e->getMessage();
+        }
+        
+        $this->redirect('/admin/cache');
+    }
+    
+    /**
+     * Vérifie si le jeton CSRF est valide
+     */
+    private function validateCsrfToken() {
+        if (!isset($_SESSION['csrf_tokens']) || !is_array($_SESSION['csrf_tokens']) || 
+            !isset($_SESSION['csrf_tokens'][$_POST['csrf_token']])) {
+            return false;
+        }
+        
+        // Vérifier si le token n'a pas expiré
+        if (time() > $_SESSION['csrf_tokens'][$_POST['csrf_token']]) {
+            unset($_SESSION['csrf_tokens'][$_POST['csrf_token']]);
+            return false;
+        }
+        
+        // Utilisation unique - supprimer le token après utilisation
+        unset($_SESSION['csrf_tokens'][$_POST['csrf_token']]);
+        return true;
+    }
 } 

@@ -3,7 +3,7 @@
     Order deny,allow
     Deny from all
 </Files>
-
+ 
 # Protection supplémentaire
 <IfModule mod_rewrite.c>
     RewriteEngine On

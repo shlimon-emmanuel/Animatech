@@ -130,6 +130,12 @@ try {
 }
 
 // Inclure les modèles et contrôleurs nécessaires
+if (file_exists(APP_PATH . '/Models/JsonDbModel.php')) {
+    require_once APP_PATH . '/Models/JsonDbModel.php';
+} else {
+    die("Le modèle JsonDbModel est manquant.");
+}
+
 if (file_exists(APP_PATH . '/Models/MovieModel.php')) {
     require_once APP_PATH . '/Models/MovieModel.php';
 } else {

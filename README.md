@@ -12,6 +12,7 @@ Animatech est une application web permettant de découvrir et suivre les films d
 - Visualisation des bandes-annonces
 - Interface responsive et moderne
 - Panel d'administration sécurisé
+- Cache NoSQL basé sur JSON pour optimiser les performances
 
 ## 📋 Prérequis
 - PHP 7.4 ou supérieur
@@ -46,6 +47,7 @@ nano .env
 # Donner les droits d'écriture aux dossiers d'upload et de logs
 chmod 755 assets/uploads/profiles
 chmod 755 logs
+chmod 755 storage/nosql
 ```
 
 ### 5. Accès
@@ -63,6 +65,15 @@ L'application implémente plusieurs mesures de sécurité :
 - Contrôle des types de fichiers uploadés
 - Protection contre les injections SQL via PDO
 - Séparation des configurations dev/prod
+
+## 🗄️ Architecture hybride SQL/NoSQL
+
+Animatech utilise une architecture hybride de base de données :
+
+- **MySQL (SQL)** : Stockage principal pour les données structurées (utilisateurs, favoris, commentaires)
+- **NoSQL (JSON)** : Cache performant pour les résultats de l'API TMDB, basé sur des fichiers JSON
+
+Cette approche offre le meilleur des deux mondes : la fiabilité et l'intégrité de SQL pour les données critiques, et la rapidité de NoSQL pour améliorer les performances, sans nécessiter d'installations supplémentaires.
 
 ## 🌐 Configuration pour la production
 

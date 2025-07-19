@@ -15,7 +15,7 @@ class FavoriteController {
         require_once APP_PATH . '/Models/MovieModel.php';
         
         $this->favoriteModel = new \App\Models\FavoriteModel();
-        $this->movieModel = new \App\Models\MovieModel(OMDB_API_KEY);
+        $this->movieModel = new \App\Models\MovieModel(TMDB_API_KEY);
     }
 
     /**

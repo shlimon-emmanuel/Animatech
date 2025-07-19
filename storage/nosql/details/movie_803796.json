@@ -1,0 +1,83 @@
+{
+    "key": "movie:803796",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/rJjhOuRFldNF0OWSuSk4PiCLmeA.jpg",
+        "belongs_to_collection": null,
+        "budget": 0,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 14,
+                "name": "Fantastique"
+            },
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            },
+            {
+                "id": 10402,
+                "name": "Musique"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            }
+        ],
+        "homepage": "https:\/\/www.netflix.com\/fr\/title\/81498621",
+        "id": 803796,
+        "imdb_id": "tt14205554",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "KPop Demon Hunters",
+        "overview": "Quand elles ne remplissent pas les stades, Rumi, Mira et Zoey, superstars de la K-pop, utilisent leurs pouvoirs secrets pour prot\u00e9ger leurs fans de menaces surnaturelles.",
+        "popularity": 216.3404,
+        "poster_path": "\/jfS5KEfiwsS35ieZvdUdJKkwLlZ.jpg",
+        "production_companies": [
+            {
+                "id": 2251,
+                "logo_path": "\/5ilV5mH3gxTEU7p5wjxptHvXkyr.png",
+                "name": "Sony Pictures Animation",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2025-06-20",
+        "revenue": 0,
+        "runtime": 96,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Korean",
+                "iso_639_1": "ko",
+                "name": "\ud55c\uad6d\uc5b4\/\uc870\uc120\ub9d0"
+            }
+        ],
+        "status": "Released",
+        "tagline": "",
+        "title": "KPop Demon Hunters",
+        "video": false,
+        "vote_average": 8.586,
+        "vote_count": 649
+    },
+    "expiry": 1752954806,
+    "created_at": 1752868406
+}

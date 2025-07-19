@@ -1,0 +1,426 @@
+{
+    "key": "filtered_movies:1:1166a0343aef2867c89606f016a8cace",
+    "data": {
+        "page": 1,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "\/mBDoBHUZHHy9WG7dRFndjB8adhc.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16,
+                    878
+                ],
+                "id": 1022787,
+                "original_language": "en",
+                "original_title": "Elio",
+                "overview": "Elio est un jeune gar\u00e7on r\u00eaveur de 11 ans qui d\u00e9teste jouer dehors et a des difficult\u00e9s \u00e0 s\u2019int\u00e9grer. Sa m\u00e8re Olga, une femme brillante et tr\u00e8s s\u00fbre d\u2019elle, dirige un projet militaire top secret qui tente de d\u00e9coder un myst\u00e9rieux signal venu de l\u2019espace. Mais Elio va prendre tout le monde de court en \u00e9tablissant le premier contact avec les extraterrestres. T\u00e9l\u00e9port\u00e9 dans l\u2019espace, le voil\u00e0 bient\u00f4t pris pour l\u2019ambassadeur intergalactique de notre plan\u00e8te...",
+                "popularity": 15.3899,
+                "poster_path": "\/jaKbruwD7KLlnprsse1zuOm4o2a.jpg",
+                "release_date": "2025-06-12",
+                "title": "Elio",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/aI3Wz1F6ie9DY94jp5F42Yg5ZYK.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    14,
+                    53
+                ],
+                "id": 1311031,
+                "original_language": "ja",
+                "original_title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8",
+                "overview": "",
+                "popularity": 14.1708,
+                "poster_path": "\/tlNFKrkb0LzhnwvyiMSOoCB5dbj.jpg",
+                "release_date": "2025-07-18",
+                "title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/7nfpkR9XsQ1lBNCXSSHxGV7Dkxe.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 1084242,
+                "original_language": "en",
+                "original_title": "Zootopia 2",
+                "overview": "Suite du film d'animation Zootopie sorti en 2016.",
+                "popularity": 10.565,
+                "poster_path": "\/v2AnZKo0046HekCFjU2KWp5nrBh.jpg",
+                "release_date": "2025-11-26",
+                "title": "Zootopie 2",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/vHP2az8Ly2ZAJWGHFlux7QpAN2Q.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    80,
+                    16,
+                    28
+                ],
+                "id": 1175942,
+                "original_language": "en",
+                "original_title": "The Bad Guys 2",
+                "overview": "Les criminels animaliers s'efforcent de se faire \u00e0 leur nouvelle vie de gentils. Bient\u00f4t, ils sont tir\u00e9s de leur retraite et forc\u00e9s de faire \"un dernier travail\" par une \u00e9quipe enti\u00e8rement f\u00e9minine.",
+                "popularity": 10.0809,
+                "poster_path": "\/opKf1uITVUkm8nteNM54uIgJZKQ.jpg",
+                "release_date": "2025-07-25",
+                "title": "Les Bad Guys 2",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/4fsyGmrZrCq9ndkoMLXrLPyMSpf.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14
+                ],
+                "id": 936108,
+                "original_language": "en",
+                "original_title": "Smurfs",
+                "overview": "Lorsque le Grand Schtroumpf est myst\u00e9rieusement kidnapp\u00e9 par les vilains sorciers : Razamel et Gargamel, la Schtroumpfette et son meilleur ami Le Schtroumpf Sans-Nom partent en mission pour le retrouver ! Commence alors une aventure d\u00e9lirante o\u00f9 nos h\u00e9ros bleus vont croiser la route de nouveaux amis hauts en couleur comme Mama Poot et ses petits. Les Schtroumpfs doivent prendre en main leur destin pour sauver celui du monde entier !",
+                "popularity": 8.9818,
+                "poster_path": "\/1Ee26rIanprYQAwnQEDw1331cp4.jpg",
+                "release_date": "2025-07-10",
+                "title": "Les Schtroumpfs",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ambzhSrmEKmNE3P5HqoR6Iub9tx.jpg",
+                "genre_ids": [
+                    878,
+                    28,
+                    16
+                ],
+                "id": 1376434,
+                "original_language": "en",
+                "original_title": "Predator: Killer of Killers",
+                "overview": "Les trois plus grands guerriers de l'histoire de l'humanit\u00e9 : une Viking, un ninja du Japon f\u00e9odal et un pilote de la Seconde Guerre mondiale font face au tueur des tueurs.",
+                "popularity": 9.5165,
+                "poster_path": "\/lIBtgpfiB92xNoB3Wa2ZtRtcyYP.jpg",
+                "release_date": "2025-06-05",
+                "title": "Predator: Killer of Killers",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/zT9JQu9BQHjappvGnZlkOZNi7W1.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    28,
+                    10402
+                ],
+                "id": 803796,
+                "original_language": "en",
+                "original_title": "KPop Demon Hunters",
+                "overview": "Quand elles ne remplissent pas les stades, Rumi, Mira et Zoey, superstars de la K-pop, utilisent leurs pouvoirs secrets pour prot\u00e9ger leurs fans de menaces surnaturelles.",
+                "popularity": 4.7605,
+                "poster_path": "\/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+                "release_date": "2025-06-20",
+                "title": "KPop Demon Hunters",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/m1f4Q57IlCsO2Kv0cnkvBHPOchL.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16,
+                    14
+                ],
+                "id": 1280282,
+                "original_language": "en",
+                "original_title": "Gabby's Dollhouse: The Movie",
+                "overview": "Au cours d'un voyage en voiture avec sa grand-m\u00e8re Gigi, la maison de poup\u00e9e de Gabby, son bien le plus pr\u00e9cieux, se retrouve entre les mains d'une femme excentrique, Vera. Gabby part alors \u00e0 l'aventure dans le monde r\u00e9el...",
+                "popularity": 3.9058,
+                "poster_path": "\/1QSDa2Q22ZCw52RUc0XswaB9nxE.jpg",
+                "release_date": "2025-09-18",
+                "title": "Gabby et la maison magique - Le film",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dh0dLVLDLqUKhtytCFjkf3EHeJI.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    27,
+                    14
+                ],
+                "id": 1218925,
+                "original_language": "ja",
+                "original_title": "\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3 \u30ec\u30bc\u7bc7",
+                "overview": "Apr\u00e8s avoir mit hors d'\u00e9tat de nuire Katana Man, Denji va faire la rencontre de Reze, une jeune femme qui semble s'int\u00e9resser \u00e0 lui.",
+                "popularity": 3.9951,
+                "poster_path": "\/3gq3Nc6wkgXrjPTkebAwOwe8l7x.jpg",
+                "release_date": "2025-09-19",
+                "title": "Chainsaw Man \u2013 The Movie : Reze Arc",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/zOFaPrU8iuVvmsTXjGfXkeitVAM.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 991494,
+                "original_language": "en",
+                "original_title": "The SpongeBob Movie: Search for SquarePants",
+                "overview": "Un spin-off de Bob l'\u00e9ponge centr\u00e9 sur le personnage de Sandy, l'\u00e9cureuil.",
+                "popularity": 2.4617,
+                "poster_path": "\/341s6WmDqYflj0gNUCOF4QvrSxH.jpg",
+                "release_date": "2025-12-17",
+                "title": "Bob l'\u00e9ponge, le film : \u00c0 la recherche de l'\u00e9ponge perdue",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/yKHS7H8gXObgMleNhnsGjJLHfjN.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    18
+                ],
+                "id": 539745,
+                "original_language": "en",
+                "original_title": "Animal Farm",
+                "overview": "Un groupe d'animaux se rebellent contre leurs ma\u00eetres humains et prennent le contr\u00f4le de la ferme. Leur r\u00e9volte termin\u00e9e, ils sont confront\u00e9s \u00e0 de nouveaux d\u00e9fis sous le r\u00e8gne d'un cochon rus\u00e9 nomm\u00e9 Napol\u00e9on. Cette situation les oblige \u00e0 trouver le courage de s'opposer \u00e0 Napol\u00e9on.",
+                "popularity": 2.6879,
+                "poster_path": "\/fPAdPR8oxY79fNzVQqTADtZVyAC.jpg",
+                "release_date": "2025-06-09",
+                "title": "La Ferme des animaux",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    28,
+                    12,
+                    16
+                ],
+                "id": 826287,
+                "original_language": "en",
+                "original_title": "Naya: Legend of the Golden Dolphin",
+                "overview": "",
+                "popularity": 2.638,
+                "poster_path": "\/q3h8sQ75kYzyWkJptBsZYtkCkfX.jpg",
+                "release_date": "2025-06-28",
+                "title": "Naya: Legend of the Golden Dolphin",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 1226863,
+                "original_language": "en",
+                "original_title": "Super Mario World",
+                "overview": "",
+                "popularity": 2.2607,
+                "poster_path": "\/a8hpHDXLls0eYOpJPFcWZwxDFCW.jpg",
+                "release_date": "2026-04-03",
+                "title": "Super Mario World",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ap3OGdodcULDqqvt0Z2HI46x1n6.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    14
+                ],
+                "id": 1359607,
+                "original_language": "ja",
+                "original_title": "\u5c0f\u6797\u3055\u3093\u3061\u306e\u30e1\u30a4\u30c9\u30e9\u30b4\u30f3 \u3055\u307f\u3057\u304c\u308a\u3084\u306e\u7adc",
+                "overview": "",
+                "popularity": 2.3243,
+                "poster_path": "\/udnoedTfNkI01LEZYmU50HJKy2R.jpg",
+                "release_date": "2025-06-27",
+                "title": "\u5c0f\u6797\u3055\u3093\u3061\u306e\u30e1\u30a4\u30c9\u30e9\u30b4\u30f3 \u3055\u307f\u3057\u304c\u308a\u3084\u306e\u7adc",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/cmvw8itPyY4ffkcAfRoZSWsYXRX.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    14,
+                    16
+                ],
+                "id": 942020,
+                "original_language": "en",
+                "original_title": "Pinocchio and the Water of Life",
+                "overview": "",
+                "popularity": 2.3369,
+                "poster_path": "\/9QCwznMK0AaqECXXNkQypPtCXB7.jpg",
+                "release_date": "2025-12-18",
+                "title": "Pinocchio and the Water of Life",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/te6lZvv2XcUZ8PTALSMj7R4GiCX.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35
+                ],
+                "id": 1316147,
+                "original_language": "en",
+                "original_title": "Grand Prix of Europe",
+                "overview": "Edda, une jeune souris, r\u00eave de devenir pilote de course. \u00c0 l'approche du 50e anniversaire du Grand Prix d'Europe, Edda a l'occasion de rencontrer son idole, la star des courses Ed, et d'aider son p\u00e8re \u00e0 sauver son entreprise en difficult\u00e9. Mais pour cela, elle devra elle-m\u00eame prendre le volant.",
+                "popularity": 2.0848,
+                "poster_path": "\/xT8ABvt1dTIEkvD7jKgVcBAPBgc.jpg",
+                "release_date": "2025-07-24",
+                "title": "Grand Prix of Europe",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/qNkLpxlGkNCGb68VpuFzoIY67Bj.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    878
+                ],
+                "id": 1360829,
+                "original_language": "ja",
+                "original_title": "\u30f4\u30a1\u30fc\u30b8\u30f3\u30fb\u30d1\u30f3\u30af Clockwork Girl",
+                "overview": "",
+                "popularity": 2.8923,
+                "poster_path": "\/oARmiq6Lar4RNAlPzsuRf8cqL8j.jpg",
+                "release_date": "2025-06-27",
+                "title": "\u30f4\u30a1\u30fc\u30b8\u30f3\u30fb\u30d1\u30f3\u30af Clockwork Girl",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/b42Bl98YTcIOdJJJTTNuhnpmDla.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35,
+                    10751
+                ],
+                "id": 814795,
+                "original_language": "en",
+                "original_title": "Pierre the Pigeon-Hawk",
+                "overview": "",
+                "popularity": 2.4426,
+                "poster_path": "\/qtIRpeHsykqr0TE4YXZUW1pvlKb.jpg",
+                "release_date": "2026-02-11",
+                "title": "Pierre the Pigeon-Hawk",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/bbC6NOEZILNB7X9jrtBHrLN9hvf.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    10749
+                ],
+                "id": 1419053,
+                "original_language": "ja",
+                "original_title": "ChaO",
+                "overview": "",
+                "popularity": 1.7429,
+                "poster_path": "\/jUuQn3oobuTyx66v9QxHdbenzLT.jpg",
+                "release_date": "2025-08-15",
+                "title": "ChaO",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dLPFvMKcjjDITzPxdi4ftTV5xOb.jpg",
+                "genre_ids": [
+                    16,
+                    35
+                ],
+                "id": 537921,
+                "original_language": "en",
+                "original_title": "Fixed",
+                "overview": "",
+                "popularity": 2.1821,
+                "poster_path": "\/mRCbfs6TfHCuipUeK3QLsu6TiGV.jpg",
+                "release_date": "2025-06-11",
+                "title": "Couic !",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            }
+        ],
+        "total_pages": 9,
+        "total_results": 162
+    },
+    "expiry": 1749041553,
+    "created_at": 1749034353
+}

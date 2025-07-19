@@ -35,7 +35,7 @@ error_log("Profile.php - User info retrieved: " . print_r($userInfo, true));
 
 // Récupérer les favoris de l'utilisateur
 require_once APP_PATH . '/Models/MovieModel.php';
-$movieModel = new App\Models\MovieModel(OMDB_API_KEY);
+$movieModel = new App\Models\MovieModel(TMDB_API_KEY);
 $favorites = $movieModel->getUserFavorites($userId);
 
 // Formater les favoris pour la vue

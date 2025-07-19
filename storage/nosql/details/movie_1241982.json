@@ -1,0 +1,91 @@
+{
+    "key": "movie:1241982",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/zo8CIjJ2nfNOevqNajwMRO6Hwka.jpg",
+        "belongs_to_collection": {
+            "id": 1241984,
+            "name": "Vaiana - Saga",
+            "poster_path": "\/2KYYl8nEuQsPWpidoKuPFnKU2J3.jpg",
+            "backdrop_path": "\/4OgaftFNqtE1UvfDDb2Eov7A5Rz.jpg"
+        },
+        "budget": 150000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            }
+        ],
+        "homepage": "",
+        "id": 1241982,
+        "imdb_id": "tt13622970",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Moana 2",
+        "overview": "Apr\u00e8s avoir re\u00e7u une invitation inattendue de ses anc\u00eatres, Vaiana entreprend un p\u00e9riple qui la conduira jusqu\u2019aux eaux dangereuses situ\u00e9es aux confins des mers des \u00eeles du Pacifique. Elle y vivra des p\u00e9rip\u00e9ties comme jamais v\u00e9cues auparavant.",
+        "popularity": 68.281,
+        "poster_path": "\/usdwoEwm68cdeMOvGFPwSk9nLTr.jpg",
+        "production_companies": [
+            {
+                "id": 2,
+                "logo_path": "\/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+                "name": "Walt Disney Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 6125,
+                "logo_path": "\/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+                "name": "Walt Disney Animation Studios",
+                "origin_country": "US"
+            },
+            {
+                "id": 158526,
+                "logo_path": "\/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+                "name": "Walt Disney Animation Studios",
+                "origin_country": "CA"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "CA",
+                "name": "Canada"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2024-11-21",
+        "revenue": 1059242164,
+        "runtime": 100,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "L'oc\u00e9an les rappelle \u00e0 nouveau.",
+        "title": "Vaiana 2",
+        "video": false,
+        "vote_average": 7.068,
+        "vote_count": 2559
+    },
+    "expiry": 1752954162,
+    "created_at": 1752867762
+}

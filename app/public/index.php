@@ -6,25 +6,25 @@ if (!defined('CONFIG_PATH')) define('CONFIG_PATH', APP_PATH . '/config');
 if (!defined('VIEW_PATH')) define('VIEW_PATH', APP_PATH . '/Views');
 if (!defined('ASSET_PATH')) define('ASSET_PATH', ROOT_PATH . '/assets');
 
-// Inclure la configuration des sessions
-require_once APP_PATH . '/config/session.php';
-
 // Activer l'affichage des erreurs en développement
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Vérifier si l'URL de base est définie
-if (!defined('BASE_URL')) {
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    $host = $_SERVER['HTTP_HOST'];
-    define('BASE_URL', $protocol . '://' . $host);
-}
-
-// Inclure la configuration
+// Inclure la configuration AVANT les sessions
 if (file_exists(APP_PATH . '/config/config.php')) {
     require_once APP_PATH . '/config/config.php';
 } else {
     die("Le fichier de configuration est manquant.");
+}
+
+// Inclure la configuration des sessions APRÈS la configuration principale
+require_once APP_PATH . '/config/session.php';
+
+// Vérifier si l'URL de base est définie (si pas déjà fait dans config.php)
+if (!defined('BASE_URL')) {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'];
+    define('BASE_URL', $protocol . '://' . $host);
 }
 
 // Vérifier la configuration de la base de données

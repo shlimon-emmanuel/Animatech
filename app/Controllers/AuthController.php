@@ -12,6 +12,11 @@ class AuthController {
 
     // Méthode pour générer un token CSRF
     private function generateCsrfToken() {
+        // Initialiser le tableau des tokens s'il n'existe pas
+        if (!isset($_SESSION['csrf_tokens'])) {
+            $_SESSION['csrf_tokens'] = [];
+        }
+        
         // Utiliser un token unique pour chaque formulaire avec une durée de vie limitée
         $token = bin2hex(random_bytes(32));
         
@@ -119,9 +124,16 @@ class AuthController {
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
-                // Vérification CSRF
-                if (!isset($_POST['csrf_token']) || !$this->validateCsrfToken($_POST['csrf_token'])) {
-                    throw new \Exception('Erreur de sécurité. Veuillez réessayer.');
+                // Vérification CSRF avec debug
+                error_log("DEBUG Registration - CSRF Token reçu: " . ($_POST['csrf_token'] ?? 'ABSENT'));
+                error_log("DEBUG Registration - Tokens en session: " . print_r($_SESSION['csrf_tokens'] ?? [], true));
+                
+                if (!isset($_POST['csrf_token'])) {
+                    throw new \Exception('Token CSRF manquant. Veuillez réessayer.');
+                }
+                
+                if (!$this->validateCsrfToken($_POST['csrf_token'])) {
+                    throw new \Exception('Token CSRF invalide. Veuillez réessayer.');
                 }
                 
                 // Nettoyage et validation des entrées
@@ -284,7 +296,7 @@ class AuthController {
         require_once APP_PATH . '/Models/MovieModel.php';
         
         $favoriteModel = new \App\Models\FavoriteModel();
-        $movieModel = new \App\Models\MovieModel(OMDB_API_KEY);
+        $movieModel = new \App\Models\MovieModel(TMDB_API_KEY);
         
         // Récupérer les IDs des films favoris
         $favoriteMovieIds = $favoriteModel->getUserFavorites($userId);

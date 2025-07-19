@@ -10,7 +10,7 @@ class MovieController {
     private $movieModel;
 
     public function __construct() {
-        $this->movieModel = new MovieModel(OMDB_API_KEY);
+        $this->movieModel = new MovieModel(TMDB_API_KEY);
     }
 
     public function listMovies() {
@@ -40,6 +40,14 @@ class MovieController {
             // Si on a une recherche, on utilise searchMovies
             if (!empty($search)) {
                 $results = $this->movieModel->searchMovies($search, $page);
+                if (is_array($results)) {
+                    $results = (object)$results;
+                }
+                if (is_array($results->results)) {
+                    $results->results = array_map(function($movie) {
+                        return is_array($movie) ? (object)$movie : $movie;
+                    }, $results->results);
+                }
             } 
             // Si on a des filtres, on utilise getFilteredMovies
             else if (!empty($filterOptions)) {
@@ -108,6 +116,18 @@ class MovieController {
                 }
             }
             
+            // Ensure upcoming movies are properly formatted
+            if ($upcomingMovies && isset($upcomingMovies->results)) {
+                if (is_array($upcomingMovies)) {
+                    $upcomingMovies = (object)$upcomingMovies;
+                }
+                if (is_array($upcomingMovies->results)) {
+                    $upcomingMovies->results = array_map(function($movie) {
+                        return is_array($movie) ? (object)$movie : $movie;
+                    }, $upcomingMovies->results);
+                }
+            }
+            
             require_once APP_PATH . '/Views/movies/list.php';
         } catch (Exception $e) {
             error_log("Erreur dans listMovies: " . $e->getMessage());
@@ -173,46 +193,45 @@ class MovieController {
         
         try {
             $sortBy = isset($_GET['sort_by']) ? trim($_GET['sort_by']) : 'popularity.desc';
-            $withGenres = isset($_GET['with_genres']) ? trim($_GET['with_genres']) : '16'; // Default to Animation
+            $withGenres = isset($_GET['with_genres']) ? trim($_GET['with_genres']) : '16';
             
             // Options de filtrage
             $filterOptions = [
-                'with_genres' => $withGenres // S'assurer que le genre d'animation est toujours inclus
+                'with_genres' => $withGenres,
+                'sort_by' => $sortBy
             ];
             
-            if (isset($_GET['with_original_language'])) {
+            // Ajouter les autres filtres s'ils sont présents
+            if (isset($_GET['with_original_language']) && !empty($_GET['with_original_language'])) {
                 $filterOptions['with_original_language'] = trim($_GET['with_original_language']);
             }
-            if (isset($_GET['primary_release_date_gte'])) {
+            if (isset($_GET['primary_release_date_gte']) && !empty($_GET['primary_release_date_gte'])) {
                 $filterOptions['primary_release_date.gte'] = trim($_GET['primary_release_date_gte']);
             }
-            if (isset($_GET['primary_release_date_lte'])) {
+            if (isset($_GET['primary_release_date_lte']) && !empty($_GET['primary_release_date_lte'])) {
                 $filterOptions['primary_release_date.lte'] = trim($_GET['primary_release_date_lte']);
             }
-            if (isset($_GET['vote_average_gte'])) {
+            if (isset($_GET['vote_average_gte']) && !empty($_GET['vote_average_gte'])) {
                 $filterOptions['vote_average.gte'] = (float)$_GET['vote_average_gte'];
             }
-            if (isset($_GET['year'])) {
+            if (isset($_GET['year']) && !empty($_GET['year'])) {
                 $filterOptions['year'] = (int)$_GET['year'];
             }
             
             $search = isset($_GET['query']) ? trim($_GET['query']) : '';
             
-            // Log pour debug
-            error_log("loadMoreMovies - Page: $page, Search: $search, With Genres: $withGenres");
-            
             // Si on a une recherche, on utilise searchMovies
             if (!empty($search)) {
                 $results = $this->movieModel->searchMovies($search, $page);
             } 
-            // Si on a des filtres, on utilise getFilteredMovies
-            else if (!empty($filterOptions)) {
-                $filterOptions['sort_by'] = $sortBy;
-                $results = $this->movieModel->getFilteredMovies($page, $filterOptions);
-            } 
-            // Sinon, on récupère les films populaires avec le tri demandé
+            // Sinon, on utilise getFilteredMovies
             else {
-                $results = $this->movieModel->getPopularMovies($page, $sortBy);
+                $results = $this->movieModel->getFilteredMovies($page, $filterOptions);
+            }
+            
+            // Vérification basique des résultats
+            if (!$results || !isset($results->results)) {
+                error_log("Aucun résultat retourné par l'API");
             }
             
             // Si aucun résultat n'est trouvé, retourner un tableau vide mais valide
@@ -220,37 +239,40 @@ class MovieController {
                 echo json_encode([
                     'movies' => [],
                     'total_pages' => 0,
-                    'error' => 'Aucun résultat trouvé'
+                    'page' => $page
                 ]);
                 exit;
             }
             
-            // Filtrage supplémentaire pour s'assurer que seuls les films d'animation sont retournés
-            $filteredResults = [];
+            // Convertir les résultats en format attendu
+            $formattedResults = [];
             foreach ($results->results as $movie) {
-                // Vérifier dans les genres si disponibles
+                // Vérifier si c'est un film d'animation
                 if (isset($movie->genre_ids) && is_array($movie->genre_ids) && in_array(16, $movie->genre_ids)) {
-                    $filteredResults[] = $movie;
+                    $formattedResults[] = $movie;
                 }
             }
             
-            // Mettre à jour le nombre total de pages
+            // Calculer le nombre total de pages en fonction des résultats filtrés
             $totalPages = 1;
             if (isset($results->total_pages)) {
-                $ratio = count($filteredResults) / (count($results->results) ?: 1);
+                $ratio = count($formattedResults) / (count($results->results) ?: 1);
                 $totalPages = max(1, ceil($results->total_pages * $ratio));
             }
             
             echo json_encode([
-                'movies' => $filteredResults,
-                'total_pages' => $totalPages
+                'movies' => $formattedResults,
+                'total_pages' => $totalPages,
+                'page' => $page
             ]);
+            
         } catch (Exception $e) {
             error_log("Erreur dans loadMoreMovies: " . $e->getMessage());
             echo json_encode([
                 'error' => $e->getMessage(),
                 'movies' => [],
-                'total_pages' => 0
+                'total_pages' => 0,
+                'page' => $page
             ]);
         }
         exit;

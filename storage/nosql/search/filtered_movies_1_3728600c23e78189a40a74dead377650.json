@@ -1,0 +1,428 @@
+{
+    "key": "filtered_movies:1:3728600c23e78189a40a74dead377650",
+    "data": {
+        "page": 1,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "\/63RnEJRNzRDvi0Fv4jhrT2eh0fl.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    14,
+                    53
+                ],
+                "id": 1311031,
+                "original_language": "ja",
+                "original_title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8 \u7b2c\u4e00\u7ae0 \u7317\u7aa9\u5ea7\u518d\u6765",
+                "overview": "",
+                "popularity": 48.8995,
+                "poster_path": "\/lQOLDiImSw68qGiB7hwwAIrJjhz.jpg",
+                "release_date": "2025-07-18",
+                "title": "Demon Slayer: Kimetsu no Yaiba - La Forteresse Infinie",
+                "video": false,
+                "vote_average": 7,
+                "vote_count": 2
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/jvpkBenB6hv19WWYVlaiow8zklq.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    80,
+                    12,
+                    16
+                ],
+                "id": 1175942,
+                "original_language": "en",
+                "original_title": "The Bad Guys 2",
+                "overview": "Les criminels animaliers s'efforcent de se faire \u00e0 leur nouvelle vie de gentils. Bient\u00f4t, ils sont tir\u00e9s de leur retraite et forc\u00e9s de faire \"un dernier travail\" par une \u00e9quipe enti\u00e8rement f\u00e9minine.",
+                "popularity": 19.3763,
+                "poster_path": "\/opKf1uITVUkm8nteNM54uIgJZKQ.jpg",
+                "release_date": "2025-07-25",
+                "title": "Les Bad Guys 2",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/hFcF4hsEaY73UuTSm1P6JDUxfQ0.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    16,
+                    878
+                ],
+                "id": 1327819,
+                "original_language": "en",
+                "original_title": "Hoppers",
+                "overview": "Mabel est une jeune fille audacieuse qui a une grande ambition : infiltrer le monde animal. Pour ce faire, elle transf\u00e8re son esprit \u00e0 un robot castor afin de pouvoir approcher d\u2019autres animaux et \u00e9tudier leur mode de vie.",
+                "popularity": 8.4864,
+                "poster_path": "\/2hTLV5XpT5dR0z15FwNABJKYxh9.jpg",
+                "release_date": "2026-03-04",
+                "title": "Jumpers",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/oMB0dF0NTXA9UPu3GxE9gGbcMwP.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16,
+                    80
+                ],
+                "id": 1084242,
+                "original_language": "en",
+                "original_title": "Zootopia 2",
+                "overview": "Suite du film d'animation Zootopie sorti en 2016.",
+                "popularity": 8.2197,
+                "poster_path": "\/LrMBxFwnsMgXTnaWqHYinn3vDN.jpg",
+                "release_date": "2025-11-26",
+                "title": "Zootopie 2",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/kVSUUWiXoNwq2wVCZ4Mcqkniqvr.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 991494,
+                "original_language": "en",
+                "original_title": "The SpongeBob Movie: Search for SquarePants",
+                "overview": "Bien d\u00e9cid\u00e9 \u00e0 prouver \u00e0 M. Krabs qu\u2019il est d\u00e9sormais un grand gar\u00e7on, Bob se lance sur les traces du l\u00e9gendaire Hollandais Volant, un redoutable pirate fant\u00f4me. Cap sur une \u00e9pop\u00e9e d\u00e9jant\u00e9e, entre fous rires, frissons et p\u00e9rip\u00e9ties sous-marines, jusque dans les abysses les plus myst\u00e9rieux de l\u2019oc\u00e9an \u2014 l\u00e0 o\u00f9 aucune \u00e9ponge n\u2019a jamais os\u00e9 plonger !",
+                "popularity": 7.4374,
+                "poster_path": "\/xhNdh0uWMCT5q2rCALNtk8PXIr.jpg",
+                "release_date": "2025-12-19",
+                "title": "Bob L\u2019\u00c9ponge \u2013 Le Film : Un Pour Tous, Tous Pirates !",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/yCXvf4C9cKnTSOJtuNRGqB0CUFV.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35
+                ],
+                "id": 1084244,
+                "original_language": "en",
+                "original_title": "Toy Story 5",
+                "overview": "Prochain film de la franchise Toy Story.",
+                "popularity": 4.0832,
+                "poster_path": "\/i4UtdsApMwXQkGD2mBDroJSJZsk.jpg",
+                "release_date": "2026-06-17",
+                "title": "Toy Story 5",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/xeIkV4e4joAmlRJhqJu2N8jR6zC.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    18,
+                    10402
+                ],
+                "id": 1374686,
+                "original_language": "en",
+                "original_title": "Light of the World",
+                "overview": "",
+                "popularity": 3.1249,
+                "poster_path": "\/lngk84juVGt3BuxcNEwP74JmX7b.jpg",
+                "release_date": "2025-09-04",
+                "title": "Light of the World",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/pFLeuwKNJLC9ETW17uBaUwTWxWl.jpg",
+                "genre_ids": [
+                    10751,
+                    14,
+                    35,
+                    16
+                ],
+                "id": 1117898,
+                "original_language": "en",
+                "original_title": "The Cat in the Hat",
+                "overview": "",
+                "popularity": 2.9332,
+                "poster_path": "\/tYH4rQZlHtuFSeDS0bsV17khvJC.jpg",
+                "release_date": "2026-02-25",
+                "title": "The Cat in the Hat",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dh0dLVLDLqUKhtytCFjkf3EHeJI.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    27,
+                    14
+                ],
+                "id": 1218925,
+                "original_language": "ja",
+                "original_title": "\u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3 \u30ec\u30bc\u7bc7",
+                "overview": "Apr\u00e8s avoir mit hors d'\u00e9tat de nuire Katana Man, Denji va faire la rencontre de Reze, une jeune femme qui semble s'int\u00e9resser \u00e0 lui.",
+                "popularity": 2.4498,
+                "poster_path": "\/ieSTagNIFeIW2oVm4D9MDiLCHFY.jpg",
+                "release_date": "2025-09-19",
+                "title": "Chainsaw Man \u2013 The Movie : Reze Arc",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    10751,
+                    14,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 1226863,
+                "original_language": "en",
+                "original_title": "Super Mario World",
+                "overview": "",
+                "popularity": 1.9888,
+                "poster_path": "\/nhlfmLg5cQXXZfTobHIGFiHIu1y.jpg",
+                "release_date": "2026-04-03",
+                "title": "Super Mario World",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    16,
+                    10402
+                ],
+                "id": 1404404,
+                "original_language": "ja",
+                "original_title": "\u6620\u753b\u30af\u30ec\u30e8\u30f3\u3057\u3093\u3061\u3083\u3093 \u8d85\u83ef\u9e97\uff01\u707c\u71b1\u306e\u30ab\u30b9\u30ab\u30d9\u30c0\u30f3\u30b5\u30fc\u30ba",
+                "overview": "",
+                "popularity": 1.5984,
+                "poster_path": "\/wSdMsAjw8Ip6AyC9wAzpBalgrEb.jpg",
+                "release_date": "2025-08-08",
+                "title": "\u6620\u753b\u30af\u30ec\u30e8\u30f3\u3057\u3093\u3061\u3083\u3093 \u8d85\u83ef\u9e97\uff01\u707c\u71b1\u306e\u30ab\u30b9\u30ab\u30d9\u30c0\u30f3\u30b5\u30fc\u30ba",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    16,
+                    14,
+                    28
+                ],
+                "id": 1144107,
+                "original_language": "zh",
+                "original_title": "\u7f57\u5c0f\u9ed1\u6218\u8bb0 2",
+                "overview": "",
+                "popularity": 1.5804,
+                "poster_path": "\/5KDVDjqDUxVyXryfBOgMBjND8u7.jpg",
+                "release_date": "2025-07-18",
+                "title": "\u7f57\u5c0f\u9ed1\u6218\u8bb0 2",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dSAGnA3OZs0cC3JQ0GLqQVndZON.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 1185806,
+                "original_language": "en",
+                "original_title": "PAW Patrol: The Dino Movie",
+                "overview": "",
+                "popularity": 1.373,
+                "poster_path": "\/id0llYnMLZyEOmcxtTi6VeWIICy.jpg",
+                "release_date": "2025-07-24",
+                "title": "PAW Patrol: The Dino Movie",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/cmvw8itPyY4ffkcAfRoZSWsYXRX.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    14,
+                    16
+                ],
+                "id": 942020,
+                "original_language": "en",
+                "original_title": "Pinocchio and the Water of Life",
+                "overview": "",
+                "popularity": 1.2584,
+                "poster_path": "\/9QCwznMK0AaqECXXNkQypPtCXB7.jpg",
+                "release_date": "2025-12-18",
+                "title": "Pinocchio and the Water of Life",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/te6lZvv2XcUZ8PTALSMj7R4GiCX.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35
+                ],
+                "id": 1316147,
+                "original_language": "en",
+                "original_title": "Grand Prix of Europe",
+                "overview": "Edda, une jeune souris, r\u00eave de devenir pilote de course. \u00c0 l'approche du 50e anniversaire du Grand Prix d'Europe, Edda a l'occasion de rencontrer son idole, la star des courses Ed, et d'aider son p\u00e8re \u00e0 sauver son entreprise en difficult\u00e9. Mais pour cela, elle devra elle-m\u00eame prendre le volant.",
+                "popularity": 1.2494,
+                "poster_path": "\/xT8ABvt1dTIEkvD7jKgVcBAPBgc.jpg",
+                "release_date": "2025-07-24",
+                "title": "Super Grand Prix",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/xgEp9FPyNnvhpqXMXFUwVKioQBY.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 1315772,
+                "original_language": "en",
+                "original_title": "Mega Minions",
+                "overview": "",
+                "popularity": 1.1013,
+                "poster_path": null,
+                "release_date": "2026-07-01",
+                "title": "Les Minions 3",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dcVnqXWMRfO58d7r8W3vBpe5UIc.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    16
+                ],
+                "id": 1297842,
+                "original_language": "en",
+                "original_title": "GOAT",
+                "overview": "",
+                "popularity": 1.0781,
+                "poster_path": "\/AqwDCGkUz0ieZk1KzxoeGlPGGco.jpg",
+                "release_date": "2026-02-12",
+                "title": "GOAT",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/bkKxHNeMk4Vg5yGQ1FuwYX74PRd.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35
+                ],
+                "id": 1490320,
+                "original_language": "zh",
+                "original_title": "\u559c\u7f8a\u7f8a\u4e0e\u7070\u592a\u72fc\u4e4b\u5f02\u56fd\u7834\u6653",
+                "overview": "",
+                "popularity": 1.0607,
+                "poster_path": "\/tvooHfa3uBh89NNpJKb96ntNoRl.jpg",
+                "release_date": "2025-07-26",
+                "title": "\u559c\u7f8a\u7f8a\u4e0e\u7070\u592a\u72fc\u4e4b\u5f02\u56fd\u7834\u6653",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/pU9cz8mZjzwyPAcJDPXBlK99BoR.jpg",
+                "genre_ids": [
+                    35,
+                    12,
+                    16,
+                    14,
+                    10751
+                ],
+                "id": 1117857,
+                "original_language": "en",
+                "original_title": "In Your Dreams",
+                "overview": "Stevie et son petit fr\u00e8re Elliot s'aventurent dans le monde follement absurde de leurs r\u00eaves pour demander au marchand de sable de leur donner la famille parfaite.",
+                "popularity": 0.9076,
+                "poster_path": "\/pPUtVV9wAAExq7q2P1lyhLrwf6f.jpg",
+                "release_date": "2025-11-13",
+                "title": "Dans tes r\u00eaves",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/hNdD8w6OGgISCGBER9exiKoOizr.jpg",
+                "genre_ids": [
+                    16,
+                    10751
+                ],
+                "id": 1214130,
+                "original_language": "en",
+                "original_title": "Stitch Head",
+                "overview": "",
+                "popularity": 0.7518,
+                "poster_path": "\/qwhscpTQAGrpit1ARQvvrlijp8h.jpg",
+                "release_date": "2025-10-16",
+                "title": "Stitch Head",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            }
+        ],
+        "total_pages": 9,
+        "total_results": 163
+    },
+    "expiry": 1752874350,
+    "created_at": 1752867150
+}

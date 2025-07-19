@@ -132,6 +132,8 @@
         <?php endif; ?>
 
         <form action="index.php?action=register" method="POST" class="auth-form">
+            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token ?? ''; ?>">
+            
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <i class="fas fa-user form-icon"></i>

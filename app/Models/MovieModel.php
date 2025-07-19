@@ -14,7 +14,12 @@ class MovieModel {
 
     public function __construct($apiKey) {
         $this->apiKey = $apiKey;
-        $this->baseUrl = OMDB_API_URL;
+        $this->baseUrl = TMDB_API_URL;
+        
+        // Vérifier que la clé API est configurée
+        if ($apiKey === 'your_api_key_here' || empty($apiKey)) {
+            error_log("ERREUR: Clé API TMDB non configurée! Veuillez obtenir une clé sur https://www.themoviedb.org/");
+        }
         
         // Initialisation du cache NoSQL JSON
         $this->cache = new JsonDbModel();
@@ -32,6 +37,21 @@ class MovieModel {
         }
     }
 
+    private function buildApiUrl($endpoint, $params = []) {
+        $isJWT = (strpos($this->apiKey, 'eyJ') === 0);
+        $url = $this->baseUrl . $endpoint;
+        
+        if (!$isJWT) {
+            $params['api_key'] = $this->apiKey;
+        }
+        
+        if (!empty($params)) {
+            $url .= "?" . http_build_query($params);
+        }
+        
+        return $url;
+    }
+
     public function getPopularMovies($page = 1, $sortBy = 'popularity.desc', $minVoteCount = 100) {
         // Créer une clé de cache unique pour cette requête
         $cacheKey = "popular_movies:$page:$sortBy:$minVoteCount";
@@ -44,13 +64,14 @@ class MovieModel {
         }
         
         // Si pas en cache, faire l'appel API normal
-        $url = $this->baseUrl . "discover/movie?api_key=" . $this->apiKey 
-             . "&language=fr-FR"
-             . "&page=" . $page 
-             . "&sort_by=" . $sortBy
-             . "&with_genres=16"  // Genre Animation uniquement
-             . "&include_adult=false"
-             . "&vote_count.gte=" . $minVoteCount; 
+        $url = $this->buildApiUrl("discover/movie", [
+            'language' => 'fr-FR',
+            'page' => $page,
+            'sort_by' => $sortBy,
+            'with_genres' => 16,  // Genre Animation uniquement
+            'include_adult' => false,
+            'vote_count.gte' => $minVoteCount
+        ]);
         
         $response = $this->makeApiCall($url);
         
@@ -91,34 +112,37 @@ class MovieModel {
             return (object)$cachedData;
         }
         
-        $url = $this->baseUrl . "discover/movie?api_key=" . $this->apiKey 
-             . "&language=fr-FR"
-             . "&page=" . $page 
-             . "&sort_by=" . $params['sort_by']
-             . "&with_genres=" . $params['with_genres']
-             . "&vote_count.gte=" . $params['vote_count.gte']
-             . "&include_adult=" . ($params['include_adult'] ? 'true' : 'false');
+        $apiParams = [
+            'language' => 'fr-FR',
+            'page' => $page,
+            'sort_by' => $params['sort_by'],
+            'with_genres' => $params['with_genres'],
+            'vote_count.gte' => $params['vote_count.gte'],
+            'include_adult' => $params['include_adult'] ? 'true' : 'false'
+        ];
         
         // Ajout des paramètres optionnels si définis
         if (!empty($params['with_original_language'])) {
-            $url .= "&with_original_language=" . $params['with_original_language'];
+            $apiParams['with_original_language'] = $params['with_original_language'];
         }
         
         if (!empty($params['primary_release_date.gte'])) {
-            $url .= "&primary_release_date.gte=" . $params['primary_release_date.gte'];
+            $apiParams['primary_release_date.gte'] = $params['primary_release_date.gte'];
         }
         
         if (!empty($params['primary_release_date.lte'])) {
-            $url .= "&primary_release_date.lte=" . $params['primary_release_date.lte'];
+            $apiParams['primary_release_date.lte'] = $params['primary_release_date.lte'];
         }
         
         if (!empty($params['vote_average.gte'])) {
-            $url .= "&vote_average.gte=" . $params['vote_average.gte'];
+            $apiParams['vote_average.gte'] = $params['vote_average.gte'];
         }
         
         if (!empty($params['year'])) {
-            $url .= "&year=" . $params['year'];
+            $apiParams['year'] = $params['year'];
         }
+        
+        $url = $this->buildApiUrl("discover/movie", $apiParams);
         
         // Log the URL for debugging
         error_log("TMDB API request URL: " . $url);
@@ -150,7 +174,7 @@ class MovieModel {
         }
         
         // Si pas en cache, faire l'appel API normal
-        $url = $this->baseUrl . "movie/" . $id . "?api_key=" . $this->apiKey . "&language=fr-FR";
+        $url = $this->buildApiUrl("movie/$id", ['language' => 'fr-FR']);
         $movie = $this->makeApiCall($url);
         
         // Stocker dans le cache NoSQL pour les requêtes futures (24 heures - les films changent rarement)
@@ -168,16 +192,25 @@ class MovieModel {
                 throw new \Exception("URL invalide dans makeApiCall: " . $url);
             }
             
+            // Déterminer le type d'authentification
+            $isJWT = (strpos($this->apiKey, 'eyJ') === 0); // JWT commence par 'eyJ'
+            
+            $headers = [
+                'Accept: application/json',
+                'Connection: close'
+            ];
+            
+            if ($isJWT) {
+                $headers[] = 'Authorization: Bearer ' . $this->apiKey;
+            }
+            
             // Configuration sécurisée du contexte
             $context = stream_context_create([
                 'http' => [
                     'timeout' => 30,
                     'ignore_errors' => true,
                     'user_agent' => 'ANIMATECH/1.0',
-                    'header' => [
-                        'Accept: application/json',
-                        'Connection: close'
-                    ]
+                    'header' => $headers
                 ],
                 'ssl' => [
                     'verify_peer' => true,
@@ -216,7 +249,7 @@ class MovieModel {
             return $decoded;
             
         } catch (\Exception $e) {
-            error_log("MovieModel::makeApiCall - Exception: " . $e->getMessage() . " - URL: " . $url);
+            error_log("Erreur makeApiCall: " . $e->getMessage() . " pour URL: " . $url);
             return null;
         }
     }
@@ -673,7 +706,7 @@ class MovieModel {
     public function getMovieVideos($movieId) {
         try {
             // Appel à l'API TMDB pour les vidéos via notre méthode makeApiCall
-            $url = $this->baseUrl . "movie/" . $movieId . "/videos?api_key=" . $this->apiKey;
+            $url = $this->buildApiUrl("movie/$movieId/videos", ['language' => 'fr-FR']);
             $response = $this->makeApiCall($url);
             
             if (!$response) {
@@ -690,12 +723,12 @@ class MovieModel {
     }
 
     public function searchMovies($query, $page = 1) {
-        $url = $this->baseUrl . "search/movie?api_key=" . $this->apiKey 
-             . "&language=fr-FR"
-             . "&page=" . $page 
-             . "&query=" . urlencode($query)
-             . "&with_genres=16" // Genre Animation - utilise un ID explicite
-             . "&include_adult=false"; // Exclure le contenu pour adultes
+        $url = $this->buildApiUrl("search/movie", [
+            'language' => 'fr-FR',
+            'page' => $page,
+            'query' => $query,
+            'include_adult' => false
+        ]);
         
         error_log("URL de recherche: " . $url); // Log pour debug
         
@@ -705,7 +738,7 @@ class MovieModel {
             return null;
         }
         
-        // Vérification supplémentaire côté serveur
+        // Vérification supplémentaire côté serveur pour les films d'animation
         $filteredResults = [];
         foreach ($response->results as $movie) {
             if (isset($movie->genre_ids) && in_array(16, $movie->genre_ids)) {
@@ -739,7 +772,7 @@ class MovieModel {
     }
 
     public function getMovieDetails($movieId) {
-        $url = $this->baseUrl . "movie/" . $movieId . "?api_key=" . $this->apiKey . "&language=fr-FR";
+        $url = $this->buildApiUrl("movie/$movieId", ['language' => 'fr-FR']);
         $movieDetails = $this->makeApiCall($url);
         
         if ($movieDetails) {

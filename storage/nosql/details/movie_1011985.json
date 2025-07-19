@@ -1,0 +1,83 @@
+{
+    "key": "movie:1011985",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/kYgQzzjNis5jJalYtIHgrom0gOx.jpg",
+        "belongs_to_collection": {
+            "id": 77816,
+            "name": "Kung Fu Panda - Saga",
+            "poster_path": "\/xoYc0RYKSc3xC4S9OpPZxKocKtj.jpg",
+            "backdrop_path": "\/2nbtv33hEk2CTnuMhTGZgsFdi3K.jpg"
+        },
+        "budget": 80000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            },
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantastique"
+            }
+        ],
+        "homepage": "https:\/\/www.universalpictures.fr\/micro\/kung-fu-panda-4",
+        "id": 1011985,
+        "imdb_id": "tt21692408",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Kung Fu Panda 4",
+        "overview": "Apr\u00e8s trois aventures dans lesquelles le guerrier dragon Po a combattu les ma\u00eetres du mal les plus redoutables gr\u00e2ce \u00e0 un courage et des comp\u00e9tences en arts martiaux in\u00e9gal\u00e9s, le destin va de nouveau frapper \u00e0 sa porte pour l'inviter \u00e0 enfin se reposer. Plus pr\u00e9cis\u00e9ment, pour \u00eatre nomm\u00e9 chef spirituel de la vall\u00e9e de la Paix.",
+        "popularity": 41.6588,
+        "poster_path": "\/y8K9wRRv7YK1ACHqaDlMBrNebVU.jpg",
+        "production_companies": [
+            {
+                "id": 521,
+                "logo_path": "\/kP7t6RwGz2AvvTkvnI1uteEwHet.png",
+                "name": "DreamWorks Animation",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2024-03-02",
+        "revenue": 548040835,
+        "runtime": 94,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "La topissitude est de retour.",
+        "title": "Kung Fu Panda 4",
+        "video": false,
+        "vote_average": 7.058,
+        "vote_count": 3142
+    },
+    "expiry": 1752954815,
+    "created_at": 1752868415
+}

@@ -568,6 +568,103 @@
             font-size: 18px;
             color: var(--neon-purple);
         }
+
+        /* Panneau de filtres */
+        .filter-panel {
+            width: 100%;
+            max-width: var(--max-width-container);
+            background-color: var(--darker-bg);
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+            margin: 20px auto;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 243, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .filter-header h2 {
+            color: var(--neon-blue);
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            text-shadow: var(--text-glow);
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            color: var(--neon-blue);
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-button .icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .filter-content {
+            padding: 20px;
+            max-height: 500px;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        /* État replié */
+        .filter-panel.collapsed .filter-content {
+            max-height: 0;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .filter-panel.collapsed .toggle-button .icon {
+            transform: rotate(-90deg);
+        }
+
+        /* Style des filtres */
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group label {
+            display: block;
+            color: var(--neon-blue);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .filter-group select,
+        .filter-group input[type="date"] {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 6px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .filter-panel {
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -604,6 +701,11 @@
                 <?php 
                 // Filtrer les films valides (avec affiche, date de sortie future dans les 90 jours, et langues appropriées)
                 $validMovies = array_filter($upcomingMovies->results, function($movie) {
+                    // First check if movie is an object and has a title
+                    if (!is_object($movie) || !isset($movie->title)) {
+                        return false;
+                    }
+                    
                     // Vérifier si le titre utilise des caractères latins
                     $hasNonLatinChars = preg_match('/[\p{Han}\p{Hiragana}\p{Katakana}\p{Cyrillic}\p{Arabic}]/u', $movie->title);
                     
@@ -626,6 +728,11 @@
                 // Si pas assez de films dans les 90 jours, on élargit à 180 jours
                 if (count($validMovies) < 3) {
                     $validMovies = array_filter($upcomingMovies->results, function($movie) {
+                        // First check if movie is an object and has a title
+                        if (!is_object($movie) || !isset($movie->title)) {
+                            return false;
+                        }
+                        
                         $hasNonLatinChars = preg_match('/[\p{Han}\p{Hiragana}\p{Katakana}\p{Cyrillic}\p{Arabic}]/u', $movie->title);
                         
                         $today = time();
@@ -665,6 +772,11 @@
                 if (count($upcomingFilms) < 3) {
                     // Définir des films de secours
                     $backupPopularMovies = array_filter($upcomingMovies->results, function($movie) use ($upcomingFilms) {
+                        // First check if movie is an object and has a title
+                        if (!is_object($movie) || !isset($movie->title)) {
+                            return false;
+                        }
+                        
                         $hasNonLatinChars = preg_match('/[\p{Han}\p{Hiragana}\p{Katakana}\p{Cyrillic}\p{Arabic}]/u', $movie->title);
                         return !empty($movie->poster_path) && 
                                !empty($movie->release_date) && 
@@ -718,178 +830,130 @@
     </section>
     <?php endif; ?>
 
-    <!-- Barre de recherche -->
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Rechercher un film d'animation...">
-    </div>
-    
-    <!-- Résultats de recherche container -->
-    <div id="searchResults" class="movie-grid" style="display: none;"></div>
-
-    <div class="filter-panel">
-        <div class="filter-header">
-            <h2>Filtres</h2>
-            <button id="toggleFilters" class="toggle-button">
-                <span class="icon">◀</span>
-            </button>
+    <!-- Après la section carousel et avant la grille de films -->
+    <div class="content-wrapper">
+        <!-- Barre de recherche -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher un film d'animation...">
         </div>
-        <div class="filter-content">
-            <form id="filtersForm" action="index.php" method="get">
-                <div class="filter-group">
-                    <label for="sort_by">Trier par :</label>
-                    <select name="sort_by" id="sort_by">
-                        <?php foreach ($sortOptions as $value => $label): ?>
-                            <option value="<?= $value ?>" <?= $currentSort === $value ? 'selected' : '' ?>><?= $label ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="with_original_language">Langue :</label>
-                    <select name="with_original_language" id="with_original_language">
-                        <option value="">Toutes</option>
-                        <option value="ja" <?= isset($currentFilters['with_original_language']) && $currentFilters['with_original_language'] === 'ja' ? 'selected' : '' ?>>Japonais</option>
-                        <option value="en" <?= isset($currentFilters['with_original_language']) && $currentFilters['with_original_language'] === 'en' ? 'selected' : '' ?>>Anglais</option>
-                        <option value="fr" <?= isset($currentFilters['with_original_language']) && $currentFilters['with_original_language'] === 'fr' ? 'selected' : '' ?>>Français</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="vote_average_gte">Note minimale :</label>
-                    <select name="vote_average_gte" id="vote_average_gte">
-                        <option value="0">Toutes</option>
-                        <option value="5" <?= isset($currentFilters['vote_average.gte']) && $currentFilters['vote_average.gte'] == 5 ? 'selected' : '' ?>>5+</option>
-                        <option value="6" <?= isset($currentFilters['vote_average.gte']) && $currentFilters['vote_average.gte'] == 6 ? 'selected' : '' ?>>6+</option>
-                        <option value="7" <?= isset($currentFilters['vote_average.gte']) && $currentFilters['vote_average.gte'] == 7 ? 'selected' : '' ?>>7+</option>
-                        <option value="8" <?= isset($currentFilters['vote_average.gte']) && $currentFilters['vote_average.gte'] == 8 ? 'selected' : '' ?>>8+</option>
-                        <option value="9" <?= isset($currentFilters['vote_average.gte']) && $currentFilters['vote_average.gte'] == 9 ? 'selected' : '' ?>>9+</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="year">Année de sortie :</label>
-                    <select name="year" id="year">
-                        <option value="">Toutes</option>
-                        <?php for ($year = date('Y'); $year >= 1950; $year--): ?>
-                            <option value="<?= $year ?>" <?= isset($currentFilters['year']) && $currentFilters['year'] == $year ? 'selected' : '' ?>><?= $year ?></option>
-                        <?php endfor; ?>
-                    </select>
-                </div>
-                
-                <div class="filter-group date-range">
-                    <label>Période de sortie :</label>
-                    <div class="date-inputs">
-                        <input type="date" name="primary_release_date_gte" id="primary_release_date_gte" placeholder="De" 
-                            value="<?= isset($currentFilters['primary_release_date.gte']) ? $currentFilters['primary_release_date.gte'] : '' ?>">
-                        <span>à</span>
-                        <input type="date" name="primary_release_date_lte" id="primary_release_date_lte" placeholder="À" 
-                            value="<?= isset($currentFilters['primary_release_date.lte']) ? $currentFilters['primary_release_date.lte'] : '' ?>">
-                    </div>
-                </div>
-                
-                <div class="filter-actions">
-                    <button type="submit" class="filter-button">Appliquer</button>
-                    <a href="index.php" class="reset-button">Réinitialiser</a>
-                </div>
-            </form>
-        </div>
-    </div>
 
-    <div id="movieGrid" class="movie-grid">
-        <?php if (isset($results) && !empty($results->results)): ?>
-            <?php foreach ($results->results as $movie): ?>
-                <div class="movie-card" data-title="<?= htmlspecialchars(strtolower($movie->title)) ?>">
-                    <a href="index.php?action=view&id=<?= $movie->id ?>">
-                        <?php if ($movie->poster_path): ?>
-                            <img src="https://image.tmdb.org/t/p/w500<?= $movie->poster_path ?>" 
-                                 alt="<?= htmlspecialchars($movie->title) ?>">
-                        <?php endif; ?>
-                        <h3><?= htmlspecialchars($movie->title) ?></h3>
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="no-results">
-                <p>Aucun film d'animation trouvé. Essayez une recherche différente.</p>
+        <!-- Panneau de filtres -->
+        <div class="filter-panel collapsed">
+            <div class="filter-header">
+                <h2>Filtres</h2>
+                <button type="button" class="toggle-button" aria-label="Toggle filters">
+                    <span class="icon">▼</span>
+                </button>
             </div>
-        <?php endif; ?>
+            <div class="filter-content">
+                <form id="filtersForm">
+                    <div class="filter-group">
+                        <label for="sort_by">Trier par :</label>
+                        <select name="sort_by" id="sort_by">
+                            <option value="popularity.desc">Popularité (décroissante)</option>
+                            <option value="popularity.asc">Popularité (croissante)</option>
+                            <option value="release_date.desc">Date de sortie (récent → ancien)</option>
+                            <option value="release_date.asc">Date de sortie (ancien → récent)</option>
+                            <option value="vote_average.desc">Note (décroissante)</option>
+                            <option value="vote_average.asc">Note (croissante)</option>
+                            <option value="original_title.asc">Titre (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="with_original_language">Langue :</label>
+                        <select name="with_original_language" id="with_original_language">
+                            <option value="">Toutes</option>
+                            <option value="ja">Japonais</option>
+                            <option value="en">Anglais</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="vote_average_gte">Note minimale :</label>
+                        <select name="vote_average_gte" id="vote_average_gte">
+                            <option value="">Toutes</option>
+                            <option value="5">5+</option>
+                            <option value="6">6+</option>
+                            <option value="7">7+</option>
+                            <option value="8">8+</option>
+                            <option value="9">9+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="year">Année de sortie :</label>
+                        <select name="year" id="year">
+                            <option value="">Toutes</option>
+                            <?php for ($year = date('Y'); $year >= 1950; $year--): ?>
+                                <option value="<?= $year ?>"><?= $year ?></option>
+                            <?php endfor; ?>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Période de sortie :</label>
+                        <div class="date-inputs">
+                            <input type="date" name="primary_release_date_gte" id="primary_release_date_gte" placeholder="De">
+                            <span>à</span>
+                            <input type="date" name="primary_release_date_lte" id="primary_release_date_lte" placeholder="À">
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button type="submit" class="filter-button">Appliquer</button>
+                        <button type="button" class="reset-button">Réinitialiser</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Grille de films -->
+        <div id="movieGrid" class="movie-grid">
+            <?php if (isset($results) && !empty($results->results)): ?>
+                <?php foreach ($results->results as $movie): ?>
+                    <?php
+                    // Convert array to object if necessary
+                    if (is_array($movie)) {
+                        $movie = (object)$movie;
+                    }
+                    
+                    // Skip invalid movies
+                    if (!isset($movie->title) || !isset($movie->id)) {
+                        continue;
+                    }
+                    
+                    $title = isset($movie->title) ? $movie->title : '';
+                    $posterPath = isset($movie->poster_path) ? $movie->poster_path : '';
+                    ?>
+                    <div class="movie-card" data-title="<?= htmlspecialchars(strtolower($title)) ?>">
+                        <a href="index.php?action=view&id=<?= htmlspecialchars($movie->id) ?>">
+                            <?php if ($posterPath): ?>
+                                <img src="https://image.tmdb.org/t/p/w500<?= htmlspecialchars($posterPath) ?>" 
+                                     alt="<?= htmlspecialchars($title) ?>">
+                            <?php else: ?>
+                                <div class="no-poster">No poster available</div>
+                            <?php endif; ?>
+                            <h3><?= htmlspecialchars($title) ?></h3>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="no-results">
+                    <p>Aucun film d'animation trouvé. Essayez une recherche différente.</p>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 
     <div id="loading" class="loading" style="display: none;">
         Chargement des films d'animation...
     </div>
 
+    <!-- Scripts -->
     <script src="assets/js/search.js"></script>
-    
-    <!-- Script pour le carousel -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.getElementById('carouselTrack');
-        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-        const movies = Array.from(document.querySelectorAll('.carousel-movie'));
-        const nextButton = document.getElementById('nextButton');
-        const prevButton = document.getElementById('prevButton');
-        
-        if (!track || slides.length < 3 || !nextButton || !prevButton) return;
-        
-        // Configuration initiale
-        let positions = [0, 1, 2]; // 0 = gauche (prev), 1 = centre (active), 2 = droite (next)
-        
-        // Fonction pour mettre à jour le carousel
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                const position = positions[index];
-                const movie = slide.querySelector('.carousel-movie');
-                
-                // Réinitialiser les classes
-                movie.classList.remove('prev', 'active', 'next');
-                
-                // Ajouter la classe appropriée selon la position
-                if (position === 0) {
-                    movie.classList.add('prev');
-                    slide.style.zIndex = '5';
-                } else if (position === 1) {
-                    movie.classList.add('active');
-                    slide.style.zIndex = '10';
-                } else if (position === 2) {
-                    movie.classList.add('next');
-                    slide.style.zIndex = '5';
-                }
-            });
-        }
-        
-        // Navigation vers la droite
-        nextButton.addEventListener('click', function() {
-            // Déplacer les positions : 0->2, 1->0, 2->1
-            positions = positions.map(pos => (pos + 2) % 3);
-            updateCarousel();
-        });
-        
-        // Navigation vers la gauche
-        prevButton.addEventListener('click', function() {
-            // Déplacer les positions : 0->1, 1->2, 2->0
-            positions = positions.map(pos => (pos + 1) % 3);
-            updateCarousel();
-        });
-        
-        // Défilement automatique
-        let autoplayInterval = setInterval(() => {
-            nextButton.click();
-        }, 5000);
-        
-        // Arrêter le défilement automatique au survol
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoplayInterval);
-        });
-        
-        // Reprendre le défilement automatique à la sortie
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoplayInterval = setInterval(() => {
-                nextButton.click();
-            }, 5000);
-        });
-    });
-    </script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/filters.js"></script>
 </body>
 </html>

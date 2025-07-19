@@ -1,0 +1,89 @@
+{
+    "key": "movie:980477",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/8btfz81bOJ2lC7cujYBTw03wzg3.jpg",
+        "belongs_to_collection": {
+            "id": 1449595,
+            "name": "\u54ea\u5412\uff08\u7cfb\u5217\uff09",
+            "poster_path": "\/viPFRE0WQ0bzeho71mSTYPwzIhA.jpg",
+            "backdrop_path": "\/8OASDLOz1buI3rhHsJJIrHPCWy4.jpg"
+        },
+        "budget": 80000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 14,
+                "name": "Fantastique"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            }
+        ],
+        "homepage": "",
+        "id": 980477,
+        "imdb_id": "tt34956443",
+        "origin_country": [
+            "CN"
+        ],
+        "original_language": "zh",
+        "original_title": "\u54ea\u5412\u4e4b\u9b54\u7ae5\u95f9\u6d77",
+        "overview": "Apr\u00e8s la catastrophe, bien que les \u00e2mes de Nezha et d'Aobing aient \u00e9t\u00e9 sauv\u00e9es, leurs corps allaient \u00eatre bris\u00e9s. Taiyi Zhenren pr\u00e9voit d'utiliser le lotus \u00e0 sept couleurs pour reconstruire leurs corps.",
+        "popularity": 25.6319,
+        "poster_path": "\/bBd30jSkoMRBoBnJGdgIXif5Aay.jpg",
+        "production_companies": [
+            {
+                "id": 167789,
+                "logo_path": null,
+                "name": "Chengdu Coco Cartoon",
+                "origin_country": "CN"
+            },
+            {
+                "id": 17818,
+                "logo_path": "\/tqImejhMUsOuuKCX2cySzaO7QTj.png",
+                "name": "Beijing Enlight Pictures",
+                "origin_country": "CN"
+            },
+            {
+                "id": 248388,
+                "logo_path": null,
+                "name": "Chengdu Enlight Animation",
+                "origin_country": "CN"
+            },
+            {
+                "id": 126865,
+                "logo_path": "\/bs9m2rBgALQ5l6yuZuJVS8hGhIi.png",
+                "name": "Coloroom Pictures",
+                "origin_country": "CN"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "CN",
+                "name": "China"
+            }
+        ],
+        "release_date": "2025-01-29",
+        "revenue": 2208800000,
+        "runtime": 144,
+        "spoken_languages": [
+            {
+                "english_name": "Mandarin",
+                "iso_639_1": "zh",
+                "name": "\u666e\u901a\u8bdd"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Je suivrai mon propre chemin",
+        "title": "Ne Zha 2",
+        "video": false,
+        "vote_average": 7.932,
+        "vote_count": 169
+    },
+    "expiry": 1749040085,
+    "created_at": 1748953685
+}

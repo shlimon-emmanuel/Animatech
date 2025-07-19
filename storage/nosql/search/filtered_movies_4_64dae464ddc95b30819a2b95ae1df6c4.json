@@ -1,0 +1,435 @@
+{
+    "key": "filtered_movies:4:64dae464ddc95b30819a2b95ae1df6c4",
+    "data": {
+        "page": 4,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "\/3VQj6m0I6gkuRaljmhNZl0XR3by.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35,
+                    14
+                ],
+                "id": 585511,
+                "original_language": "en",
+                "original_title": "Luck",
+                "overview": "Sam Greenfield est la personne la plus malchanceuse du monde ! Quand elle se retrouve tout \u00e0 coup sur la Terre de la Chance, territoire inconnu, elle doit s'unir aux cr\u00e9atures magiques qu'elle y rencontre afin de faire tourner sa chance.",
+                "popularity": 16.0207,
+                "poster_path": "\/1a5ZNjSDf80nqWWq0oh9up2tPrt.jpg",
+                "release_date": "2022-08-05",
+                "title": "Luck",
+                "video": false,
+                "vote_average": 7.772,
+                "vote_count": 1802
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/hU1Q9YVzdYhokr8a9gLywnSUMlN.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    28,
+                    14,
+                    10751
+                ],
+                "id": 1147400,
+                "original_language": "fr",
+                "original_title": "Miraculous World : Paris, Les Aventures de Toxinelle et Griffe Noire",
+                "overview": "Des porteurs de Miraculous venus d\u2019un autre monde surgissent dans la ville de Paris. Ils viennent d\u2019un univers parall\u00e8le o\u00f9 tout est invers\u00e9 : Toxinelle et Griffe Noire, les alter \u00e9gos mal\u00e9fiques de Ladybug et Chat Noir sont les m\u00e9chants et le porteur du Papillon, Hesperia, est un super-h\u00e9ros. Ensemble Ladybug et Chat Noir \u2013 les vrais \u2013 vont devoir aider Hesp\u00e9ria \u00e0 contrer les attaques de leurs doubles mal\u00e9fiques et les emp\u00eacher de s\u2019emparer du Miraculous du Papillon. Mais nos h\u00e9ros pourront-ils aider Hesperia \u00e0 faire de Toxinelle et Griffe Noire de meilleures personnes ?",
+                "popularity": 13.4894,
+                "poster_path": "\/4wHrXw9zB4wsibWaAPDkvjNGPnQ.jpg",
+                "release_date": "2023-10-21",
+                "title": "Miraculous World : Paris, Les Aventures de Toxinelle et Griffe Noire",
+                "video": false,
+                "vote_average": 7.2,
+                "vote_count": 598
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/fOy2Jurz9k6RnJnMUMRDAgBwru2.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    14
+                ],
+                "id": 508947,
+                "original_language": "en",
+                "original_title": "Turning Red",
+                "overview": "Les aventures de Meilin Lee, une jeune adolescente de 13 ans, pleine d\u2019assurance, mais tiraill\u00e9e entre son image de petite fille mod\u00e8le aux yeux de sa m\u00e8re hyper protectrice et le chaos de l\u2019adolescence. Et comme si tous les changements qui s\u2019op\u00e8rent en elle ne suffisaient pas, chaque fois qu\u2019elle est d\u00e9bord\u00e9e par ses \u00e9motions - ce qui, pour une ado, arrive quasiment tout le temps - elle se transforme en panda roux g\u00e9ant !",
+                "popularity": 16.5167,
+                "poster_path": "\/wmcbGp8IbEkYWQmCJWSRfzeCdP9.jpg",
+                "release_date": "2022-03-10",
+                "title": "Alerte rouge",
+                "video": false,
+                "vote_average": 7.349,
+                "vote_count": 5410
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    10402
+                ],
+                "id": 1371727,
+                "original_language": "en",
+                "original_title": "Sing: Thriller",
+                "overview": "Buster Moon r\u00eave d'un spectacle \u00e9tincelant inspir\u00e9 du \"Thriller\" de Michael Jackson dans ce court-m\u00e9trage anim\u00e9 qui reprend des personnages des films \"Tous en sc\u00e8ne\".",
+                "popularity": 12.8383,
+                "poster_path": "\/i77OInTKcrnRlAozFOaB6D5mk15.jpg",
+                "release_date": "2024-10-15",
+                "title": "Tous en sc\u00e8ne : Thriller",
+                "video": false,
+                "vote_average": 7.245,
+                "vote_count": 165
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/71FjlP0qZPc1iymcHf8u5vXfH50.jpg",
+                "genre_ids": [
+                    16,
+                    10751
+                ],
+                "id": 73723,
+                "original_language": "en",
+                "original_title": "The Lorax",
+                "overview": "Pour conqu\u00e9rir le c\u0153ur de sa jolie voisine, Audrey, Ted (voix de Kev Adams) va s'\u00e9chapper de Thneedville, un monde totalement artificiel o\u00f9 toute v\u00e9g\u00e9tation a d\u00e9finitivement disparu, pour partir en qu\u00eate d'un arbre vivant. Ted va rencontrer le Gash-pilleur, un vieil ermite aigri reclus dans sa cabane au milieu de nulle part, et d\u00e9couvrir la l\u00e9gende du Lorax (voix de Fran\u00e7ois Berl\u00e9and), cette cr\u00e9ature aussi renfrogn\u00e9e que craquante qui vit dans la magnifique vall\u00e9e de Truffala et lutte avec ardeur pour la protection de la nature. Avec l'aide de sa grand-m\u00e8re, Mamie Norma, Ted va devoir d\u00e9jouer les pi\u00e8ges de O'Hare et ses sbires pour rapporter \u00e0 Audrey la derni\u00e8re graine d'arbre vivant au monde. Sans le savoir, le jeune gar\u00e7on va transformer le destin de Thneedville.",
+                "popularity": 16.1707,
+                "poster_path": "\/cTf9D509jaRiqZsj6zmBwDFmnvo.jpg",
+                "release_date": "2012-03-01",
+                "title": "Le Lorax",
+                "video": false,
+                "vote_average": 6.509,
+                "vote_count": 3658
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/dFOFsm3z8tss4Nz8dzahbc6r5CD.jpg",
+                "genre_ids": [
+                    16,
+                    35
+                ],
+                "id": 1329336,
+                "original_language": "en",
+                "original_title": "The Bad Guys: Haunted Heist",
+                "overview": "La bande des Bad Guys se met en t\u00eate de d\u00e9rober une amulette l\u00e9gendaire dans un manoir lugubre la nuit d'Halloween. Tout va bien se passer, c'est s\u00fbr !",
+                "popularity": 13.3301,
+                "poster_path": "\/4nJoXJS9xpXcpqchJnaFU1vnwsY.jpg",
+                "release_date": "2024-10-02",
+                "title": "Les Bad Guys : Un bonbon ou un casse",
+                "video": false,
+                "vote_average": 6.96,
+                "vote_count": 126
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/se5Hxz7PArQZOG3Nx2bpfOhLhtV.jpg",
+                "genre_ids": [
+                    28,
+                    12,
+                    16,
+                    10751
+                ],
+                "id": 9806,
+                "original_language": "en",
+                "original_title": "The Incredibles",
+                "overview": "Ayant raccroch\u00e9 leurs costumes quinze ans plus t\u00f4t, Bob, ex\u2010Mr. Indestructible et sa femme, H\u00e9l\u00e8ne, ex\u2010Elastigirl, sont rentr\u00e9s dans le rang et s\u2019efforcent de mener une vie normale avec leurs trois enfants. Mais l\u2019occasion de repasser \u00e0 l\u2019action va se pr\u00e9senter pour Bob lorsqu\u2019une myst\u00e9rieuse convocation l\u2019appelle sur une \u00eele lointaine pour une mission top\u2010secr\u00e8te.",
+                "popularity": 16.8648,
+                "poster_path": "\/1xnQ093qUPWOWZHBgw5oEUEcfTe.jpg",
+                "release_date": "2004-10-27",
+                "title": "Les Indestructibles",
+                "video": false,
+                "vote_average": 7.711,
+                "vote_count": 18021
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/mUYV0ZdsDEliGaQahcQH1F3grsP.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    12
+                ],
+                "id": 10674,
+                "original_language": "en",
+                "original_title": "Mulan",
+                "overview": "Mulan, sous les traits du soldat \u00ab Ping \u00bb, prend la place de son p\u00e8re dans l\u2019arm\u00e9e imp\u00e9riale chinoise. Aid\u00e9e par son dragon Mushu et un criquet appel\u00e9 Cri-Kee, Mulan essaie de gagner le respect de ses camarades et du courageux Capitaine Shang. Ses aventures l\u2019emm\u00e8nent dans une bataille sur le toit du palais imp\u00e9rial o\u00f9 l\u2019honneur de sa famille et le destin de l\u2019Empereur reposent entre ses mains.",
+                "popularity": 15.5854,
+                "poster_path": "\/nWYuhyM8oQ4Gkktq0c2GCcKdJLv.jpg",
+                "release_date": "1998-06-18",
+                "title": "Mulan",
+                "video": false,
+                "vote_average": 7.907,
+                "vote_count": 9945
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/tPaurpIUskVji5vwV0dhy9pq4Vs.jpg",
+                "genre_ids": [
+                    10751,
+                    16,
+                    12,
+                    35
+                ],
+                "id": 953,
+                "original_language": "en",
+                "original_title": "Madagascar",
+                "overview": "Lorsqu\u2019un lion, un z\u00e8bre, une girafe, un hippopotame et une poign\u00e9e de pingouins psychotiques fuient leur zoo new\u2010yorkais pour secourir l\u2019un des leurs, l\u2019aventure s\u2019\u00e9crit avec un grand A. Et lorsque le destin les r\u00e9unit sur l\u2019\u00eele de Madagascar, ils doivent apprendre en formation acc\u00e9l\u00e9r\u00e9e les rudiments de la vie \u00e0 l\u2019air libre.",
+                "popularity": 14.963,
+                "poster_path": "\/aA1eZtISZ2rqUk2QIUgu1pXcHrm.jpg",
+                "release_date": "2005-05-25",
+                "title": "Madagascar",
+                "video": false,
+                "vote_average": 6.911,
+                "vote_count": 11132
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/4JNggqfyJWREqb0enzpUMbvIniV.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    14
+                ],
+                "id": 508442,
+                "original_language": "en",
+                "original_title": "Soul",
+                "overview": "Passionn\u00e9 de jazz et professeur de musique dans un coll\u00e8ge, Joe Gardner a enfin l\u2019opportunit\u00e9 de r\u00e9aliser son r\u00eave\u00a0: jouer dans le meilleur club de jazz de New York. Mais un malencontreux faux pas le pr\u00e9cipite dans le \u00ab\u00a0Grand Avant\u00a0\u00bb \u2013 un endroit fantastique o\u00f9 les nouvelles \u00e2mes acqui\u00e8rent leur personnalit\u00e9, leur caract\u00e8re et leur sp\u00e9cificit\u00e9 avant d\u2019\u00eatre envoy\u00e9es sur Terre. Bien d\u00e9cid\u00e9 \u00e0 retrouver sa vie, Joe fait \u00e9quipe avec 22, une \u00e2me espi\u00e8gle et pleine d\u2019esprit, qui n\u2019a jamais saisi l\u2019int\u00e9r\u00eat de vivre une vie humaine. En essayant d\u00e9sesp\u00e9r\u00e9ment de montrer \u00e0 22 \u00e0 quel point l\u2019existence est formidable, Joe pourrait bien d\u00e9couvrir les r\u00e9ponses aux questions les plus importantes sur le sens de la vie.",
+                "popularity": 17.1056,
+                "poster_path": "\/c6Q7te0PPyL4rzlGkDByVeTKFYg.jpg",
+                "release_date": "2020-12-25",
+                "title": "Soul",
+                "video": false,
+                "vote_average": 8.108,
+                "vote_count": 10789
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/qSNz1G1Ts8fFw6v4Vae4aMAjcY7.jpg",
+                "genre_ids": [
+                    14,
+                    12,
+                    16,
+                    35,
+                    10751
+                ],
+                "id": 810,
+                "original_language": "en",
+                "original_title": "Shrek the Third",
+                "overview": "L\u2019ogre Shrek n\u2019avait pas quitt\u00e9 son mar\u00e9cage pestilentiel et \u00e9pous\u00e9 sa ch\u00e8re Fiona pour devenir roi. C\u2019est pourtant ce qui risque de lui arriver apr\u00e8s que son beau\u2010p\u00e8re Harold clabote soudain sans crier gare. S\u2019il n\u2019arrive pas \u00e0 d\u00e9nicher illico un roi avec l\u2019aide de ses fid\u00e8les compagnons, l\u2019\u00c2ne et le Chat Pott\u00e9, Shrek deviendra le prochain souverain du Royaume Fort Fort Lointain. Bonjour les ennuis\u202f! \u00c0 moins qu\u2019Artie, le cousin loser de Fiona, ne se laisse convaincre de monter sur le tr\u00f4ne \u00e0 sa place. Mais ce paum\u00e9 a\u2010t\u2010il vraiment l\u2019\u00e9toffe d\u2019un roi\u202f?",
+                "popularity": 16.1642,
+                "poster_path": "\/oQjx87d7YNtBUEcFtAPGABIaLBd.jpg",
+                "release_date": "2007-05-17",
+                "title": "Shrek le troisi\u00e8me",
+                "video": false,
+                "vote_average": 6.297,
+                "vote_count": 9275
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ehumsuIBbgAe1hg343oszCLrAfI.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14,
+                    12
+                ],
+                "id": 1022796,
+                "original_language": "en",
+                "original_title": "Wish",
+                "overview": "Asha vit \u00e0 Rosas, un royaume o\u00f9 tous les souhaits peuvent litt\u00e9ralement s'exaucer. Dans un moment de d\u00e9sespoir, elle adresse un v\u0153u aux \u00e9toiles auquel va r\u00e9pondre une force cosmique :  une petite boule d'\u00e9nergie infinie pr\u00e9nomm\u00e9e Star. Avec son aide, Asha doit sauver son royaume d'un roi et prouver que lorsque le courage d'un humain se lie \u00e0 la magie des \u00e9toiles, de merveilleuses choses peuvent arriver.",
+                "popularity": 13.6443,
+                "poster_path": "\/uV5hmKQwdvS2XAQRBi3s5KpWJ8.jpg",
+                "release_date": "2023-11-13",
+                "title": "Wish : Asha et la bonne \u00e9toile",
+                "video": false,
+                "vote_average": 6.308,
+                "vote_count": 1610
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/XNVdWNgiAHu8y4BsJv5ndUHXxN.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 929204,
+                "original_language": "en",
+                "original_title": "Wallace & Gromit: Vengeance Most Fowl",
+                "overview": "Dans cet opus, les craintes de Gromit de voir Wallace devenir trop d\u00e9pendant de ses inventions se r\u00e9v\u00e8lent fond\u00e9es lorsque Wallace invente un \"smart\" gnome qui commence \u00e0 prendre des initiatives. Lorsqu'il s'av\u00e8re qu'une vieille connaissance en qu\u00eate de vengeance pourrait \u00eatre derri\u00e8re tout \u00e7a, Gromit doit combattre des forces obscures et sauver son ma\u00eetre\u2026 ou Wallace pourrait bien ne plus jamais rien inventer !",
+                "popularity": 15.4304,
+                "poster_path": "\/mf2LpP6YtmR8Kvl6bmQJleh8cB4.jpg",
+                "release_date": "2024-12-18",
+                "title": "Wallace et Gromit : La palme de la vengeance",
+                "video": false,
+                "vote_average": 7.547,
+                "vote_count": 493
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/v23fWgJUEt8EMmvn19btIacxP8E.jpg",
+                "genre_ids": [
+                    10749,
+                    14,
+                    16
+                ],
+                "id": 3933,
+                "original_language": "en",
+                "original_title": "Corpse Bride",
+                "overview": "Victor d\u00e9couvre le monde de l'au-del\u00e0 apr\u00e8s avoir \u00e9pous\u00e9, sans le vouloir, le cadavre d'une myst\u00e9rieuse mari\u00e9e. Durant ce temps, sa promise, Victoria l'attend d\u00e9sesp\u00e9r\u00e9ment dans le monde des vivants.",
+                "popularity": 16.023,
+                "poster_path": "\/7JcwGSEvPEPbp09zDk1FyNmcofA.jpg",
+                "release_date": "2005-09-12",
+                "title": "Les Noces fun\u00e8bres",
+                "video": false,
+                "vote_average": 7.579,
+                "vote_count": 9548
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ztiFxuG0gC6wQ8y7JZFYbCQyN4Y.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    10402,
+                    35
+                ],
+                "id": 438695,
+                "original_language": "en",
+                "original_title": "Sing 2",
+                "overview": "Dans le nouveau th\u00e9\u00e2tre Moon, la troupe interpr\u00e8te sa version musicale d'Alice au pays des merveilles. Buster Moon tient \u00e0 avoir l'avis de Suki Lane. Elle est celle qui d\u00e9cide quels talents peuvent auditionner devant Jimmy Crystal, grand producteur de spectacles \u00e0 Redshore City. Pour elle, le niveau n'est pas suffisant et l'insistance de Buster Moon n'y fait rien.Remotiv\u00e9 par Nana Noodleman, le koala rassemble ses artistes et part infiltrer les auditions.",
+                "popularity": 16.261,
+                "poster_path": "\/xsjgiztyEu9cEZetxFlvJz6Yibw.jpg",
+                "release_date": "2021-12-01",
+                "title": "Tous en sc\u00e8ne 2",
+                "video": false,
+                "vote_average": 7.848,
+                "vote_count": 4535
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/wFN8llYh215M8i2fqWAcPV8CSyL.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    10751,
+                    14,
+                    35,
+                    28
+                ],
+                "id": 49519,
+                "original_language": "en",
+                "original_title": "The Croods",
+                "overview": "Lorsque la caverne o\u00f9 ils vivent depuis toujours est d\u00e9truite et leur univers familier r\u00e9duit en miettes, les Croods se retrouvent oblig\u00e9s d\u2019entreprendre leur premier grand voyage en famille. Entre conflits g\u00e9n\u00e9rationnels et bouleversements sismiques, ils vont d\u00e9couvrir un nouveau monde fascinant, rempli de cr\u00e9atures fantastiques, et un futur au\u2010del\u00e0 de tout ce qu\u2019ils avaient imagin\u00e9.",
+                "popularity": 12.7845,
+                "poster_path": "\/jXJ3zCPtCsZqNTanIOvCgkpo4cI.jpg",
+                "release_date": "2013-03-15",
+                "title": "Les Croods",
+                "video": false,
+                "vote_average": 6.924,
+                "vote_count": 7199
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ytTQoYkdpsgtfDWrNFCei8Mfbxu.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    12,
+                    14,
+                    35
+                ],
+                "id": 529203,
+                "original_language": "en",
+                "original_title": "The Croods: A New Age",
+                "overview": "Les Croods ont surv\u00e9cu \u00e0 leur part de dangers et de catastrophes mais ils vont maintenant devoir relever leur plus grand d\u00e9fi\u00a0: rencontrer une autre famille. Les Croods ont besoin d\u2019un nouvel endroit o\u00f9 habiter. La famille pr\u00e9historique part alors en qu\u00eate d\u2019un endroit plus s\u00fbr. Quand ils d\u00e9couvrent un paradis idyllique entour\u00e9 de murs, ils pensent que tous leurs probl\u00e8mes sont r\u00e9solus\u2026 Mais une famille y vit d\u00e9j\u00e0\u00a0: les Bettermans. Avec leur cabane dans les arbres, leurs inventions \u00e9tonnantes et leurs hectares irrigu\u00e9s de produits frais, Les Bettermans sont bien au\u2010dessus des Croods sur l\u2019\u00e9chelle de l\u2019\u00e9volution. Ils accueillent les Croods avec joie, mais les tensions ne tardent pas \u00e0 s\u2019intensifier entre la famille des grottes et la famille moderne. Mais une nouvelle menace va propulser les deux familles dans une aventure \u00e9pique hors des murs, ce qui les obligera \u00e0 accepter leurs diff\u00e9rences et \u00e0 se servir des forces des uns et des autres.",
+                "popularity": 15.3033,
+                "poster_path": "\/nMLI9xkJTbgpZjMSrFiTUDv9WIG.jpg",
+                "release_date": "2020-11-25",
+                "title": "Les Croods 2\u00a0: Une nouvelle \u00e8re",
+                "video": false,
+                "vote_average": 7.465,
+                "vote_count": 3931
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/7QabKu8tizoqy8qCZJXljdSpP4A.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751,
+                    12,
+                    14
+                ],
+                "id": 585083,
+                "original_language": "en",
+                "original_title": "Hotel Transylvania: Transformania",
+                "overview": "Drac et sa bande sont de retour, comme vous ne les avez encore jamais vus ! Retrouvez vos monstres pr\u00e9f\u00e9r\u00e9s dans une toute nouvelle aventure o\u00f9 Drac doit affronter les \u00e9preuves les plus terrifiantes de sa carri\u00e8re ! Quand le Rayon Monstrificateur, myst\u00e9rieuse invention de Van Helsing, se d\u00e9traque, Drac et ses \u2013 monstrueux \u2013 acolytes se transforment en humains, tandis que Jonathan devient un monstre ! Sous leurs nouvelles apparences, Drac, priv\u00e9 de ses pouvoirs, et Jonathan, qui prend go\u00fbt \u00e0 sa vie de monstre, doivent unir leurs forces et sillonner la plan\u00e8te pour trouver un rem\u00e8de avant qu\u2019il ne soit trop tard\u2026 et surtout, avant qu\u2019ils ne deviennent fous \u00e0 force de se c\u00f4toyer ! Tandis que Mavis et l\u2019irr\u00e9sistible bande de Drac tentent de venir en aide \u00e0 nos h\u00e9ros, c\u2019est une v\u00e9ritable course contre la montre qui s\u2019engage pour que chacun r\u00e9int\u00e8gre son corps d\u2019origine\u2026 avant que ces transformations ne deviennent d\u00e9finitives !",
+                "popularity": 15.6966,
+                "poster_path": "\/yFwFp5QVHazxTklKGiJ0G59pVab.jpg",
+                "release_date": "2022-01-31",
+                "title": "H\u00f4tel Transylvanie : Changements monstres",
+                "video": false,
+                "vote_average": 7.068,
+                "vote_count": 2863
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+                "genre_ids": [
+                    28,
+                    12,
+                    16,
+                    35,
+                    10751
+                ],
+                "id": 140300,
+                "original_language": "en",
+                "original_title": "Kung Fu Panda 3",
+                "overview": "Po avait toujours cru son p\u00e8re panda disparu, mais le voil\u00e0 qui r\u00e9appara\u00eet\u202f! Enfin r\u00e9unis, p\u00e8re et fils vont voyager jusqu\u2019au paradis secret du peuple panda. Ils y feront la connaissance de certains de leurs semblables, tous plus d\u00e9jant\u00e9s les uns que les autres. Mais lorsque le mal\u00e9fique Ka\u00ef d\u00e9cide de s\u2019attaquer aux plus grands ma\u00eetres de kung\u2010fu \u00e0 travers toute la Chine, Po va devoir r\u00e9ussir l\u2019impossible\u00a0: transformer tout un village de pandas maladroits et rigolards en experts des arts martiaux, les redoutables Kung\u2010Fu Pandas\u202f!",
+                "popularity": 12.185,
+                "poster_path": "\/qUrLaT8NLUXpP9cOmLftdKt98Ag.jpg",
+                "release_date": "2016-01-23",
+                "title": "Kung Fu Panda 3",
+                "video": false,
+                "vote_average": 6.914,
+                "vote_count": 6220
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/3SszodoxSiJRQVoFg9IRjrMcSuJ.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35,
+                    10751,
+                    28,
+                    14
+                ],
+                "id": 62177,
+                "original_language": "en",
+                "original_title": "Brave",
+                "overview": "M\u00e9rida est une arch\u00e8re talentueuse et la fille t\u00eatue du roi Fergus et de la reine Elinor. D\u00e9termin\u00e9e \u00e0 suivre son propre chemin, la jeune princesse d\u00e9fie une ancienne coutume ch\u00e8re aux seigneurs des terres. Lorsqu\u2019elle d\u00e9clenche le chaos au royaume, M\u00e9rida doit faire appel \u00e0 tous ses talents et ressources (y compris ses fr\u00e8res triplets) pour rompre un horrible sort et d\u00e9couvrir le vrai sens de la bravoure.",
+                "popularity": 15.1247,
+                "poster_path": "\/rFLhPoKAqg4CBQdwTs8sQlbao5M.jpg",
+                "release_date": "2012-06-21",
+                "title": "Rebelle",
+                "video": false,
+                "vote_average": 7.02,
+                "vote_count": 13612
+            }
+        ],
+        "total_pages": 131,
+        "total_results": 2610
+    },
+    "expiry": 1748955716,
+    "created_at": 1748948516
+}

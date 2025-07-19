@@ -1,0 +1,75 @@
+{
+    "key": "movie:1022789",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+        "belongs_to_collection": {
+            "id": 1022790,
+            "name": "Vice-Versa - Saga",
+            "poster_path": "\/7SWknxivcn0SZRocWm3v0umGQf.jpg",
+            "backdrop_path": "\/7hYG0v6BEErqqwnU7vWJjWgYJJp.jpg"
+        },
+        "budget": 200000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            }
+        ],
+        "homepage": "https:\/\/www.pixar.com\/inside-out-2",
+        "id": 1022789,
+        "imdb_id": "tt22022452",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Inside Out 2",
+        "overview": "Riley, adolescente depuis peu, au moment o\u00f9 le Quartier C\u00e9r\u00e9bral doit \u00eatre d\u00e9moli pour faire place \u00e0 un \u00e9v\u00e9nement totalement inattendu : de nouvelles \u00c9motions ! Joie, Tristesse, Col\u00e8re, Peur et D\u00e9go\u00fbt, qui ont longtemps su contr\u00f4ler les choses avec succ\u00e8s, ne savent pas comment r\u00e9agir \u00e0 l'arriv\u00e9e d'Anxi\u00e9t\u00e9. Et il semblerait qu'elle ne soit pas seule. Elle est venue accompagn\u00e9e d'Embarras, Envie et Ennui.",
+        "popularity": 45.1416,
+        "poster_path": "\/9Jic8z9NEeCEmSJFgFHZF1lWMFo.jpg",
+        "production_companies": [
+            {
+                "id": 3,
+                "logo_path": "\/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+                "name": "Pixar",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2024-06-11",
+        "revenue": 1698863816,
+        "runtime": 97,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Pr\u00eats pour un tourbillon d'\u00e9motions ?",
+        "title": "Vice-versa 2",
+        "video": false,
+        "vote_average": 7.555,
+        "vote_count": 5984
+    },
+    "expiry": 1752954838,
+    "created_at": 1752868438
+}

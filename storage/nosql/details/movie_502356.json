@@ -1,0 +1,95 @@
+{
+    "key": "movie:502356",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
+        "belongs_to_collection": {
+            "id": 1434561,
+            "name": "Super Mario Bros. - Saga",
+            "poster_path": "\/8wVpJ4DCEVP6Ima1MgKgymZbYcz.jpg",
+            "backdrop_path": "\/hX6DycbhqpkHuYD5ia4YeQQ2RgV.jpg"
+        },
+        "budget": 100000000,
+        "genres": [
+            {
+                "id": 10751,
+                "name": "Familial"
+            },
+            {
+                "id": 14,
+                "name": "Fantastique"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 16,
+                "name": "Animation"
+            }
+        ],
+        "homepage": "https:\/\/www.supermarioplomberie.fr\/",
+        "id": 502356,
+        "imdb_id": "tt6718170",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "The Super Mario Bros. Movie",
+        "overview": "Alors qu\u2019ils tentent de r\u00e9parer une canalisation souterraine, Mario et son fr\u00e8re Luigi, tous deux plombiers, se retrouvent plong\u00e9s dans un nouvel univers f\u00e9erique \u00e0 travers un myst\u00e9rieux conduit. Mais lorsque les deux fr\u00e8res sont s\u00e9par\u00e9s, Mario s\u2019engage dans une aventure tr\u00e9pidante pour retrouver Luigi. Dans sa qu\u00eate, il peut compter sur l\u2019aide du champignon Toad, habitant du Royaume Champignon, et les conseils avis\u00e9s, en mati\u00e8re de techniques de combat, de la Princesse Peach, guerri\u00e8re d\u00e9termin\u00e9e \u00e0 la t\u00eate du Royaume. C\u2019est ainsi que Mario r\u00e9ussit \u00e0 mobiliser ses propres forces pour aller au bout de sa mission.",
+        "popularity": 21.7831,
+        "poster_path": "\/ahMxyHMSJXingQr4yJBMzMU9k42.jpg",
+        "production_companies": [
+            {
+                "id": 33,
+                "logo_path": "\/3wwjVpkZtnog6lSKzWDjvw2Yi00.png",
+                "name": "Universal Pictures",
+                "origin_country": "US"
+            },
+            {
+                "id": 6704,
+                "logo_path": "\/fOG2oY4m1YuYTQh4bMqqZkmgOAI.png",
+                "name": "Illumination",
+                "origin_country": "US"
+            },
+            {
+                "id": 12288,
+                "logo_path": "\/e4dQAqZD374H5EuM0W1ljEBWTKy.png",
+                "name": "Nintendo",
+                "origin_country": "JP"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "JP",
+                "name": "Japan"
+            },
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2023-04-05",
+        "revenue": 1362000000,
+        "runtime": 92,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Les h\u00e9ros ne portent pas tous des capes. Certains portent des salopettes.",
+        "title": "Super Mario Bros. le film",
+        "video": false,
+        "vote_average": 7.619,
+        "vote_count": 9822
+    },
+    "expiry": 1753022726,
+    "created_at": 1752936326
+}

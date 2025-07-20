@@ -6,7 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
-    'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'App\\' => array($baseDir . '/app'),
 );

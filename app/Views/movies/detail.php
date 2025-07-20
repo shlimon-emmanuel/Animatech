@@ -9,106 +9,334 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Styles supplémentaires */
-        .comment-author-link, .reply-author-link {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s ease;
-        }
-        
-        .comment-author-link:hover, .reply-author-link:hover {
-            color: #6E54FF;
-            text-decoration: underline;
-        }
-        
-        .comment-author, .reply-author {
-            font-weight: bold;
-        }
-        
-        /* Reste du CSS */
-        .movie-detail-container {
+        /* Styles spécifiques pour la page de détails de film */
+        .movie-detail-page {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            margin: 0 auto;
+            padding: 20px;
         }
-        
-        /* Styles pour les commentaires */
-        .comment-card {
+
+        .movie-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            text-shadow: var(--text-glow);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            padding: 20px 0;
+        }
+
+        /* Messages d'alerte */
+        .alert {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .alert-error {
+            background-color: rgba(220, 53, 69, 0.1);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .alert-success {
+            background-color: rgba(40, 167, 69, 0.1);
+            border: 1px solid #28a745;
+            color: #28a745;
+        }
+
+        /* Section des favoris */
+        .favorites-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(10, 10, 31, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(157, 78, 221, 0.2);
+        }
+
+        .favorite-btn {
+            background-color: transparent;
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .favorite-btn:hover {
+            background-color: var(--neon-purple);
+            color: white;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+        }
+
+        .favorite-btn.active {
+            background-color: var(--neon-purple);
+            color: white;
+        }
+
+        /* Contenu principal du film */
+        .movie-main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: start;
+        }
+
+        .movie-poster-section {
+            text-align: center;
+        }
+
+        .movie-poster {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .movie-poster:hover {
+            transform: scale(1.02);
+        }
+
+        .movie-info-section {
+            background-color: var(--darker-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(157, 78, 221, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-info-section p {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e1e1e1;
+        }
+
+        .movie-info-section strong {
+            color: var(--neon-blue);
+        }
+
+        .movie-rating {
+            display: inline-block;
+            background-color: var(--neon-purple);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Section bande-annonce */
+        .trailer-section {
+            margin: 50px 0;
+            padding: 30px;
+            background-color: var(--darker-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .trailer-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            text-shadow: var(--text-glow);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .video-container {
             position: relative;
-            background-color: rgba(30, 30, 30, 0.8);
-            border-radius: 10px;
-            padding: 15px;
+            width: 100%;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .video-info p {
+            color: var(--neon-blue);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .no-trailer {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            font-size: 1.1rem;
+            padding: 40px;
+        }
+
+        /* Section commentaires */
+        .comments-section {
+            margin: 50px 0;
+        }
+
+        .comments-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            text-shadow: var(--text-glow);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Formulaire de commentaire */
+        .comment-form {
+            background-color: var(--darker-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
             margin-bottom: 20px;
-            border-left: 3px solid #7b2cbf;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
-        
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--neon-blue);
+            font-weight: 600;
+        }
+
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(0, 243, 255, 0.1);
+            border: 2px solid rgba(0, 243, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        /* Liste des commentaires */
+        .comments-list {
+            margin-top: 30px;
+        }
+
+        .comment-card {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--neon-purple);
+            transition: all 0.3s ease;
+        }
+
         .comment-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
-        
+
         .comment-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        
+
         .comment-user-info {
             display: flex;
             align-items: center;
         }
-        
-        .comment-profile-picture {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-        }
-        
+
+        .comment-profile-picture,
         .default-comment-icon {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #7b2cbf;
+            margin-right: 12px;
+        }
+
+        .comment-profile-picture {
+            object-fit: cover;
+            border: 2px solid var(--neon-purple);
+        }
+
+        .default-comment-icon {
+            background-color: var(--neon-purple);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            font-size: 1.2rem;
         }
-        
+
         .comment-author {
             font-weight: 600;
-            color: #fff;
+            color: var(--neon-blue);
+            font-size: 1.1rem;
         }
-        
+
         .comment-author-link {
             text-decoration: none;
             color: inherit;
+            transition: color 0.3s ease;
         }
-        
+
+        .comment-author-link:hover {
+            color: var(--neon-purple);
+        }
+
         .comment-rating {
             color: #ffd700;
-            font-size: 18px;
+            font-size: 1.2rem;
         }
-        
+
         .comment-content {
-            margin-bottom: 10px;
-            line-height: 1.5;
+            margin: 15px 0;
+            line-height: 1.6;
             color: #e1e1e1;
+            font-size: 1rem;
         }
-        
+
         .comment-date {
             color: #999;
-            font-size: 0.8rem;
-            display: block;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
 
         .comment-actions {
@@ -116,41 +344,278 @@
             gap: 10px;
             margin-bottom: 15px;
         }
-        
-        .delete-btn {
-            background-color: #dc3545;
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            background-color: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-small:hover {
+            background-color: var(--neon-blue);
+            color: var(--darker-bg);
+        }
+
+        .btn-small.delete {
             border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .btn-small.delete:hover {
+            background-color: #dc3545;
             color: white;
         }
-        
-        .delete-btn:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
+
+        /* Formulaire de réponse */
+        .reply-form {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .reply-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            background-color: rgba(0, 243, 255, 0.1);
+            border: 2px solid rgba(0, 243, 255, 0.3);
+            border-radius: 6px;
             color: white;
+            font-family: 'Rajdhani', sans-serif;
+            resize: vertical;
+            box-sizing: border-box;
         }
-        
-        .delete-btn.small {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-        }
-        
-        .reply-actions {
-            margin-top: 5px;
+
+        .reply-buttons {
             display: flex;
-            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 10px;
         }
-        
-        /* Styles pour le squelette des commentaires */
+
+        .reply-buttons .btn-small.cancel {
+            border-color: #999;
+            color: #999;
+        }
+
+        .reply-buttons .btn-small.cancel:hover {
+            background-color: #999;
+            color: white;
+        }
+
+        /* Réponses */
+        .replies-container {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .reply-card {
+            background-color: rgba(20, 20, 30, 0.6);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--neon-blue);
+        }
+
+        .reply-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .reply-user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .reply-profile-picture,
+        .default-reply-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .reply-profile-picture {
+            object-fit: cover;
+            border: 2px solid var(--neon-blue);
+        }
+
+        .default-reply-icon {
+            background-color: var(--neon-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .reply-author {
+            font-weight: 600;
+            color: var(--neon-blue);
+        }
+
+        .reply-author-link {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .reply-author-link:hover {
+            color: var(--neon-purple);
+        }
+
+        .reply-content {
+            color: #e1e1e1;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .reply-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .reply-actions {
+            margin-top: 8px;
+            text-align: right;
+        }
+
+        /* Skeleton loader */
+        .comments-skeleton {
+            margin: 20px 0;
+        }
+
+        .skeleton-card {
+            background-color: rgba(30, 30, 30, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skeleton-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skeleton-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .skeleton-header-col {
+            margin-left: 12px;
+        }
+
+        .skeleton-loading {
+            background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Bouton de retour */
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background-color: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: var(--neon-blue);
+            color: var(--darker-bg);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+        }
+
+        /* Design responsive */
+        @media (max-width: 768px) {
+            .movie-main-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .movie-poster-section {
+                order: 1;
+            }
+
+            .movie-info-section {
+                order: 2;
+                padding: 20px;
+            }
+
+            .movie-poster {
+                max-width: 280px;
+            }
+
+            .replies-container {
+                margin-left: 15px;
+            }
+
+            .comment-header,
+            .reply-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .movie-detail-page {
+                padding: 15px;
+            }
+
+            .movie-title {
+                font-size: 1.8rem;
+            }
+
+            .trailer-section,
+            .comment-form,
+            .movie-info-section {
+                padding: 20px 15px;
+            }
+
+            .comment-actions {
+                flex-wrap: wrap;
+            }
+
+            .reply-buttons {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
     <?php require_once APP_PATH . '/Views/includes/header.php'; ?>
     
-    <div class="movie-detail">
+    <div class="movie-detail-page">
         <?php if (!empty($movie)): ?>
-            <h1><?= htmlspecialchars($movie['title']) ?></h1>
+            <h1 class="movie-title"><?= htmlspecialchars($movie['title']) ?></h1>
             
-            <!-- Afficher les messages d'erreur et de succès -->
+            <!-- Messages d'alerte -->
             <?php if (isset($_SESSION['error'])): ?>
                 <div class="alert alert-error">
                     <?= htmlspecialchars($_SESSION['error']) ?>
@@ -165,74 +630,53 @@
                 </div>
             <?php endif; ?>
             
+            <!-- Section favoris -->
             <?php if (isset($_SESSION['user']) || isset($_SESSION['user_id'])): ?>
-                <div class="favorite-section">
+                <div class="favorites-section">
                     <?php if ($isFavorite): ?>
-                        <form action="index.php?action=removeFavorite" method="POST" class="favorite-form" id="removeFavoriteForm">
+                        <form action="index.php?action=removeFavorite" method="POST" class="favorite-form">
                             <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
                             <input type="hidden" name="csrf_token" value="<?= isset($_SESSION['csrf_token']) ? $_SESSION['csrf_token'] : '' ?>">
-                            <button type="submit" class="neon-button favorite-btn active">
+                            <button type="submit" class="favorite-btn active">
                                 ★ Retirer des favoris
                             </button>
                         </form>
                     <?php else: ?>
-                        <form action="index.php?action=addFavorite" method="POST" class="favorite-form" id="addFavoriteForm">
+                        <form action="index.php?action=addFavorite" method="POST" class="favorite-form">
                             <input type="hidden" name="movie_id" value="<?= $movie['id'] ?>">
                             <input type="hidden" name="csrf_token" value="<?= isset($_SESSION['csrf_token']) ? $_SESSION['csrf_token'] : '' ?>">
-                            <button type="submit" class="neon-button favorite-btn">
+                            <button type="submit" class="favorite-btn">
                                 ☆ Ajouter aux favoris
                             </button>
                         </form>
                     <?php endif; ?>
                 </div>
-                
-                <script>
-                // Logging pour débogage des favoris
-                document.addEventListener('DOMContentLoaded', function() {
-                    console.log("Détail du film - ID:", <?= $movie['id'] ?>);
-                    console.log("Statut favori:", <?= $isFavorite ? 'true' : 'false' ?>);
-                    console.log("Session utilisateur présente:", <?= isset($_SESSION['user']) ? 'true' : 'false' ?>);
-                    console.log("Session user_id présente:", <?= isset($_SESSION['user_id']) ? 'true' : 'false' ?>);
-                    
-                    // Intercepter les soumissions de formulaires pour journalisation
-                    const addFavoriteForm = document.getElementById('addFavoriteForm');
-                    if (addFavoriteForm) {
-                        addFavoriteForm.addEventListener('submit', function(event) {
-                            console.log("Soumission du formulaire d'ajout aux favoris...");
-                            // Ne pas bloquer la soumission normale
-                        });
-                    }
-                    
-                    const removeFavoriteForm = document.getElementById('removeFavoriteForm');
-                    if (removeFavoriteForm) {
-                        removeFavoriteForm.addEventListener('submit', function(event) {
-                            console.log("Soumission du formulaire de retrait des favoris...");
-                            // Ne pas bloquer la soumission normale
-                        });
-                    }
-                });
-                </script>
-                <?php endif; ?>
-            
-            <?php if (!empty($movie['poster_path'])): ?>
-                <img class="movie-poster" 
-                     src="https://image.tmdb.org/t/p/w500<?= htmlspecialchars($movie['poster_path']) ?>" 
-                     alt="<?= htmlspecialchars($movie['title']) ?>">
             <?php endif; ?>
-            
-            <div class="movie-info">
-                <p><strong>Date de sortie:</strong> <?= htmlspecialchars($movie['release_date']) ?></p>
-                <?php if (!empty($movie['overview'])): ?>
-                    <p><strong>Synopsis:</strong> <?= htmlspecialchars($movie['overview']) ?></p>
-                <?php endif; ?>
-                <div class="rating">
-                    <strong>Note moyenne:</strong> <?= htmlspecialchars($movie['vote_average']) ?>/10
+
+            <!-- Contenu principal du film -->
+            <div class="movie-main-content">
+                <div class="movie-poster-section">
+                    <?php if (!empty($movie['poster_path'])): ?>
+                        <img class="movie-poster" 
+                             src="https://image.tmdb.org/t/p/w500<?= htmlspecialchars($movie['poster_path']) ?>" 
+                             alt="<?= htmlspecialchars($movie['title']) ?>">
+                    <?php endif; ?>
+                </div>
+                
+                <div class="movie-info-section">
+                    <p><strong>Date de sortie:</strong> <?= htmlspecialchars($movie['release_date']) ?></p>
+                    <?php if (!empty($movie['overview'])): ?>
+                        <p><strong>Synopsis:</strong> <?= htmlspecialchars($movie['overview']) ?></p>
+                    <?php endif; ?>
+                    <div class="movie-rating">
+                        <strong>Note moyenne:</strong> <?= htmlspecialchars($movie['vote_average']) ?>/10
+                    </div>
                 </div>
             </div>
 
             <!-- Section bande-annonce -->
             <div class="trailer-section">
-                <h2>Bande Annonce</h2>
+                <h2 class="trailer-title">Bande Annonce</h2>
                 <?php if ($trailer && isset($trailer['key'])): ?>
                     <div class="video-container">
                         <iframe
@@ -249,20 +693,12 @@
                     </div>
                 <?php else: ?>
                     <p class="no-trailer">Aucune bande-annonce disponible pour ce film.</p>
-                    <?php
-                    // Débogage - Afficher les informations de l'API
-                    if (isset($videos) && !empty($videos)):
-                        echo "<pre style='color: white;'>";
-                        print_r($videos);
-                        echo "</pre>";
-                    endif;
-                    ?>
                 <?php endif; ?>
             </div>
 
-            <!-- Section Commentaires -->
+            <!-- Section commentaires -->
             <div class="comments-section">
-                <h2>Commentaires</h2>
+                <h2 class="comments-title">Commentaires</h2>
                 
                 <?php if (isset($_SESSION['user'])): ?>
                     <form action="index.php?action=addComment" method="POST" class="comment-form">
@@ -283,7 +719,7 @@
                     </form>
                 <?php endif; ?>
 
-                <!-- Skeleton Loader pour les commentaires -->
+                <!-- Skeleton loader -->
                 <div id="comments-skeleton" class="comments-skeleton">
                     <?php for($i = 0; $i < 3; $i++): ?>
                     <div class="skeleton-card">
@@ -303,6 +739,7 @@
                     <?php endfor; ?>
                 </div>
 
+                <!-- Liste des commentaires -->
                 <div class="comments-list" id="comments-container" style="display: none;">
                     <?php if (!empty($comments)): ?>
                         <?php foreach ($comments as $comment): ?>
@@ -331,15 +768,13 @@
                                 <span class="comment-date"><?= date('d/m/Y H:i', strtotime($comment['created_at'])) ?></span>
                                 
                                 <div class="comment-actions">
-                                    <!-- Bouton de réponse -->
                                     <?php if (isset($_SESSION['user'])): ?>
-                                        <button class="reply-btn neon-button-sm" 
+                                        <button class="btn-small reply-btn" 
                                                 onclick="toggleReplyForm(<?= $comment['id'] ?>)">
                                             Répondre
                                         </button>
                                     <?php endif; ?>
                                     
-                                    <!-- Bouton de suppression pour les admins et superadmins -->
                                     <?php 
                                     $isAdmin = false;
                                     if (isset($_SESSION['user']['role']) && ($_SESSION['user']['role'] === 'admin' || $_SESSION['user']['role'] === 'superadmin')) {
@@ -351,14 +786,14 @@
                                     if ($isAdmin): 
                                     ?>
                                         <a href="index.php?action=deleteComment&comment_id=<?= $comment['id'] ?>&movie_id=<?= $movie['id'] ?>" 
-                                           class="delete-btn neon-button-sm" 
+                                           class="btn-small delete" 
                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire?')">
                                             <i class="fas fa-trash"></i> Supprimer
                                         </a>
                                     <?php endif; ?>
                                 </div>
                                 
-                                <!-- Formulaire de réponse (initialement caché) -->
+                                <!-- Formulaire de réponse -->
                                 <?php if (isset($_SESSION['user'])): ?>
                                     <div id="reply-form-<?= $comment['id'] ?>" class="reply-form" style="display: none;">
                                         <form onsubmit="submitReply(event, <?= $comment['id'] ?>, <?= $movie['id'] ?>)">
@@ -370,15 +805,15 @@
                                                         required></textarea>
                                             </div>
                                             <div class="reply-buttons">
-                                                <button type="submit" class="neon-button-sm">Envoyer</button>
-                                                <button type="button" class="neon-button-sm cancel" 
+                                                <button type="submit" class="btn-small">Envoyer</button>
+                                                <button type="button" class="btn-small cancel" 
                                                         onclick="toggleReplyForm(<?= $comment['id'] ?>)">Annuler</button>
                                             </div>
                                         </form>
                                     </div>
                                 <?php endif; ?>
                                 
-                                <!-- Affichage des réponses -->
+                                <!-- Réponses -->
                                 <?php if (!empty($comment['replies'])): ?>
                                     <div class="replies-container" id="replies-container-<?= $comment['id'] ?>">
                                         <?php foreach ($comment['replies'] as $reply): ?>
@@ -397,17 +832,18 @@
                                                                 </div>
                                                             </a>
                                                         <?php endif; ?>
-                                                        <span class="reply-author"><?= htmlspecialchars($reply['username']) ?></span>
+                                                        <a href="index.php?action=profile&user_id=<?= $reply['user_id'] ?>" class="reply-author-link">
+                                                            <span class="reply-author"><?= htmlspecialchars($reply['username']) ?></span>
+                                                        </a>
                                                     </div>
                                                     <span class="reply-date"><?= date('d/m/Y H:i', strtotime($reply['created_at'])) ?></span>
                                                 </div>
                                                 <p class="reply-content"><?= nl2br(htmlspecialchars($reply['content'])) ?></p>
                                                 
-                                                <!-- Bouton de suppression pour les réponses (admin) -->
                                                 <?php if ($isAdmin): ?>
                                                     <div class="reply-actions">
                                                         <a href="index.php?action=deleteCommentReply&reply_id=<?= $reply['id'] ?>&movie_id=<?= $movie['id'] ?>" 
-                                                           class="delete-btn neon-button-sm small" 
+                                                           class="btn-small delete" 
                                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette réponse?')">
                                                             <i class="fas fa-trash"></i> Supprimer
                                                         </a>
@@ -430,25 +866,20 @@
             <p>Film non trouvé.</p>
         <?php endif; ?>
         
-        <a href="index.php" class="nav-link">Retour à la liste</a>
+        <a href="index.php" class="back-link">Retour à la liste</a>
     </div>
 
-    <!-- Script pour gérer les skeletons et les réponses aux commentaires -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Gestion des skeletons
             const commentsSkeleton = document.getElementById('comments-skeleton');
             const commentsContainer = document.getElementById('comments-container');
             
-            // Simuler un chargement pour la démo
             setTimeout(() => {
-                // Cacher le skeleton
                 commentsSkeleton.style.display = 'none';
-                
-                // Afficher les commentaires avec animation
                 commentsContainer.style.display = 'block';
                 
-                // Animer les commentaires
                 const commentCards = document.querySelectorAll('.comment-card');
                 commentCards.forEach((card, index) => {
                     card.style.opacity = '0';
@@ -460,90 +891,37 @@
                         card.style.transform = 'translateY(0)';
                     }, 100 * index);
                 });
-            }, 1500); // Délai de 1.5 secondes pour la démo
-            
-            // Fonction pour afficher/masquer le formulaire de réponse
-            window.toggleReplyForm = function(commentId) {
-                const replyForm = document.getElementById(`reply-form-${commentId}`);
-                if (replyForm.style.display === 'none' || replyForm.style.display === '') {
-                    replyForm.style.display = 'block';
-                    
-                    // Obtenir le textarea et se concentrer dessus
-                    const textarea = document.getElementById(`reply-content-${commentId}`);
-                    
-                    // Vérifiez si le textarea est correctement récupéré
-                    if (!textarea) {
-                        console.error(`Textarea avec ID 'reply-content-${commentId}' non trouvé!`);
-                        return;
-                    }
-                    
-                    console.log("Textarea trouvé:", textarea);
-                    
-                    // Assurer que le textarea est visible et accessible
-                    setTimeout(() => {
-                        textarea.focus();
-                        console.log("Focus appliqué sur le textarea");
-                        
-                        // Tester l'ajout de texte
-                        textarea.value = "";
-                        console.log("Valeur du textarea réinitialisée");
-                    }, 100);
-                } else {
-                    replyForm.style.display = 'none';
-                }
-            };
+            }, 1500);
         });
         
-        // Surveillance des événements sur les textareas pour débogage
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sélectionner tous les textareas de réponse
-            const replyTextareas = document.querySelectorAll('.reply-textarea');
-            
-            console.log("Nombre de textareas de réponse trouvés:", replyTextareas.length);
-            
-            replyTextareas.forEach((textarea, index) => {
-                console.log(`Textarea #${index} ID:`, textarea.id);
-                
-                // Ajouter des gestionnaires d'événements
-                textarea.addEventListener('focus', function() {
-                    console.log(`Textarea #${index} a reçu le focus`);
-                });
-                
-                textarea.addEventListener('input', function(e) {
-                    console.log(`Textarea #${index} valeur modifiée:`, this.value);
-                });
-                
-                textarea.addEventListener('blur', function() {
-                    console.log(`Textarea #${index} a perdu le focus, valeur finale:`, this.value);
-                });
-            });
-        });
+        // Fonction pour afficher/masquer le formulaire de réponse
+        function toggleReplyForm(commentId) {
+            const replyForm = document.getElementById(`reply-form-${commentId}`);
+            if (replyForm.style.display === 'none' || replyForm.style.display === '') {
+                replyForm.style.display = 'block';
+                const textarea = document.getElementById(`reply-content-${commentId}`);
+                setTimeout(() => textarea.focus(), 100);
+            } else {
+                replyForm.style.display = 'none';
+            }
+        }
         
-        // Fonction pour soumettre une réponse via AJAX
+        // Fonction pour soumettre une réponse
         async function submitReply(event, commentId, movieId) {
             event.preventDefault();
             
             const textarea = document.getElementById(`reply-content-${commentId}`);
-            
-            if (!textarea) {
-                console.error(`Textarea reply-content-${commentId} non trouvé!`);
-                alert("Erreur: Impossible de trouver le champ de réponse");
-                return;
-            }
-            
             const content = textarea.value.trim();
-            console.log("Contenu de la réponse:", content, "Longueur:", content.length);
             
             if (!content) {
                 alert('Veuillez entrer un message');
                 return;
             }
             
-            // Afficher un indicateur de chargement
             const submitBtn = event.target.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.textContent;
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.textContent = 'Envoi...';
             
             try {
                 const formData = new FormData();
@@ -551,40 +929,20 @@
                 formData.append('content', content);
                 formData.append('movie_id', movieId);
                 
-                console.log('Envoi de la réponse:', {
-                    commentId: commentId,
-                    movieId: movieId,
-                    contentLength: content.length
-                });
-                
                 const response = await fetch('index.php?action=addReply', {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
                 });
                 
-                // Vérifier si la réponse est OK
                 if (!response.ok) {
                     throw new Error(`Erreur serveur: ${response.status}`);
                 }
                 
-                let data;
-                
-                try {
-                    data = await response.json();
-                } catch (parseError) {
-                    console.error('Erreur de parsing JSON:', await response.text());
-                    throw new Error('La réponse du serveur n\'est pas un JSON valide');
-                }
-                
-                console.log('Réponse du serveur:', data);
+                const data = await response.json();
                 
                 if (data.success) {
-                    // Ajouter la nouvelle réponse à la liste des réponses
                     addReplyToDOM(data.reply, commentId);
-                    // Réinitialiser et masquer le formulaire
                     textarea.value = '';
                     toggleReplyForm(commentId);
                 } else {
@@ -592,9 +950,8 @@
                 }
             } catch (error) {
                 console.error('Erreur:', error);
-                alert('Une erreur est survenue lors de l\'envoi de votre réponse: ' + error.message);
+                alert('Une erreur est survenue lors de l\'envoi de votre réponse');
             } finally {
-                // Restaurer l'état du bouton
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalBtnText;
             }
@@ -604,17 +961,13 @@
         function addReplyToDOM(reply, commentId) {
             const repliesContainer = document.getElementById(`replies-container-${commentId}`);
             
-            // Créer et ajouter la nouvelle réponse au DOM
             const profileImage = reply.profile_picture && reply.profile_picture !== 'assets/img/default-profile.png'
                 ? `<a href="index.php?action=profile&user_id=${reply.user_id}" class="reply-author-link"><img src="${reply.profile_picture}" alt="Photo de profil" class="reply-profile-picture"></a>`
                 : `<a href="index.php?action=profile&user_id=${reply.user_id}" class="reply-author-link"><div class="default-reply-icon"><i class="fa-solid fa-user"></i></div></a>`;
             
             const formattedDate = new Date(reply.created_at).toLocaleString('fr-FR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                day: '2-digit', month: '2-digit', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
             });
             
             const newReplyHTML = `
@@ -632,10 +985,8 @@
                 </div>
             `;
             
-            // Ajouter la réponse au conteneur
             repliesContainer.innerHTML += newReplyHTML;
             
-            // Faire un smooth scroll vers la nouvelle réponse
             const replyCard = repliesContainer.lastElementChild;
             if (replyCard) {
                 replyCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

@@ -15,7 +15,7 @@ if (!defined('APP_ENV')) define('APP_ENV', getenv('APP_ENV') ?: 'development');
 if (!defined('APP_DEBUG')) define('APP_DEBUG', getenv('APP_DEBUG') === 'true');
 
 // Configuration API TMDB
-if (!defined('TMDB_API_KEY')) define('TMDB_API_KEY', 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNTkyZjFmNmQyMmU4YTA0MzdjZDVmZTFkYjg5MTVjMCIsIm5iZiI6MTczMTk0MzQ0MS45MDIwMDAyLCJzdWIiOiI2NzNiNWMxMWJiYjQ5ZjA2YTAwZGNiZTUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.6q8e__UdVYygDxnIquEm2RGwnmHQ0KKDLlP4ogcBcZI');
+if (!defined('TMDB_API_KEY')) define('TMDB_API_KEY', getenv('TMDB_API_KEY') ?: 'your_api_key_here');
 if (!defined('TMDB_API_URL')) define('TMDB_API_URL', getenv('TMDB_API_URL') ?: 'https://api.themoviedb.org/3/');
 
 // Configuration base de données

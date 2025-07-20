@@ -1,0 +1,103 @@
+{
+    "key": "movie:1376434",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/a3F9cXjRH488qcOqFmFZwqawBMU.jpg",
+        "belongs_to_collection": null,
+        "budget": 0,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 878,
+                "name": "Science-Fiction"
+            },
+            {
+                "id": 53,
+                "name": "Thriller"
+            }
+        ],
+        "homepage": "",
+        "id": 1376434,
+        "imdb_id": "tt36463894",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Predator: Killer of Killers",
+        "overview": "Cette anthologie d'animation suit trois des guerriers les plus f\u00e9roces de l'histoire de l'humanit\u00e9 : une Viking guidant son jeune fils dans une qu\u00eate de vengeance sanglante, un ninja du Japon f\u00e9odal s'opposant \u00e0 son fr\u00e8re samoura\u00ef pour la succession et un pilote de la Seconde Guerre mondiale enqu\u00eatant sur une menace de la cause alli\u00e9e en plein ciel.",
+        "popularity": 55.7852,
+        "poster_path": "\/ff8DS4oiZttqBppDriGUal49lmw.jpg",
+        "production_companies": [
+            {
+                "id": 127928,
+                "logo_path": "\/h0rjX5vjW5r8yEnUBStFarjcLT4.png",
+                "name": "20th Century Studios",
+                "origin_country": "US"
+            },
+            {
+                "id": 1302,
+                "logo_path": "\/zC3b70ixHh89qJIikLQPEvLqbPM.png",
+                "name": "Davis Entertainment",
+                "origin_country": "US"
+            },
+            {
+                "id": 840,
+                "logo_path": null,
+                "name": "Lawrence Gordon Productions",
+                "origin_country": "US"
+            },
+            {
+                "id": 185309,
+                "logo_path": null,
+                "name": "Toberoff Productions",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2025-06-05",
+        "revenue": 0,
+        "runtime": 90,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            },
+            {
+                "english_name": "Norwegian",
+                "iso_639_1": "no",
+                "name": "Norsk"
+            },
+            {
+                "english_name": "Japanese",
+                "iso_639_1": "ja",
+                "name": "\u65e5\u672c\u8a9e"
+            }
+        ],
+        "status": "Released",
+        "tagline": "",
+        "title": "Predator : Killer of Killers",
+        "video": false,
+        "vote_average": 7.974,
+        "vote_count": 725
+    },
+    "expiry": 1753024351,
+    "created_at": 1752937951
+}

@@ -1,0 +1,81 @@
+{
+    "key": "movie:269149",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+        "belongs_to_collection": {
+            "id": 1084247,
+            "name": "Zootopie - Saga",
+            "poster_path": "\/u8597pdwSHOvcJQhP2cLi7a67ZW.jpg",
+            "backdrop_path": "\/1WDssJDYInLA4Avg45lgy3WM6Ly.jpg"
+        },
+        "budget": 150000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            }
+        ],
+        "homepage": "http:\/\/movies.disney.com\/zootopia",
+        "id": 269149,
+        "imdb_id": "tt2948356",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Zootopia",
+        "overview": "Avec ses quartiers comme la tr\u00e8s chic Place du Sahara ou le glacial Toundraville, la m\u00e9tropole Zootopie, o\u00f9 ne vivent que des mammif\u00e8res, est un melting pot o\u00f9 toutes les esp\u00e8ces cohabitent. Qu\u2019on soit un \u00e9norme \u00e9l\u00e9phant ou une minuscule musaraigne, tout le monde y a sa place. Mais quand l\u2019optimiste agent Judy Hopps arrive en ville, elle d\u00e9couvre qu\u2019\u00eatre le premier lapin dans la police, au milieu d'animaux costauds, n\u2019est pas si simple. Pour faire ses preuves, elle d\u00e9cide de r\u00e9soudre une enqu\u00eate, m\u00eame si pour cela, elle doit faire \u00e9quipe avec Nick Wilde, un renard beau parleur et roi de l\u2019arnaque. Certaines s\u00e9quences ou certains motifs lumineux clignotants sont susceptibles d'affecter les t\u00e9l\u00e9spectateurs photosensibles.",
+        "popularity": 18.7021,
+        "poster_path": "\/xEx4dHi2IrTB0vkVPccrGrMcZQW.jpg",
+        "production_companies": [
+            {
+                "id": 6125,
+                "logo_path": "\/tzsMJBJZINu7GHzrpYzpReWhh66.png",
+                "name": "Walt Disney Animation Studios",
+                "origin_country": "US"
+            },
+            {
+                "id": 2,
+                "logo_path": "\/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
+                "name": "Walt Disney Pictures",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2016-02-11",
+        "revenue": 1023784195,
+        "runtime": 109,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Bienvenue dans la jungle urbaine.",
+        "title": "Zootopie",
+        "video": false,
+        "vote_average": 7.748,
+        "vote_count": 16788
+    },
+    "expiry": 1753022745,
+    "created_at": 1752936345
+}

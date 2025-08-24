@@ -1,0 +1,74 @@
+{
+    "key": "movie:1022787",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/lWeaB9S77Os7VHOt8GH5JdfrBX3.jpg",
+        "belongs_to_collection": null,
+        "budget": 150000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            },
+            {
+                "id": 35,
+                "name": "Com\u00e9die"
+            },
+            {
+                "id": 12,
+                "name": "Aventure"
+            },
+            {
+                "id": 878,
+                "name": "Science-Fiction"
+            }
+        ],
+        "homepage": "",
+        "id": 1022787,
+        "imdb_id": "tt4900148",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "Elio",
+        "overview": "Elio, un petit gar\u00e7on \u00e0 l'imagination d\u00e9bordante, qui se retrouve t\u00e9l\u00e9port\u00e9 par inadvertance dans le Communivers, une organisation interplan\u00e9taire compos\u00e9e de repr\u00e9sentants des galaxies les plus \u00e9loign\u00e9es. Alors que tout l'univers le consid\u00e8re par erreur comme le chef de la Terre, Elio, loin d'\u00eatre pr\u00e9par\u00e9 \u00e0 ce genre de pression, va devoir tisser de nouveaux liens avec d'\u00e9tranges formes de vie extraterrestres, survivre \u00e0 une s\u00e9rie d'\u00e9preuves redoutables, pour finir par d\u00e9couvrir qui il est v\u00e9ritablement.",
+        "popularity": 237.6903,
+        "poster_path": "\/jaKbruwD7KLlnprsse1zuOm4o2a.jpg",
+        "production_companies": [
+            {
+                "id": 3,
+                "logo_path": "\/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+                "name": "Pixar",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2025-06-18",
+        "revenue": 150634578,
+        "runtime": 98,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "L'univers a compos\u00e9 le mauvais num\u00e9ro.",
+        "title": "Elio",
+        "video": false,
+        "vote_average": 6.9,
+        "vote_count": 314
+    },
+    "expiry": 1756125890,
+    "created_at": 1756039490
+}

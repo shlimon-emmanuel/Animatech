@@ -141,6 +141,174 @@
         }
         
         /* Styles pour le squelette des commentaires */
+        .comments-skeleton {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        .skeleton-card {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 3px solid #7b2cbf;
+        }
+        
+        .skeleton-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .skeleton-flex {
+            display: flex;
+            align-items: center;
+        }
+        
+        .skeleton-header-col {
+            margin-left: 10px;
+        }
+        
+        .skeleton-loading {
+            background: linear-gradient(90deg, #444 25%, #555 50%, #444 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Styles pour les réponses */
+        .reply-card {
+            background-color: rgba(40, 40, 40, 0.6);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0 10px 30px;
+            border-left: 2px solid #9d4edd;
+        }
+        
+        .reply-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .reply-user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .reply-profile-picture {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+        }
+        
+        .default-reply-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #7b2cbf;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .reply-author {
+            font-weight: 500;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        
+        .reply-date {
+            color: #999;
+            font-size: 0.75rem;
+        }
+        
+        .reply-content {
+            color: #e1e1e1;
+            line-height: 1.4;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .reply-form {
+            margin: 15px 0 0 30px;
+            padding: 15px;
+            background-color: rgba(40, 40, 40, 0.8);
+            border-radius: 8px;
+            border-left: 2px solid #9d4edd;
+        }
+        
+        .reply-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 1px solid #7b2cbf;
+            border-radius: 4px;
+            background-color: rgba(157, 78, 221, 0.1);
+            color: white;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        
+        .reply-textarea:focus {
+            outline: none;
+            border-color: #9d4edd;
+            box-shadow: 0 0 0 2px rgba(157, 78, 221, 0.2);
+        }
+        
+        .reply-textarea::placeholder {
+            color: #999;
+        }
+        
+        .reply-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-end;
+        }
+        
+        .neon-button-sm {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .neon-button-sm:hover {
+            background: linear-gradient(45deg, #9d4edd, #c77dff);
+            transform: translateY(-1px);
+        }
+        
+        .neon-button-sm.cancel {
+            background: linear-gradient(45deg, #666, #888);
+        }
+        
+        .neon-button-sm.cancel:hover {
+            background: linear-gradient(45deg, #888, #aaa);
+        }
     </style>
 </head>
 <body>
@@ -249,14 +417,6 @@
                     </div>
                 <?php else: ?>
                     <p class="no-trailer">Aucune bande-annonce disponible pour ce film.</p>
-                    <?php
-                    // Débogage - Afficher les informations de l'API
-                    if (isset($videos) && !empty($videos)):
-                        echo "<pre style='color: white;'>";
-                        print_r($videos);
-                        echo "</pre>";
-                    endif;
-                    ?>
                 <?php endif; ?>
             </div>
 

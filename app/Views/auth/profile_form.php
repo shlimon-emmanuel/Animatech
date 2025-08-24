@@ -172,13 +172,13 @@
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <i class="fas fa-user form-icon"></i>
-                <input type="text" id="username" name="username" value="<?= htmlspecialchars($_SESSION['user']['username'] ?? '') ?>" required>
+                <input type="text" id="username" name="username" value="<?= htmlspecialchars($_SESSION['user']['username'] ?? '') ?>" required autocomplete="off">
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <i class="fas fa-envelope form-icon"></i>
-                <input type="email" id="email" name="email" value="<?= htmlspecialchars($_SESSION['user']['email'] ?? '') ?>" required>
+                <input type="email" id="email" name="email" value="<?= htmlspecialchars($_SESSION['user']['email'] ?? '') ?>" required autocomplete="off">
             </div>
 
             <button type="submit" class="neon-button">Mettre à jour le profil</button>

@@ -11,16 +11,16 @@ if (file_exists(ROOT_PATH . '/.env')) {
 }
 
 // Configuration de base
-if (!defined('APP_ENV')) define('APP_ENV', getenv('APP_ENV') ?: 'development');
+if (!defined('APP_ENV')) define('APP_ENV', 'production');
 if (!defined('APP_DEBUG')) define('APP_DEBUG', getenv('APP_DEBUG') === 'true');
 
 // Configuration API TMDB
-if (!defined('TMDB_API_KEY')) define('TMDB_API_KEY', 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNTkyZjFmNmQyMmU4YTA0MzdjZDVmZTFkYjg5MTVjMCIsIm5iZiI6MTczMTk0MzQ0MS45MDIwMDAyLCJzdWIiOiI2NzNiNWMxMWJiYjQ5ZjA2YTAwZGNiZTUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.6q8e__UdVYygDxnIquEm2RGwnmHQ0KKDLlP4ogcBcZI');
+if (!defined('TMDB_API_KEY')) define('TMDB_API_KEY', getenv('TMDB_API_KEY') ?: '');
 if (!defined('TMDB_API_URL')) define('TMDB_API_URL', getenv('TMDB_API_URL') ?: 'https://api.themoviedb.org/3/');
 
 // Configuration base de données
 if (!defined('DB_HOST')) define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-if (!defined('DB_NAME')) define('DB_NAME', 'userauth'); // Force userauth au lieu de lire depuis .env
+if (!defined('DB_NAME')) define('DB_NAME', getenv('DB_DATABASE') ?: 'userauth');
 if (!defined('DB_USER')) define('DB_USER', getenv('DB_USERNAME') ?: 'root');
 if (!defined('DB_PASS')) define('DB_PASS', getenv('DB_PASSWORD') ?: '');
 
@@ -84,9 +84,6 @@ foreach ($directories as $dir) {
 // Configuration CORS pour les requêtes AJAX
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     $allowedOrigins = [
-        'http://localhost',
-        'http://localhost:8080',
-        'http://127.0.0.1',
         BASE_URL
     ];
     

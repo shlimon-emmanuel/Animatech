@@ -367,13 +367,13 @@ if (isset($_SESSION['success'])) unset($_SESSION['success']);
                 <div class="form-group">
                     <label for="username" class="form-label">Nom d'utilisateur</label>
                     <i class="fas fa-user form-icon"></i>
-                    <input type="text" id="username" name="username" class="form-control" value="<?= htmlspecialchars($username) ?>" required>
+                    <input type="text" id="username" name="username" class="form-control" value="<?= htmlspecialchars($username) ?>" required autocomplete="off">
                 </div>
                 
                 <div class="form-group">
                     <label for="email" class="form-label">Adresse e-mail</label>
                     <i class="fas fa-envelope form-icon"></i>
-                    <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($email) ?>" required>
+                    <input type="email" id="email" name="email" class="form-control" value="<?= htmlspecialchars($email) ?>" required autocomplete="off">
                 </div>
             </div>
             
@@ -384,19 +384,19 @@ if (isset($_SESSION['success'])) unset($_SESSION['success']);
                 <div class="form-group">
                     <label for="current_password" class="form-label">Mot de passe actuel</label>
                     <i class="fas fa-lock form-icon"></i>
-                    <input type="password" id="current_password" name="current_password" class="form-control">
+                    <input type="password" id="current_password" name="current_password" class="form-control" autocomplete="current-password">
                 </div>
                 
                 <div class="form-group">
                     <label for="new_password" class="form-label">Nouveau mot de passe</label>
                     <i class="fas fa-key form-icon"></i>
-                    <input type="password" id="new_password" name="new_password" class="form-control">
+                    <input type="password" id="new_password" name="new_password" class="form-control" autocomplete="new-password">
                 </div>
                 
                 <div class="form-group">
                     <label for="confirm_password" class="form-label">Confirmer le nouveau mot de passe</label>
                     <i class="fas fa-check-circle form-icon"></i>
-                    <input type="password" id="confirm_password" name="confirm_password" class="form-control">
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" autocomplete="new-password">
                 </div>
             </div>
             

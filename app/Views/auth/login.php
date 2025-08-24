@@ -168,14 +168,14 @@
             <div class="form-group">
                 <label for="email" id="email-label">Email</label>
                 <i class="fas fa-envelope form-icon" aria-hidden="true"></i>
-                <input type="email" name="email" id="email" required aria-required="true" aria-labelledby="email-label" aria-describedby="email-format">
+                <input type="email" name="email" id="email" required aria-required="true" aria-labelledby="email-label" aria-describedby="email-format" autocomplete="off">
                 <span id="email-format" class="sr-only">Format attendu: exemple@domaine.com</span>
             </div>
             
             <div class="form-group">
                 <label for="password" id="password-label">Mot de passe</label>
                 <i class="fas fa-lock form-icon" aria-hidden="true"></i>
-                <input type="password" name="password" id="password" required aria-required="true" aria-labelledby="password-label">
+                <input type="password" name="password" id="password" required aria-required="true" aria-labelledby="password-label" autocomplete="new-password">
             </div>
             
             <button type="submit" class="neon-button">Se connecter</button>

@@ -137,19 +137,19 @@
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <i class="fas fa-user form-icon"></i>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required autocomplete="off">
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <i class="fas fa-envelope form-icon"></i>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required autocomplete="off">
             </div>
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
                 <i class="fas fa-lock form-icon"></i>
-                <input type="password" id="password" name="password" minlength="6" required>
+                <input type="password" id="password" name="password" minlength="6" required autocomplete="new-password">
                 <div id="password-strength" class="password-strength">Le mot de passe doit contenir au moins 6 caractères</div>
             </div>
 

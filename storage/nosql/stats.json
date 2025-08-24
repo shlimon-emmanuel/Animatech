@@ -1,6 +1,6 @@
 {
-    "hits": 277,
+    "hits": 710,
     "misses": 0,
-    "time_saved": 138.5,
-    "requests_avoided": 277
+    "time_saved": 355,
+    "requests_avoided": 710
 }

@@ -128,6 +128,10 @@ class MovieController {
                 }
             }
             
+            // Variables SEO
+            $pageTitle = 'ANIMATECH - Catalogue Films d\'Animation | Streaming Gratuit';
+            $pageDescription = 'Découvrez notre catalogue complet de films d\'animation. Recherchez, filtrez et regardez vos films d\'animation préférés en streaming gratuit.';
+            
             require_once APP_PATH . '/Views/movies/list.php';
         } catch (Exception $e) {
             error_log("Erreur dans listMovies: " . $e->getMessage());
@@ -179,6 +183,10 @@ class MovieController {
                 $isFavorite = $favoriteModel->isFavorite($userId, $id);
                 error_log("showMovieDetail: Vérification favori pour userId=$userId, movieId=$id, résultat=" . ($isFavorite ? 'true' : 'false'));
             }
+            
+            // Variables SEO pour la page de détail
+            $pageTitle = htmlspecialchars($movie['title']) . ' - Film d\'Animation | ANIMATECH';
+            $pageDescription = 'Regardez ' . htmlspecialchars($movie['title']) . ' en streaming. ' . (isset($movie['overview']) ? htmlspecialchars(substr($movie['overview'], 0, 150)) . '...' : 'Film d\'animation disponible sur ANIMATECH.');
             
             // Inclure la vue de détail
             require_once APP_PATH . '/Views/movies/detail.php';
@@ -244,21 +252,15 @@ class MovieController {
                 exit;
             }
             
-            // Convertir les résultats en format attendu
+            // Les résultats sont déjà filtrés par l'API avec with_genres=16
+            // Pas besoin de re-filtrer, juste convertir le format
             $formattedResults = [];
             foreach ($results->results as $movie) {
-                // Vérifier si c'est un film d'animation
-                if (isset($movie->genre_ids) && is_array($movie->genre_ids) && in_array(16, $movie->genre_ids)) {
-                    $formattedResults[] = $movie;
-                }
+                $formattedResults[] = $movie;
             }
             
-            // Calculer le nombre total de pages en fonction des résultats filtrés
-            $totalPages = 1;
-            if (isset($results->total_pages)) {
-                $ratio = count($formattedResults) / (count($results->results) ?: 1);
-                $totalPages = max(1, ceil($results->total_pages * $ratio));
-            }
+            // Utiliser directement le nombre de pages de l'API
+            $totalPages = isset($results->total_pages) ? $results->total_pages : 1;
             
             echo json_encode([
                 'movies' => $formattedResults,
@@ -491,7 +493,7 @@ class MovieController {
             
             $results = $this->movieModel->searchMovies($query, $page);
             
-            // S'assurer que tous les films retournés sont bien des films d'animation
+            // Pour la recherche, on garde le filtrage car searchMovies ne filtre pas automatiquement par genre
             $filteredResults = [];
             
             if ($results && isset($results->results)) {
@@ -513,12 +515,11 @@ class MovieController {
                 }
             }
             
-            // Mettre à jour le nombre total de pages en fonction des résultats filtrés
+            // Pour la recherche, utiliser une estimation basée sur les résultats trouvés
             $totalPages = 1;
-            if ($results && isset($results->total_pages)) {
-                // Estimation approximative basée sur le ratio de films filtrés
-                $ratio = count($filteredResults) / (count($results->results) ?: 1);
-                $totalPages = max(1, ceil($results->total_pages * $ratio));
+            if ($results && isset($results->total_pages) && count($filteredResults) > 0) {
+                // Si on a trouvé des films d'animation, estimer qu'il y en a autant sur les autres pages
+                $totalPages = $results->total_pages;
             }
             
             header('Content-Type: application/json');

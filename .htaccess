@@ -10,10 +10,10 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ app/public/$1 [L] 
 # Permettre les uploads de fichiers volumineux
-php_value upload_max_filesize 10M
-php_value post_max_size 10M
-php_value max_execution_time 300
-php_value max_input_time 300
+#php_value upload_max_filesize 10M
+#php_value post_max_size 10M
+#php_value max_execution_time 300
+#php_value max_input_time 300
 
 # Ajout d'en-têtes de sécurité pour protéger contre les attaques XSS et autres vulnérabilités
 <IfModule mod_headers.c>

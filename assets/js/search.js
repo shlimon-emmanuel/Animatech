@@ -297,6 +297,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Protection supplémentaire : arrêter si on a déjà un message de fin
+        if (document.querySelector('.end-message')) {
+            hasMorePages = false;
+            return;
+        }
+        
         // Marquer comme en train de charger
         isLoading = true;
         currentPage++;
@@ -352,10 +358,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Si c'est la dernière page, afficher un message
             if (!hasMorePages) {
-                const endMessage = document.createElement('div');
-                endMessage.className = 'end-message';
-                endMessage.innerHTML = '<p>Vous avez atteint la fin des résultats.</p>';
-                movieGrid.appendChild(endMessage);
+                // Vérifier une seule fois s'il n'y a pas déjà de message
+                if (!document.querySelector('.end-message')) {
+                    const endMessage = document.createElement('div');
+                    endMessage.className = 'end-message';
+                    endMessage.innerHTML = '<p>Vous avez atteint la fin des résultats.</p>';
+                    movieGrid.appendChild(endMessage);
+                }
             }
         } catch (error) {
             console.error('Erreur lors du chargement des films:', error);

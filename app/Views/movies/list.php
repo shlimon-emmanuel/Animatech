@@ -656,6 +656,42 @@
             display: flex;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-button, .reset-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            flex: 1;
+        }
+        
+        .filter-button {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+        }
+        
+        .filter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.4);
+        }
+        
+        .reset-button {
+            background: linear-gradient(45deg, #ff4757, #ff6b7a);
+            color: white;
+            border: 2px solid #ff4757;
+        }
+        
+        .reset-button:hover {
+            background: linear-gradient(45deg, #ff6b7a, #ff8a9b);
+            border-color: #ff6b7a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
         }
 
         /* Responsive */
@@ -663,6 +699,55 @@
             .filter-panel {
                 margin: 10px;
                 width: calc(100% - 20px);
+            }
+            
+            .filter-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .filter-button, .reset-button {
+                min-width: 100%;
+                padding: 12px 20px;
+                font-size: 16px;
+                font-weight: 600;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            }
+            
+            .filter-button {
+                background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple)) !important;
+                border: 2px solid var(--neon-blue);
+            }
+            
+            .reset-button {
+                background: linear-gradient(45deg, #ff4757, #ff6b7a) !important;
+                border: 2px solid #ff4757;
+            }
+            
+            .filter-content {
+                padding: 15px;
+                max-height: 600px; /* Plus d'espace pour mobile */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .filter-panel {
+                margin: 5px;
+                width: calc(100% - 10px);
+            }
+            
+            .filter-content {
+                padding: 10px;
+            }
+            
+            .filter-group {
+                margin-bottom: 20px;
+            }
+            
+            .filter-actions {
+                margin-top: 25px;
+                padding-top: 15px;
+                border-top: 1px solid rgba(0, 243, 255, 0.2);
             }
         }
     </style>

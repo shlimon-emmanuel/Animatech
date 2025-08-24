@@ -1,0 +1,431 @@
+{
+    "key": "filtered_movies:10:64dae464ddc95b30819a2b95ae1df6c4",
+    "data": {
+        "page": 10,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "\/o4mhrLxv6I70kvYA42qANGUF7ya.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    35,
+                    10751
+                ],
+                "id": 153518,
+                "original_language": "en",
+                "original_title": "The Angry Birds Movie",
+                "overview": "Ce film nous am\u00e8ne sur une \u00eele enti\u00e8rement peupl\u00e9e d\u2019oiseaux heureux et qui ne volent pas \u2013 ou presque. Dans ce paradis, Red, un oiseau avec un probl\u00e8me de col\u00e8re, le tr\u00e8s press\u00e9 Chuck, et l\u2019impr\u00e9visible Bomb ont toujours \u00e9t\u00e9 mis \u00e0 l\u2019\u00e9cart. Mais lorsqu\u2019arrivent des cochons verts myst\u00e9rieux sur l\u2019\u00eele, ce sera la mission de ce groupe de parias de d\u00e9couvrir ce que trament les cochons.",
+                "popularity": 7.0663,
+                "poster_path": "\/5QQNrX1CjSWKAa1dBMc93rzTe85.jpg",
+                "release_date": "2016-05-11",
+                "title": "Angry Birds: Le film",
+                "video": false,
+                "vote_average": 6.238,
+                "vote_count": 3786
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/h6VshReCGaGQoaGZwT2wqiqrcZW.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14,
+                    12
+                ],
+                "id": 9444,
+                "original_language": "en",
+                "original_title": "Anastasia",
+                "overview": "Saint\u2010P\u00e9tersbourg, 1917. Comment l\u2019imp\u00e9ratrice Marie et sa petite fille Anastasia vont \u00eatre sauv\u00e9es du funeste sort, provoqu\u00e9 par la r\u00e9volution, qui s\u2019abat sur la famille imp\u00e9riale, par un jeune employ\u00e9 de cuisine\u00a0: Dimitri. Mais le destin les s\u00e9pare une nouvelle fois. Dix ans apr\u00e8s la chute des Romanov, une rumeur persistante se propage\u00a0: la fille cadette de l\u2019empereur serait encore en vie\u2026",
+                "popularity": 7.061,
+                "poster_path": "\/bppGWGA8zq1sRvTdDJnUzVW9GcH.jpg",
+                "release_date": "1997-11-20",
+                "title": "Anastasia",
+                "video": false,
+                "vote_average": 7.607,
+                "vote_count": 5424
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/8oYykF1Qhrb8fC2qZqD71EzRywg.jpg",
+                "genre_ids": [
+                    10751,
+                    12,
+                    18,
+                    14,
+                    16
+                ],
+                "id": 278927,
+                "original_language": "en",
+                "original_title": "The Jungle Book",
+                "overview": "Les aventures de Mowgli, un petit homme \u00e9lev\u00e9 dans la jungle par une famille de loups. Mais Mowgli n'est plus le bienvenu dans la jungle depuis que le redoutable tigre Shere Khan, qui porte les cicatrices des hommes, promet d'\u00e9liminer celui qu'il consid\u00e8re comme une menace. Pouss\u00e9 \u00e0 abandonner le seul foyer qu'il ait jamais connu, Mowgli se lance dans un voyage captivant, \u00e0 la d\u00e9couverte de soi, guid\u00e9 par son mentor la panth\u00e8re Bagheera et l'ours Baloo. Sur le chemin, Mowgli rencontre des cr\u00e9atures comme Kaa, un pyton \u00e0 la voix s\u00e9duisante et au regard hypnotique et le Roi Louie, qui tente de contraindre Mowgli \u00e0 lui r\u00e9v\u00e9ler le secret de la fleur rouge et insaisissable\u00a0: le feu.",
+                "popularity": 7.0384,
+                "poster_path": "\/pqFerT5MqAp2bZxlQwfwtc9GSb7.jpg",
+                "release_date": "2016-04-07",
+                "title": "Le Livre de la jungle",
+                "video": false,
+                "vote_average": 6.863,
+                "vote_count": 8236
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/shqLeIkqPAAXM8iT6wVDiXUYz1p.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    10751
+                ],
+                "id": 12429,
+                "original_language": "ja",
+                "original_title": "\u5d16\u306e\u4e0a\u306e\u30dd\u30cb\u30e7",
+                "overview": "La trame suit une petite princesse poisson rouge appel\u00e9e Ponyo qui veut d\u00e9sesp\u00e9r\u00e9ment devenir humaine. En cherchant ce faire, elle devient amie d'un gar\u00e7on de cinq ans, S\u00f4suke.",
+                "popularity": 7.0184,
+                "poster_path": "\/ud7spJ4CH0UlsBz5n3KcXTaCNH2.jpg",
+                "release_date": "2008-07-19",
+                "title": "Ponyo sur la falaise",
+                "video": false,
+                "vote_average": 7.749,
+                "vote_count": 4522
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/4PKfa0zltSrp1BJoLl8zfvYXaac.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    28
+                ],
+                "id": 663558,
+                "original_language": "zh",
+                "original_title": "\u65b0\u795e\u699c\uff1a\u54ea\u5412\u91cd\u751f",
+                "overview": "Fan de course automobile, Nezha est un livreur banal... jusqu'\u00e0 ce qu'il recroise de vieux ennemis et doive red\u00e9couvrir ses propres pouvoirs afin de prot\u00e9ger ses proches.",
+                "popularity": 6.9961,
+                "poster_path": "\/iyOgNaaDX67AUMWlzsGZVO1luoh.jpg",
+                "release_date": "2021-02-06",
+                "title": "New Gods : Nezha Reborn",
+                "video": false,
+                "vote_average": 8.097,
+                "vote_count": 476
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/tyj0QztA0PkYo6XauifWjkx7UVi.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14,
+                    12
+                ],
+                "id": 12092,
+                "original_language": "en",
+                "original_title": "Alice in Wonderland",
+                "overview": "Joignez-vous \u00e0 Alice alors qu\u2019elle poursuit un lapin blanc dans un monde \u00e0 l\u2019envers, qui devient de plus en plus curieux au fur et \u00e0 mesure que ses aventures fantastiques se d\u00e9roulent. Rencontrez le Chapelier Toqu\u00e9, le Li\u00e8vre de Mars, Tweedledee et Tweedledum, le chat du Chester, la reine de c\u0153ur et d\u2019autres personnages inoubliables. Le tout sur un d\u00e9cor magique inoubliable.",
+                "popularity": 6.9435,
+                "poster_path": "\/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg",
+                "release_date": "1951-07-28",
+                "title": "Alice au pays des merveilles",
+                "video": false,
+                "vote_average": 7.187,
+                "vote_count": 6040
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/yBov7O4eXDcBLDpZrOHZzFr8rIl.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    12,
+                    10751
+                ],
+                "id": 459151,
+                "original_language": "en",
+                "original_title": "The Boss Baby: Family Business",
+                "overview": "Tim Templeton et son petit fr\u00e8re Ted, le fameux Baby Boss sont devenus adultes, ils vivent chacun de leur c\u00f4t\u00e9, Tim est devenu un p\u00e8re de famille rang\u00e9 et Ted est \u00e0 la t\u00eate d\u2019un important fond sp\u00e9culatif. Mais l\u2019arriv\u00e9e d\u2019un nouveau Baby Boss, avec une toute nouvelle approche et une strat\u00e9gie innovante, est sur le point de rassembler les fr\u00e8res ennemis\u2026 et inspirer un nouveau mod\u00e8le dans les affaires familiales. Tim et sa femme Carole vivent en banlieue o\u00f9 il s\u2019occupe du foyer pendant qu\u2019elle fait bouillir la marmite. Ils ont deux enfants : Tabitha, une petite fille de 7 ans \u00e0 l\u2019intelligence remarquable et Tina, leur adorable nouveau-n\u00e9e. Tabitha, premi\u00e8re de sa classe dans une \u00e9cole pour surdou\u00e9s, adule son oncle Ted et r\u00eave de marcher sur ses pas, ce qui inqui\u00e8te beaucoup Tim qui craint qu\u2019elle ne passe \u00e0 c\u00f4t\u00e9 de son enfance \u00e0 force de travailler si dur.",
+                "popularity": 6.9011,
+                "poster_path": "\/iqEninKSpIyADR7hYt0ha4mlsa0.jpg",
+                "release_date": "2021-07-01",
+                "title": "Baby Boss 2 : Une affaire de famille",
+                "video": false,
+                "vote_average": 7.351,
+                "vote_count": 2620
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/aIyvMthA7UGV6ix6AUUM88ZXfeU.jpg",
+                "genre_ids": [
+                    14,
+                    10751,
+                    35,
+                    16
+                ],
+                "id": 77931,
+                "original_language": "en",
+                "original_title": "The Smurfs 2",
+                "overview": "Cherchant d\u00e9sesp\u00e9r\u00e9ment \u00e0 s\u2019emparer de la puissance de l\u2019essence magique des Schtroumpfs, Gargamel a invent\u00e9 les Canailles, de minuscules cr\u00e9atures. Mais pour que leur transformation en vrais Schtroumpfs soit compl\u00e8te, il lui manque encore la formule secr\u00e8te que d\u00e9tient la Schtroumpfette. Il parvient \u00e0 kidnapper la demoiselle et l\u2019emm\u00e8ne \u00e0 Paris pour accomplir son plan diabolique\u2026  Pour avoir une chance de sauver la belle, il va falloir tous les talents du Grand Schtroumpf, du Schtroumpf maladroit, du Schtroumpf grognon, du Schtroumpf coquet et de leurs amis humains, Patrick et Grace. Ils vont \u00eatre oblig\u00e9s de rivaliser d\u2019ing\u00e9niosit\u00e9 et de courage, car le danger est partout. Ils vont aussi devoir convaincre la Schtroumpfette que sa place est bien parmi eux, et pas avec les Canailles\u2026",
+                "popularity": 6.8668,
+                "poster_path": "\/wpLqm3ZjYAu83MGABSVzJS7Cy3G.jpg",
+                "release_date": "2013-07-30",
+                "title": "Les Schtroumpfs 2",
+                "video": false,
+                "vote_average": 5.75,
+                "vote_count": 2290
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/7JGfZGooHS4uHRHuYpfWLAcCNsE.jpg",
+                "genre_ids": [
+                    28,
+                    16,
+                    35,
+                    10751,
+                    12
+                ],
+                "id": 324852,
+                "original_language": "en",
+                "original_title": "Despicable Me 3",
+                "overview": "Apr\u00e8s avoir \u00e9t\u00e9 licenci\u00e9 de la Ligue Anti\u2010Villain pour avoir \u00e9chou\u00e9 \u00e0 capturer le dernier m\u00e9chant capable de menacer l\u2019humanit\u00e9, Gru se trouve confront\u00e9 \u00e0 une crise d\u2019identit\u00e9 majeure. Mais quand se pr\u00e9sente un \u00e9tranger myst\u00e9rieux qui l\u2019informe du d\u00e9c\u00e8s de son p\u00e8re mais aussi de l\u2019existence d\u2019un fr\u00e8re jumeau \u2013 un fr\u00e8re qui veut d\u00e9sesp\u00e9r\u00e9ment suivre les traces m\u00e9prisables de son jumeau \u2013 un ancien super\u2010m\u00e9chant va red\u00e9couvrir \u00e0 quel point c\u2019est bon d\u2019\u00eatre mauvais.",
+                "popularity": 6.8667,
+                "poster_path": "\/a9L4X9veOlVtWZWmoVRNkZmKbH8.jpg",
+                "release_date": "2017-06-15",
+                "title": "Moi, moche et m\u00e9chant 3",
+                "video": false,
+                "vote_average": 6.468,
+                "vote_count": 7376
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/30XLt1HzwOsdciWVaYVxlJq3cjH.jpg",
+                "genre_ids": [
+                    878,
+                    12,
+                    16,
+                    10751,
+                    14
+                ],
+                "id": 9016,
+                "original_language": "en",
+                "original_title": "Treasure Planet",
+                "overview": "Dans une version futuriste du conte de Robert Louis Stevenson, une carte secr\u00e8te entra\u00eene une chasse au tr\u00e9sor \u00e0 travers l'univers. Le jeune Jim Hawkins et un \u00e9quipage hilarant partent \u00e0 la recherche de leur destin\u00e9e. Sur le vaisseau spatial, Jim rencontre le cuisinier cyborg John Silver, qui lui apprend les valeurs de l'amiti\u00e9 et \u00e0 croire en ses r\u00eaves. Ils vont d\u00e9couvrir un tr\u00e9sor inimaginable.",
+                "popularity": 6.8666,
+                "poster_path": "\/xfeqEnK7hExbmZfZHKnjTkbuxMa.jpg",
+                "release_date": "2002-11-26",
+                "title": "La Plan\u00e8te au Tr\u00e9sor : Un nouvel univers",
+                "video": false,
+                "vote_average": 7.6,
+                "vote_count": 4387
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/rhA5xJ2zunWTUbWTJoxnthhp2IZ.jpg",
+                "genre_ids": [
+                    16,
+                    12,
+                    10751
+                ],
+                "id": 24554,
+                "original_language": "en",
+                "original_title": "The Land Before Time X: The Great Longneck Migration",
+                "overview": "Durant la nuit, Petit-Pied et ses grands-parents ont partag\u00e9 un r\u00eave inhabituel qui les pousse \u00e0 partir \u00e0 la d\u00e9couverte de nouveaux horizons. Ils sont rapidement suivis de C\u00e9ra, Pointu, Beckie et P\u00e9tri, toujours partant pour de nouvelles aventures.Au cours de ce fantastique voyage, ils vont croiser le chemin de myst\u00e9rieuses cr\u00e9atures, d\u00e9couvrir les merveilles de la nature, braver les dangers et vivre de grands moments de joie et d'amiti\u00e9.Ils vont finalement se joindre au plus grand troupeau de dinosaures jamais rencontr\u00e9, et parmi eux, Petit-Pied va faire la connaissance d'un Long-Cou tr\u00e8s sp\u00e9cial.Dans cette \u00e9pisode, Petit-pied rencontre pour la premi\u00e8re fois son p\u00e8re. Il apprend que son p\u00e8re \u00e9tait parti \u00e0 la recherche d'une meilleure vall\u00e9e pour \u00e9lever Petit-pied et \u00e9tait parti avant sa naissance. Et \u00e0 son retour, la vall\u00e9e avait \u00e9t\u00e9 d\u00e9truite, Petit-pied n'\u00e9tait pas l\u00e0. Et son p\u00e8re avait recueilli un groupe de petits Longs-Cous qu'il a \u00e9lev\u00e9s.",
+                "popularity": 6.84,
+                "poster_path": "\/lncLJ86sWHytbmUdhOXtbZFTJio.jpg",
+                "release_date": "2003-12-02",
+                "title": "Le Petit Dinosaure 10 : Les Longs-Cous et le Cercle de lumi\u00e8re",
+                "video": false,
+                "vote_average": 6.3,
+                "vote_count": 239
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/t4V34FTYzZl0ZMdAXAK0T7DE3ie.jpg",
+                "genre_ids": [
+                    28,
+                    12,
+                    16,
+                    878,
+                    53
+                ],
+                "id": 12244,
+                "original_language": "en",
+                "original_title": "9",
+                "overview": "Dans un futur proche, la Terre a \u00e9t\u00e9 ravag\u00e9e par une grande guerre entre les hommes et les puissantes machines qu'ils avaient cr\u00e9\u00e9es. Sachant l'humanit\u00e9 condamn\u00e9e, un scientifique cr\u00e9e 9 petites cr\u00e9atures, fragiles et sans d\u00e9fense \u00e0 partir d'objets divers ramass\u00e9s dans les d\u00e9combres. Incapables de s'opposer aux machines, ils ont form\u00e9 une petite communaut\u00e9 survivant au jour le jour dans les d\u00e9combres. Mais le dernier n\u00e9 de cette famille, le Num\u00e9ro 9 a une mission. Il d\u00e9tient en lui la cl\u00e9 de leur survie et devra convaincre ses camarades de quitter leur refuge de fortune pour s'aventurer au coeur du royaume des machines. Ce qu'ils vont d\u00e9couvrir en chemin repr\u00e9sente peut-\u00eatre le dernier espoir de l'Humanit\u00e9.",
+                "popularity": 6.8344,
+                "poster_path": "\/h7uO28IWKtIIXhPWKvVdFOaPcSq.jpg",
+                "release_date": "2009-08-19",
+                "title": "Num\u00e9ro 9",
+                "video": false,
+                "vote_average": 6.928,
+                "vote_count": 3692
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/sDPk862OKB0Ckkvebo4M2k5AKly.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14
+                ],
+                "id": 81188,
+                "original_language": "en",
+                "original_title": "Rise of the Guardians",
+                "overview": "Il existe dans le monde, dissimul\u00e9s aux yeux des humains, quatre \u00eatres surnaturels dot\u00e9s de grands pouvoirs qui prot\u00e8gent l\u2019innocence et l\u2019imaginaire des enfants\u00a0: le P\u00e8re No\u00ebl, le Lapin de P\u00e2ques, la F\u00e9e des dents et le Marchand de sable. Lorsqu\u2019ils d\u00e9couvrent que Pitch, un esprit mal\u00e9fique, \u0153uvre pour r\u00e9pandre ruine et destruction sur le monde, ils r\u00e9alisent que m\u00eame en unissant leurs forces, ils ne seront pas de taille. Aussi tentent\u2010ils de rallier \u00e0 leur cause Jack Frost, un jeune gar\u00e7on insouciant et solitaire qui ma\u00eetrise le givre et le froid. Ce combat va permettre \u00e0 Jack de comprendre quelle est sa place dans l\u2019ordre de l\u2019univers\u2026",
+                "popularity": 6.7971,
+                "poster_path": "\/g4YdtN10YPhmrcetJOl7ZrxNSaP.jpg",
+                "release_date": "2012-11-21",
+                "title": "Les Cinq L\u00e9gendes",
+                "video": false,
+                "vote_average": 7.369,
+                "vote_count": 6909
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/yTgqGrzDtJPAYpWN2QrL5TTtWrr.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 11836,
+                "original_language": "en",
+                "original_title": "The SpongeBob SquarePants Movie",
+                "overview": "\u00c0 Bikini Bottom, quelqu'un a vol\u00e9 la couronne du roi Neptune, et le patron de Bob l'\u00e9ponge, M. Krabs, figure en t\u00eate des suspects. Convaincus de son innocence, Bob et Patrick partent pour Shell City avec l'intention de le disculper et de restituer sa couronne \u00e0 Neptune.",
+                "popularity": 6.7912,
+                "poster_path": "\/xNzhSaXoOpXIyYsid3L5FWsXkbb.jpg",
+                "release_date": "2004-11-19",
+                "title": "Bob l'\u00e9ponge, le film",
+                "video": false,
+                "vote_average": 7.046,
+                "vote_count": 3037
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/1YRtgjLb5xxUb2rsNRnr54Oc0B2.jpg",
+                "genre_ids": [
+                    16,
+                    53
+                ],
+                "id": 10494,
+                "original_language": "ja",
+                "original_title": "PERFECT BLUE",
+                "overview": "Chanteuse pop tr\u00e8s populaire, Mima d\u00e9cide d\u2019abandonner la sc\u00e8ne pour devenir actrice. Sans regrets, elle quitte son groupe et accepte un petit r\u00f4le dans une s\u00e9rie TV, d\u00e9clenchant ainsi la col\u00e8re de ses fans\u2026 et plus particuli\u00e8rement celle de l\u2019un deux. Le myst\u00e9rieux \u00ab\u00a0traqueur\u00a0\u00bb passe \u00e0 l\u2019acte en d\u00e9voilant en d\u00e9tail la vie de Mima sur Internet, puis en mena\u00e7ant ses proches. Des incidents violents se produisent et elle r\u00e9alise que son existence se confond dangereusement avec la s\u00e9rie dans laquelle elle joue. Mima sombre dans la schizophr\u00e9nie tandis que les cadavres s\u2019accumulent autour d\u2019elle\u2026",
+                "popularity": 6.7825,
+                "poster_path": "\/pTjuiITuZHIii9PSRZjWzTRNwoC.jpg",
+                "release_date": "1998-02-28",
+                "title": "Perfect Blue",
+                "video": false,
+                "vote_average": 8.304,
+                "vote_count": 2885
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/wsE1ScIiFdKl9RLuaI8pTn4rjxR.jpg",
+                "genre_ids": [
+                    10770,
+                    80,
+                    18,
+                    14,
+                    53,
+                    16
+                ],
+                "id": 51482,
+                "original_language": "ja",
+                "original_title": "DEATH NOTE \u30ea\u30e9\u30a4\u30c8 \uff5e\u5e7b\u8996\u3059\u308b\u795e\uff5e",
+                "overview": "Dans le monde bien ennuyeux des Shinigamis, une rumeur circule. L'un d'entre eux aurait vu des choses int\u00e9ressantes dans le monde des humains!  Plus curieux que la moyenne un des Dieux de la Mort part \u00e0 la recherche de celui que l'on nomme Ryuk. En \u00e9change d'une pomme bien s\u00e8che, ce dernier se met \u00e0 raconter son histoire: celle de Light Yagami, un homme qui voulait devenir Dieu\u2026",
+                "popularity": 6.7765,
+                "poster_path": "\/3i223ulKI2AjTqqyVxPmfZ32QHM.jpg",
+                "release_date": "2009-09-23",
+                "title": "Death Note Relight: La Vision d'un Dieu",
+                "video": false,
+                "vote_average": 7.9,
+                "vote_count": 363
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/2Cpg8hUn60PK9CW9d5SWf605Ah8.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    28,
+                    878
+                ],
+                "id": 614930,
+                "original_language": "en",
+                "original_title": "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+                "overview": "Apr\u00e8s des ann\u00e9es pass\u00e9es loin du monde des humains, les fr\u00e8res Tortues entreprennent de gagner le c\u0153ur des New-Yorkais et d'\u00eatre accept\u00e9s comme des adolescents normaux gr\u00e2ce \u00e0 des actes h\u00e9ro\u00efques. Leur nouvelle amie April O'Neil les aide \u00e0 s'attaquer \u00e0 un myst\u00e9rieux syndicat du crime mais ils se retrouvent d\u00e9pass\u00e9s par les \u00e9v\u00e9nements lorsqu'une arm\u00e9e de mutants se d\u00e9ploie contre eux.",
+                "popularity": 6.7686,
+                "poster_path": "\/eLNxn5R7xngthiRc6HoQC4dqzbF.jpg",
+                "release_date": "2023-07-31",
+                "title": "Ninja Turtles : Teenage Years",
+                "video": false,
+                "vote_average": 7.211,
+                "vote_count": 1461
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/sN1sIv6YZTpdBr7D9mQBxGzRnLL.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 137116,
+                "original_language": "en",
+                "original_title": "Smurfs: The Lost Village",
+                "overview": "La Schtroumpfette, le Schtroumpf costaud, le Schtroumpf \u00e0 lunettes et le Schtroumpf maladroit ont fil\u00e9 en douce pour suivre une carte vers un myst\u00e9rieux village. Mais le chemin qui y m\u00e8ne regorge d'embuches, de cr\u00e9atures magiques et de souterrains labyrinthiques. Il leur faudra par ailleurs redoubler de prudence puisque Gargamel n'est pas loin et compte bien les arr\u00eater.",
+                "popularity": 6.7559,
+                "poster_path": "\/62NwjQjLpiOcm9PXcaGdW1lICDO.jpg",
+                "release_date": "2017-03-23",
+                "title": "Les Schtroumpfs et le village perdu",
+                "video": false,
+                "vote_average": 6.342,
+                "vote_count": 1495
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/pR51tWHlUWUEnPUc5my9anqcDto.jpg",
+                "genre_ids": [
+                    10751,
+                    16,
+                    14
+                ],
+                "id": 73456,
+                "original_language": "en",
+                "original_title": "Barbie: Princess Charm School",
+                "overview": "Blair Willows (Barbie), jeune fille au grand coeur, est choisie pour int\u00e9grer l'\u00e9cole des apprenties princesses. C'est un endroit incroyable dans lequel les futures princesses apprennent la danse et les bonnes mani\u00e8res. Tr\u00e8s vite, Blair se passionne pour ses cours et se fait de nouvelles amies : Princesse Hadley et Princesse Delancy. Mais c'est sans compter sur l'effroyable enseignante Dame Devin. Cette derni\u00e8re est persuad\u00e9e que Blair est la princesse disparue du Royaume. Elle d\u00e9cide de faire tout ce qui est en son pouvoir pour que Blair ne revendique pas la couronne. C'est alors que Blair, Hadley et Delancy unissent leurs forces afin de prouver la v\u00e9ritable identit\u00e9 de Blair...",
+                "popularity": 6.7535,
+                "poster_path": "\/blM1jHTJKbQ7kmQguNXhHcds1yS.jpg",
+                "release_date": "2011-08-11",
+                "title": "Barbie apprentie Princesse",
+                "video": false,
+                "vote_average": 7.523,
+                "vote_count": 838
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/maeox8nZYIxAAE4SdyLA0VOXe1x.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    12,
+                    14
+                ],
+                "id": 13179,
+                "original_language": "en",
+                "original_title": "Tinker Bell",
+                "overview": "Voyagez dans le monde secret de la Vall\u00e9e des f\u00e9es alors que l'histoire de la plus \u00e9tonnante des f\u00e9es de Disney est enfin r\u00e9v\u00e9l\u00e9e. Vous-\u00eates vous d\u00e9j\u00e0 demand\u00e9 ce qui donne de la lumi\u00e8re et de la couleur aux saisons ? Entrez dans un monde d'aventure tandis que la F\u00e9e Clochette et ses meilleures amies changent l'hiver en printemps gr\u00e2ce \u00e0 un peu de foi, de confiance et de poussi\u00e8re de f\u00e9e.",
+                "popularity": 6.7249,
+                "poster_path": "\/pipDbSUyH0xABjlKJyPaPSJ1N1I.jpg",
+                "release_date": "2008-09-11",
+                "title": "La F\u00e9e Clochette",
+                "video": false,
+                "vote_average": 6.905,
+                "vote_count": 1498
+            }
+        ],
+        "total_pages": 133,
+        "total_results": 2645
+    },
+    "expiry": 1756061415,
+    "created_at": 1756054215
+}

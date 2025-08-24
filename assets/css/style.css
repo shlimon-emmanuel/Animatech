@@ -1645,6 +1645,30 @@ body {
     
     .nav-menu {
         padding: var(--spacing-sm) 3%;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .site-title {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-text {
+        order: -1;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+    
+    /* Header dans les pages de détail */
+    .movie-detail {
+        padding-top: 80px; /* Plus d'espace pour header mobile */
     }
 }
 

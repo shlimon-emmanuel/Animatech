@@ -1,0 +1,423 @@
+{
+    "key": "filtered_movies:11:64dae464ddc95b30819a2b95ae1df6c4",
+    "data": {
+        "page": 11,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "\/o11rDwFa7nZMVI57Mm3C44YwmmF.jpg",
+                "genre_ids": [
+                    12,
+                    16,
+                    35,
+                    10751
+                ],
+                "id": 127380,
+                "original_language": "en",
+                "original_title": "Finding Dory",
+                "overview": "Dory, le poisson bleu amn\u00e9sique, d\u00e9cide de partir \u00e0 la recherche de sa famille dont elle a \u00e9t\u00e9 s\u00e9par\u00e9e enfant, accompagn\u00e9e de ses amis Nemo et Marin. Se joignent \u00e0 eux Hank, un poulpe grincheux, Bailey, un b\u00e9luga complex\u00e9 par rapport \u00e0 son sonar biologique et Destiny, un requin-baleine myope. Elle se lance dans une aventure \u00e9pique pour enqu\u00eater sur son pass\u00e9 et retrouver ses parents. Leur voyage va les emmener au Marine Life Institute, un conservatoire qui abrite diverses esp\u00e8ces oc\u00e9aniques.",
+                "popularity": 6.7089,
+                "poster_path": "\/t2YKLraPb8cqPHXVp5BN0ZGJypI.jpg",
+                "release_date": "2016-06-16",
+                "title": "Le Monde de Dory",
+                "video": false,
+                "vote_average": 7.04,
+                "vote_count": 12330
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/pxsR974ez8bQx0GDixxiKr7pk1o.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751
+                ],
+                "id": 9836,
+                "original_language": "en",
+                "original_title": "Happy Feet",
+                "overview": "Un manchot de l\u2019Antarctique n\u2019arrivera jamais \u00e0 rien s\u2019il ne sait pas chanter, et le pauvre Mumble est sans conteste le pire chanteur du monde. Son talent \u00e0 lui, c\u2019est\u2026 les claquettes, qu\u2019il pratique en virtuose, avec une ardeur confondante. Bien que sa maman, Norma Jean, trouve ce don \u00ab\u00a0tout \u00e0 fait charmant\u00a0\u00bb, son p\u00e8re, Memphis, juge que \u00ab\u00a0\u00e7a ne fait vraiment pas pingouin\u00a0\u00bb. Tous deux savent aussi que leur rejeton ne trouvera l\u2019\u00e2me s\u0153ur que le jour o\u00f9 il saura pousser son \u00ab\u00a0chant d\u2019amour\u00a0\u00bb. Le hasard fait bien les choses\u00a0: Gloria, la seule et unique amie de notre h\u00e9ros, est la meilleure chanteuse de la r\u00e9gion. Mumble et elle sont copains depuis toujours, bien que cette gracieuse cr\u00e9ature ait encore du mal \u00e0 accepter son \u00e9trange \u00ab\u00a0anomalie\u00a0\u00bb. Banni de la tribu, Mumble se lie avec les Amigos de Terre Ad\u00e9lie, un groupe latino exub\u00e9rant, men\u00e9 par Ramon\u2026",
+                "popularity": 6.6997,
+                "poster_path": "\/xMqjB0ZPweftGytxfYFUWCMXNkW.jpg",
+                "release_date": "2006-11-16",
+                "title": "Happy Feet",
+                "video": false,
+                "vote_average": 6.21,
+                "vote_count": 5255
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/pJ39ZYZQetpNXn4lSmjBoib4NZL.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751,
+                    28
+                ],
+                "id": 1046032,
+                "original_language": "en",
+                "original_title": "The Bad Guys: A Very Bad Holiday",
+                "overview": "Pour honorer leur traditionnel casse-taculaire de No\u00ebl, M. Loup et sa bande d'animaux hors-la-loi doivent restaurer l'esprit des f\u00eates de la ville... et en vitesse !",
+                "popularity": 6.6876,
+                "poster_path": "\/tQKpSpAFH4a0eytEfLo0jQTxfNH.jpg",
+                "release_date": "2023-11-29",
+                "title": "Un No\u00ebl fa\u00e7on Bad Guys",
+                "video": false,
+                "vote_average": 6.532,
+                "vote_count": 141
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/g01B5oD3j2sIupAQY2Ykm4TIRks.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    35,
+                    10751
+                ],
+                "id": 324849,
+                "original_language": "en",
+                "original_title": "The Lego Batman Movie",
+                "overview": "Il en r\u00eavait depuis La Grande Aventure LEGO : Batman est enfin le h\u00e9ros de son propre film ! Mais la situation a bien chang\u00e9 \u00e0 Gotham \u2013 et s'il veut sauver la ville des griffes du Joker, il lui faudra arr\u00eater de jouer au justicier masqu\u00e9 et d\u00e9couvrir le travail d'\u00e9quipe ! Peut-\u00eatre pourra-t-il alors se d\u00e9coincer un peu\u2026",
+                "popularity": 6.6688,
+                "poster_path": "\/iGbEqeFC9tffYb4MkiaEP7uheU5.jpg",
+                "release_date": "2017-02-08",
+                "title": "Lego Batman, le film",
+                "video": false,
+                "vote_average": 7.228,
+                "vote_count": 5182
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/drSJ0HVuSNFMPq5VzAEHk37BiEC.jpg",
+                "genre_ids": [
+                    16,
+                    10749,
+                    878
+                ],
+                "id": 1165642,
+                "original_language": "ko",
+                "original_title": "\uc774 \ubcc4\uc5d0 \ud544\uc694\ud55c",
+                "overview": "S\u00e9oul, 2050. Nan-young, astronaute, a pour but ultime de se rendre sur Mars. Mais elle \u00e9choue au test final pour participer \u00e0 la quatri\u00e8me exp\u00e9dition martienne. Jay, musicien, a enterr\u00e9 ses r\u00eaves dans une boutique d'\u00e9quipement audio vintage. Quand ils se rencontrent par hasard, c'est le d\u00e9but d'une histoire d'amour. Alors qu'ils se soutiennent et aspirent \u00e0 un avenir meilleur, Nan-young a une nouvelle chance de r\u00e9aliser son souhait le plus cher : aller sur Mars\u2026",
+                "popularity": 6.6564,
+                "poster_path": "\/eEDTw32AcwQJ1h6nnP35rQ4hLrb.jpg",
+                "release_date": "2025-05-30",
+                "title": "Juste l'espace entre nous",
+                "video": false,
+                "vote_average": 7.179,
+                "vote_count": 95
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/ymHTXJabZagpXvXIR0litdXC8BT.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751,
+                    14
+                ],
+                "id": 159824,
+                "original_language": "en",
+                "original_title": "Hotel Transylvania 2",
+                "overview": "Dracula est dor\u00e9navant grand\u2010p\u00e8re et est bien d\u00e9cid\u00e9 \u00e0 initier son petit gar\u00e7on \u00e0 la crini\u00e8re rousse aux rudiments du monde de l\u2019\u00e9pouvante. Bien s\u00fbr, rien ne va se passer comme pr\u00e9vu pour notre dr\u00f4lissime vampire et sa bande de monstres\u00a0: Frankenstein, la Momie, l\u2019Homme invisible, le Loup\u2010garou et le Blob\u2026",
+                "popularity": 6.638,
+                "poster_path": "\/8VUK4vsvVqJFD4oPzwU9UMRQbnq.jpg",
+                "release_date": "2015-09-21",
+                "title": "H\u00f4tel Transylvanie 2",
+                "video": false,
+                "vote_average": 6.766,
+                "vote_count": 5918
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/wfClZdRb1x4LZ8B73Y9RSn8XAPa.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    878,
+                    12
+                ],
+                "id": 10386,
+                "original_language": "en",
+                "original_title": "The Iron Giant",
+                "overview": "Quelque chose de gigantesque se profile \u00e0 l\u2019horizon. Hogarth Hugues vient tout juste de sauver un \u00e9norme robot tomb\u00e9 du ciel. Le jeune Hogarth a d\u00e9sormais un tr\u00e8s grand ami et un probl\u00e8me encore plus grand : Comment garder secr\u00e8te l\u2019existence d\u2019un g\u00e9ant de 15 m\u00e8tres ? Cette mission se complique encore plus lorsqu\u2019un agent du gouvernement un peu trop curieux arrive en ville pour chasser \u00ab l\u2019envahisseur alien \u00bb et que les forces terrestres, maritimes et a\u00e9riennes des militaires am\u00e9ricains sont envoy\u00e9es pour d\u00e9molir le g\u00e9ant.",
+                "popularity": 6.6331,
+                "poster_path": "\/1Z1Gn2bbyOygv8R2qE2uLjwualf.jpg",
+                "release_date": "1999-08-06",
+                "title": "Le G\u00e9ant de fer",
+                "video": false,
+                "vote_average": 7.951,
+                "vote_count": 5853
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/3r9aPVVNuCXNOFFXsL03abZs9xF.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    10751
+                ],
+                "id": 739547,
+                "original_language": "en",
+                "original_title": "Thelma the Unicorn",
+                "overview": "Thelma est un poney qui r\u00eave de devenir une chanteuse glamour, et m\u00eame une superstar. Un jour, les plan\u00e8tes s'alignent, et Thelma se transforme en licorne ! Flottant sur un petit nuage rose \u00e0 paillettes, elle devient une star \u00e0 la popularit\u00e9 internationale, mais ce succ\u00e8s plan\u00e9taire a un prix.",
+                "popularity": 6.5084,
+                "poster_path": "\/eAZRQR4UM0Y80FxkoVoJb09FEoc.jpg",
+                "release_date": "2024-05-17",
+                "title": "Thelma la licorne",
+                "video": false,
+                "vote_average": 7.006,
+                "vote_count": 179
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/cslS1Er64IP0t5VKCqQh435NeFd.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751
+                ],
+                "id": 22794,
+                "original_language": "en",
+                "original_title": "Cloudy with a Chance of Meatballs",
+                "overview": "Flint Lockwood est inventeur. Jusqu\u2019ici, toutes ses inventions bizarres, depuis les chaussures que l\u2019on se pulv\u00e9rise sur les pieds jusqu\u2019au traducteur de pens\u00e9es pour singe, ont \u00e9t\u00e9 des \u00e9checs spectaculaires qui ont caus\u00e9 d\u2019innombrables probl\u00e8mes \u00e0 sa petite ville, Swallow en Ch\u00e2teau. Cette fois, Flint est bien d\u00e9cid\u00e9 \u00e0 inventer quelque chose qui rendra les gens heureux. Pourtant, lorsque sa nouvelle cr\u00e9ation, la machine \u00e0 transformer l\u2019eau en nourriture, d\u00e9truit la grand\u2010place avant de dispara\u00eetre dans les nuages, il pense que sa carri\u00e8re d\u2019inventeur est d\u00e9finitivement fichue. Jusqu\u2019\u00e0 ce que l\u2019incroyable se produise\u00a0: il se met \u00e0 pleuvoir des cheeseburgers\u202f! Sa machine marche\u202f! Les averses de nourriture connaissent un succ\u00e8s instantan\u00e9, et Flint se fait vite une nouvelle amie\u00a0: Sam Sparks, la pr\u00e9sentatrice m\u00e9t\u00e9o qui arrive \u00e0 Swallow en Ch\u00e2teau pour couvrir ce qu\u2019elle appelle \u00ab\u00a0le plus formidable ph\u00e9nom\u00e8ne m\u00e9t\u00e9o de l\u2019histoire\u00a0\u00bb\u2026",
+                "popularity": 6.4875,
+                "poster_path": "\/ttah02gPctSZKTKD2u6Buvb4FEF.jpg",
+                "release_date": "2009-09-17",
+                "title": "Temp\u00eate de boulettes g\u00e9antes",
+                "video": false,
+                "vote_average": 6.642,
+                "vote_count": 6178
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/2AeE4Op9qjDSXe8GbfCtlbHFxhL.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14,
+                    12
+                ],
+                "id": 75258,
+                "original_language": "en",
+                "original_title": "Secret of the Wings",
+                "overview": "Il est interdit aux f\u00e9es de la Vall\u00e9e des f\u00e9es de se rendre dans la For\u00eat blanche. Mais quand une force myst\u00e9rieuse force Clochette \u00e0 p\u00e9n\u00e9trer dans ce monde inconnu, elle d\u00e9couvre un secret qui changera sa vie pour toujours. Elle rencontre une f\u00e9e nomm\u00e9e Cristalline qui est la seule \u00e0 pouvoir l'aider et s'av\u00e8re \u00eatre sa s\u0153ur.",
+                "popularity": 6.4785,
+                "poster_path": "\/rW34RvBIREDYgY5k6tOJXDQcTI.jpg",
+                "release_date": "2012-08-17",
+                "title": "Clochette et le secret des f\u00e9es",
+                "video": false,
+                "vote_average": 7.221,
+                "vote_count": 1314
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/hkJhGayONXn96CqIRM9GhWKnlCf.jpg",
+                "genre_ids": [
+                    28,
+                    12,
+                    16,
+                    14
+                ],
+                "id": 1014505,
+                "original_language": "ja",
+                "original_title": "\u5287\u5834\u7248\u300c\u30aa\u30fc\u30d0\u30fc\u30ed\u30fc\u30c9\u300d\u8056\u738b\u56fd\u7de8",
+                "overview": "Jaldabaoth d\u00e9cide d'envahir le Saint Royaume de Roble avec les demi-humains. Conscient de la menace, le Saint Royaume pr\u00e9voit de faire appel \u00e0 Momon pour l'aider dans cette guerre.  (Pour rappel, ce film fera suite \u00e0 la quatri\u00e8me saison)",
+                "popularity": 6.3996,
+                "poster_path": "\/6dD9i3dOUVMry9vZ3YajWvpNYfB.jpg",
+                "release_date": "2024-09-20",
+                "title": "Overlord : The Sacred Kingdom",
+                "video": false,
+                "vote_average": 7.816,
+                "vote_count": 128
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/aDnCTWpWMHcQxOeGWsITmoLuEGy.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751,
+                    14
+                ],
+                "id": 9297,
+                "original_language": "en",
+                "original_title": "Monster House",
+                "overview": "D.J. Walters, un petit gar\u00e7on de 12 ans est dot\u00e9 d'une imagination d\u00e9bordante. C'est pourquoi personne ne le prend au s\u00e9rieux lorsqu'il fait part de ses craintes au sujet de son horrible voisin qui terrorise tous les enfants du quartier. Il est en effet persuad\u00e9 que celui-ci est responsable de la disparition myst\u00e9rieuse de sa femme. Il a \u00e9galement remarqu\u00e9 d'autres ph\u00e9nom\u00e8nes inqui\u00e9tants se d\u00e9roulant dans la maison de ce dernier. Ce que personne ne sait, c'est que D.J. n'invente rien et que cela va empirer.",
+                "popularity": 6.3968,
+                "poster_path": "\/7tWlgI7v55pUkh7iTWSvIunQpeB.jpg",
+                "release_date": "2006-06-30",
+                "title": "Monster House",
+                "video": false,
+                "vote_average": 6.69,
+                "vote_count": 4118
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/nJkPu09Jac5N8CIwKLNf2A4qAuy.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    16
+                ],
+                "id": 7518,
+                "original_language": "en",
+                "original_title": "Over the Hedge",
+                "overview": "Le printemps est de retour\u202f; la tortue Verne et ses amis sortent d\u2019un long sommeil hivernal. Mais, entre\u2010temps, \u00f4 surprise, une grande \u00ab\u00a0chose\u00a0\u00bb verte a pouss\u00e9 \u00e0 l\u2019or\u00e9e du bois et envahi leur domaine. Surgit alors le raton laveur RJ, jamais \u00e0 court de combines et d\u2019explications. Il s\u2019agit, leur dit\u2010il, d\u2019une HAIE, destin\u00e9e \u00e0 prot\u00e9ger le domaine enchant\u00e9 du \u00ab\u00a0Bien\u2010\u00eatre\u00a0\u00bb, habit\u00e9 par les Humains, ces cr\u00e9atures d\u2019un genre particulier qui vivent pour manger, au lieu de manger pour vivre. Le pusillanime Verne, qui se m\u00e9fie de RJ (et le jalouse un peu), se convainc que lui et sa famille doivent rester de ce c\u00f4t\u00e9\u2010ci de la haie \u2013 on n\u2019est jamais mieux que sous sa carapace. Mais l\u2019habile RJ persuade les h\u00f4tes du bois qu\u2019\u00ab\u00a0ailleurs l\u2019herbe est plus verte\u00a0\u00bb, et qu\u2019ils n\u2019ont rien \u00e0 craindre de leurs nouveaux voisins. Commence alors une grande aventure dans cet \u00e9trange univers qu\u2019on appelle \u00ab\u00a0Banlieue\u00a0\u00bb.",
+                "popularity": 6.3909,
+                "poster_path": "\/nP32NaPYeVP8dieTqujgGXvj6fq.jpg",
+                "release_date": "2006-05-17",
+                "title": "Nos voisins, les hommes",
+                "video": false,
+                "vote_average": 6.577,
+                "vote_count": 4614
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/wWWXd27yF8sK9bLgAD4zxiGcYJW.jpg",
+                "genre_ids": [
+                    10751,
+                    16
+                ],
+                "id": 44874,
+                "original_language": "en",
+                "original_title": "Barbie: A Fashion Fairytale",
+                "overview": "Barbie et son chien Sequin partent visiter Paris afin d'y d\u00e9couvrir la fabuleuse maison de couture de tante Millie. H\u00e9las, son s\u00e9jour ne sera pas de tout repos car elle s'aper\u00e7oit vite que celle-ci risque la fermeture ! Mais heureusement, apr\u00e8s avoir d\u00e9couvert les trois f\u00e9es de la mode, dot\u00e9es d'incroyables pouvoirs magiques, Barbie d\u00e9cide de porter secours \u00e0 l'atelier. Pour y parvenir, elle entreprend, avec l'aide d'Alice une timide mais talentueuse cr\u00e9atrice de mode, l'organisation d'un \u00e9blouissant et fantastique d\u00e9fil\u00e9...",
+                "popularity": 6.3893,
+                "poster_path": "\/zRnsscfeGeJhGtLgLzZv7Xm4v9Q.jpg",
+                "release_date": "2010-09-14",
+                "title": "Barbie : La Magie de la mode",
+                "video": false,
+                "vote_average": 7.25,
+                "vote_count": 771
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/w7H4II0nbwMLAWJjtC6fQ3EwHEm.jpg",
+                "genre_ids": [
+                    10751,
+                    16,
+                    10749,
+                    14
+                ],
+                "id": 14128,
+                "original_language": "en",
+                "original_title": "Cinderella II: Dreams Come True",
+                "overview": "Cendrillon apprend que la vie au palais royal, charg\u00e9e de responsabilit\u00e9s, est plus difficile qu'elle ne l\u2019avait imagin\u00e9. Dans trois contes r\u00e9confortants, Cendrillon demande de l'aide \u00e0 sa f\u00e9e marraine et \u00e0 ses amis souris pour l\u2019aider dans ses fonctions royales, qu\u2019elle remplit d\u00e9j\u00e0 avec charme et gr\u00e2ce. Elle d\u00e9couvre qu\u2019\u00eatre fid\u00e8le \u00e0 soi-m\u00eame est la meilleure fa\u00e7on de concr\u00e9tiser ses r\u00eaves.",
+                "popularity": 6.3764,
+                "poster_path": "\/tNQQiBMimmt5yYtKYRXAEQG3hIQ.jpg",
+                "release_date": "2002-02-23",
+                "title": "Cendrillon 2 : Une vie de princesse",
+                "video": false,
+                "vote_average": 6.103,
+                "vote_count": 1493
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/h5pAEVma835u8xoE60kmLVopLct.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14
+                ],
+                "id": 16859,
+                "original_language": "ja",
+                "original_title": "\u9b54\u5973\u306e\u5b85\u6025\u4fbf",
+                "overview": "\u00c0 l'\u00e2ge de 13 ans, une future sorci\u00e8re doit partir faire son apprentissage dans une ville inconnue durant un an. Une exp\u00e9rience que va vivre la jeune et espi\u00e8gle Kiki aux c\u00f4t\u00e9s de Osono, une gentille boulang\u00e8re qui lui propose un emploi de livreuse.",
+                "popularity": 6.3664,
+                "poster_path": "\/tdOJxx6PCzjPYViSnk0OPQ80X2d.jpg",
+                "release_date": "1989-07-29",
+                "title": "Kiki la petite sorci\u00e8re",
+                "video": false,
+                "vote_average": 7.8,
+                "vote_count": 4296
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/jXk3ZMq7n4ugOqKYq0CtMn3gia8.jpg",
+                "genre_ids": [
+                    10751,
+                    16,
+                    12,
+                    35
+                ],
+                "id": 431580,
+                "original_language": "en",
+                "original_title": "Abominable",
+                "overview": "Tout commence sur le toit d\u2019un immeuble \u00e0 Shanghai, avec l\u2019improbable rencontre d\u2019une jeune adolescente, l\u2019intr\u00e9pide Yi avec un jeune Yeti. La jeune fille et ses amis Jin et Peng vont tenter de ramener chez lui celui qu\u2019ils appellent d\u00e9sormais Everest, leur nouvel et \u00e9trange ami, afin qu\u2019il puisse retrouver sa famille sur le toit du monde\u2026",
+                "popularity": 6.3262,
+                "poster_path": "\/fU54mG8yvk7VBA6BI6TDeyrzt5d.jpg",
+                "release_date": "2019-09-19",
+                "title": "Abominable",
+                "video": false,
+                "vote_average": 7.457,
+                "vote_count": 2104
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/geU7XW9G2n7EqhXsF1v8CvzAbGa.jpg",
+                "genre_ids": [
+                    18,
+                    16,
+                    10751
+                ],
+                "id": 10545,
+                "original_language": "en",
+                "original_title": "The Hunchback of Notre Dame",
+                "overview": "D\u00e9couvrez les aventures de Quasimodo, inspir\u00e9es du roman de Victor Hugo. Le gentil bossu solitaire, carillonneur de Notre-Dame, pouss\u00e9 par ses amies gargouilles, quitte sa tour pour rencontrer la belle boh\u00e9mienne, Esmeralda. Lorsqu'elle est arr\u00eat\u00e9e, Quasimodo l'aide \u00e0 s'enfuir. Il devra alors se battre pour les habitants et la ville qu'il aime.",
+                "popularity": 6.3184,
+                "poster_path": "\/qHmMaxjn2GrGOsP3VatoachK9mM.jpg",
+                "release_date": "1996-06-21",
+                "title": "Le Bossu de Notre-Dame",
+                "video": false,
+                "vote_average": 7.117,
+                "vote_count": 5162
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/wawIfsBlzgZYtHrBn8RUtGIZTgF.jpg",
+                "genre_ids": [
+                    10751,
+                    35,
+                    12,
+                    16
+                ],
+                "id": 675445,
+                "original_language": "en",
+                "original_title": "PAW Patrol: The Movie",
+                "overview": "La Pat\u2019 Patrouille part en mission pour sa premi\u00e8re grande aventure au cin\u00e9ma ! Pr\u00e8s de chez eux, leur plus grand rival, Monsieur Hellinger, devient le maire d' Aventureville et commence \u00e0 semer le trouble. C'est \u00e0 Ryder et les chiens intr\u00e9pides de la Pat\u2019 Patrouille de plonger dans l'action pour l'arr\u00eater. Tandis que l'un de nos h\u00e9ros se voit confront\u00e9 \u00e0 son pass\u00e9 dans cette nouvelle ville, l\u2019\u00e9quipe va trouver une nouvelle alli\u00e9e : Liberty, une teckel fut\u00e9e et pleine d'\u00e9nergie. \u00c9quip\u00e9e de gadgets in\u00e9dits et de nouveaux \u00e9quipements, la Pat\u2019 Patrouille va voler au secours des citoyens d\u2019Aventureville. Aucune mission n'est trop dure car la Pat' Patrouille assure !",
+                "popularity": 6.3036,
+                "poster_path": "\/kESkVKLffIHnzVLojI8rzcv9rfZ.jpg",
+                "release_date": "2021-08-09",
+                "title": "La Pat' Patrouille : Le Film",
+                "video": false,
+                "vote_average": 7.4,
+                "vote_count": 1240
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/oM5mMTGBqsmMJO3l5tkQdQ0Xujm.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    10751,
+                    12
+                ],
+                "id": 10112,
+                "original_language": "en",
+                "original_title": "The Aristocats",
+                "overview": "Au c\u0153ur de Paris, une millionnaire excentrique l\u00e8gue toute sa fortune \u00e0 sa chatte de haute soci\u00e9t\u00e9 et ses trois chatons. L\u2019aventure commence alors que son cupide majordome administre une drogue aux chats en esp\u00e9rant toucher leur h\u00e9ritage. C\u2019est \u00e0 Thomas O\u2019Malley, le chat de goutti\u00e8re, et sa bande de chats chanteurs de jazz de sauver la mise.",
+                "popularity": 6.3006,
+                "poster_path": "\/u2zNj2EVWgaFXmWJM0HG5PWbgTM.jpg",
+                "release_date": "1970-12-24",
+                "title": "Les Aristochats",
+                "video": false,
+                "vote_average": 7.292,
+                "vote_count": 5202
+            }
+        ],
+        "total_pages": 133,
+        "total_results": 2645
+    },
+    "expiry": 1756061417,
+    "created_at": 1756054217
+}

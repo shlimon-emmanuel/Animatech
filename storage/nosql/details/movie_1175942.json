@@ -2,15 +2,19 @@
     "key": "movie:1175942",
     "data": {
         "adult": false,
-        "backdrop_path": "\/vHP2az8Ly2ZAJWGHFlux7QpAN2Q.jpg",
+        "backdrop_path": "\/jvpkBenB6hv19WWYVlaiow8zklq.jpg",
         "belongs_to_collection": {
             "id": 1231053,
             "name": "Les Bad Guys - Saga",
-            "poster_path": "\/oVgEMlI8kPVt6vF5HLEqSf9nbmG.jpg",
-            "backdrop_path": "\/A0VR7xcg6MZSXd8kCzQE3VoB86D.jpg"
+            "poster_path": "\/MvnERW28KnZ5fmxS73a27m3qhN.jpg",
+            "backdrop_path": "\/i3CknOVjxNEbTJnaX3ryyTeCYxn.jpg"
         },
-        "budget": 0,
+        "budget": 80000000,
         "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
             {
                 "id": 10751,
                 "name": "Familial"
@@ -26,10 +30,6 @@
             {
                 "id": 12,
                 "name": "Aventure"
-            },
-            {
-                "id": 16,
-                "name": "Animation"
             }
         ],
         "homepage": "",
@@ -40,62 +40,45 @@
         ],
         "original_language": "en",
         "original_title": "The Bad Guys 2",
-        "overview": "Les criminels animaliers s'efforcent de se faire \u00e0 leur nouvelle vie de gentils. Bient\u00f4t, ils sont tir\u00e9s de leur retraite et forc\u00e9s de faire \"un dernier travail\" par une \u00e9quipe enti\u00e8rement f\u00e9minine.",
-        "popularity": 5.2322,
-        "poster_path": "\/opKf1uITVUkm8nteNM54uIgJZKQ.jpg",
+        "overview": "Un loup, un serpent, une tarentule, un requin et un piranha sont une ancienne bande de criminels repentis tentant une r\u00e9insertion dans la soci\u00e9t\u00e9. Cependant, leur mauvaise r\u00e9putation les pr\u00e9c\u00e8de et ils peinent \u00e0 trouver du travail. Lorsqu'une s\u00e9rie de cambriolages sont perp\u00e9tr\u00e9s dans la ville, ils en deviennent les principaux suspects. Pour prouver leurs bonnes intentions, ils offrent \u00e0 la commissaire de police d'utiliser leurs habilet\u00e9s uniques pour identifier le v\u00e9ritable coupable.",
+        "popularity": 309.0878,
+        "poster_path": "\/1heUoLYAHVAKn0ehIF9ASOg2jUv.jpg",
         "production_companies": [
             {
                 "id": 521,
                 "logo_path": "\/3BPX5VGBov8SDqTV7wC1L1xShAS.png",
                 "name": "DreamWorks Animation",
                 "origin_country": "US"
-            },
-            {
-                "id": 30246,
-                "logo_path": "\/zYY3tNfZuDVfmwv8hvm4ZdLMdIM.png",
-                "name": "Scholastic Entertainment",
-                "origin_country": "US"
-            },
-            {
-                "id": 1778,
-                "logo_path": "\/b5rT6VbYza3LyfltCmz1OcqzWJM.png",
-                "name": "dentsu",
-                "origin_country": "JP"
-            },
-            {
-                "id": 33,
-                "logo_path": "\/3wwjVpkZtnog6lSKzWDjvw2Yi00.png",
-                "name": "Universal Pictures",
-                "origin_country": "US"
             }
         ],
         "production_countries": [
-            {
-                "iso_3166_1": "JP",
-                "name": "Japan"
-            },
             {
                 "iso_3166_1": "US",
                 "name": "United States of America"
             }
         ],
-        "release_date": "2025-07-30",
-        "revenue": 0,
-        "runtime": 102,
+        "release_date": "2025-07-24",
+        "revenue": 126741295,
+        "runtime": 104,
         "spoken_languages": [
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Espa\u00f1ol"
+            },
             {
                 "english_name": "English",
                 "iso_639_1": "en",
                 "name": "English"
             }
         ],
-        "status": "Post Production",
+        "status": "Released",
         "tagline": "",
         "title": "Les Bad Guys 2",
         "video": false,
-        "vote_average": 0,
-        "vote_count": 0
+        "vote_average": 7.785,
+        "vote_count": 198
     },
-    "expiry": 1747218230,
-    "created_at": 1747131830
+    "expiry": 1756139513,
+    "created_at": 1756053113
 }

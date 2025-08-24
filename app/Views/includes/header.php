@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($pageTitle) ? $pageTitle : 'ANIMATECH' ?></title>
+    <title><?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Films d\'Animation en Streaming | Catalogue Complet' ?></title>
+    <meta name="description" content="<?= isset($pageDescription) ? $pageDescription : 'Découvrez ANIMATECH, votre plateforme dédiée aux films d\'animation. Explorez notre catalogue complet de films d\'animation, ajoutez vos favoris, notez et commentez vos œuvres préférées. Streaming gratuit et légal.' ?>">
+    <meta name="keywords" content="films animation, streaming animation, catalogue films, anime, dessins animés, animation japonaise, Pixar, Disney, Studio Ghibli">
+    <meta name="author" content="ANIMATECH">
+    <meta property="og:title" content="<?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Films d\'Animation en Streaming' ?>">
+    <meta property="og:description" content="<?= isset($pageDescription) ? $pageDescription : 'Plateforme dédiée aux films d\'animation avec catalogue complet, favoris et commentaires.' ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?= BASE_URL . ($_SERVER['REQUEST_URI'] ?? '') ?>">
+    <meta property="og:image" content="<?= BASE_URL ?>/assets/img/logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Films d\'Animation' ?>">
+    <meta name="twitter:description" content="<?= isset($pageDescription) ? $pageDescription : 'Votre plateforme de films d\'animation préférée' ?>">
     <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
     <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">

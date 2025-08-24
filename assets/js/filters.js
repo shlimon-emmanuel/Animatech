@@ -103,10 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 hasMorePages = false;
             } else if (page > 1) {
                 console.log('Fin des résultats');
-                const endMessage = document.createElement('div');
-                endMessage.className = 'end-message';
-                endMessage.innerHTML = '<p>Vous avez atteint la fin des résultats.</p>';
-                movieGrid.appendChild(endMessage);
+                // Vérifier s'il n'y a pas déjà de message de fin
+                if (!document.querySelector('.end-message')) {
+                    const endMessage = document.createElement('div');
+                    endMessage.className = 'end-message';
+                    endMessage.innerHTML = '<p>Vous avez atteint la fin des résultats.</p>';
+                    movieGrid.appendChild(endMessage);
+                }
                 hasMorePages = false;
             }
         } catch (error) {

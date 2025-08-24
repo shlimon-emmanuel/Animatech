@@ -1,0 +1,71 @@
+{
+    "key": "movie:1184918",
+    "data": {
+        "adult": false,
+        "backdrop_path": "\/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+        "belongs_to_collection": {
+            "id": 1370345,
+            "name": "Le Robot Sauvage - Saga",
+            "poster_path": "\/k6TlfBb4V1TSesM8rNANtxDpFq6.jpg",
+            "backdrop_path": "\/f6G8QPeod5ngQMs5Fe1O4LdphB7.jpg"
+        },
+        "budget": 78000000,
+        "genres": [
+            {
+                "id": 16,
+                "name": "Animation"
+            },
+            {
+                "id": 878,
+                "name": "Science-Fiction"
+            },
+            {
+                "id": 10751,
+                "name": "Familial"
+            }
+        ],
+        "homepage": "",
+        "id": 1184918,
+        "imdb_id": "tt29623480",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_title": "The Wild Robot",
+        "overview": "L\u2019incroyable \u00e9pop\u00e9e d'un robot -- l'unit\u00e9 ROZZUM 7134 alias \"Roz\" -- qui apr\u00e8s avoir fait naufrage sur une \u00eele d\u00e9serte doit apprendre \u00e0 s'adapter \u00e0 un environnement hostile en nouant petit \u00e0 petit des relations avec les animaux de l'\u00eele. Il finit par adopter le petit d\u2019une oie, un oison, qui s'est retrouv\u00e9 orphelin.",
+        "popularity": 26.6737,
+        "poster_path": "\/2IUCa73cvvIgZSiJcNtPBf4L5iF.jpg",
+        "production_companies": [
+            {
+                "id": 521,
+                "logo_path": "\/3BPX5VGBov8SDqTV7wC1L1xShAS.png",
+                "name": "DreamWorks Animation",
+                "origin_country": "US"
+            }
+        ],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2024-09-12",
+        "revenue": 331982078,
+        "runtime": 102,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Une incroyable \u00e9pop\u00e9e au c\u0153ur de la nature.",
+        "title": "Le Robot sauvage",
+        "video": false,
+        "vote_average": 8.317,
+        "vote_count": 5279
+    },
+    "expiry": 1756141214,
+    "created_at": 1756054814
+}

@@ -129,8 +129,8 @@ class MovieController {
             }
             
             // Variables SEO
-            $pageTitle = 'ANIMATECH - Catalogue Films d\'Animation | Streaming Gratuit';
-            $pageDescription = 'Découvrez notre catalogue complet de films d\'animation. Recherchez, filtrez et regardez vos films d\'animation préférés en streaming gratuit.';
+            $pageTitle = 'ANIMATECH - Application web de gestion et découverte de films d\'animation';
+            $pageDescription = 'Application web développée en PHP MVC avec intégration API TMDB. Fonctionnalités : authentification, catalogue interactif, système de favoris, commentaires et notation. Base de données MySQL pour la gestion utilisateurs.';
             
             require_once APP_PATH . '/Views/movies/list.php';
         } catch (Exception $e) {

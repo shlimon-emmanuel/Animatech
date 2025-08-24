@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Films d\'Animation en Streaming | Catalogue Complet' ?></title>
-    <meta name="description" content="<?= isset($pageDescription) ? $pageDescription : 'Découvrez ANIMATECH, votre plateforme dédiée aux films d\'animation. Explorez notre catalogue complet de films d\'animation, ajoutez vos favoris, notez et commentez vos œuvres préférées. Streaming gratuit et légal.' ?>">
-    <meta name="keywords" content="films animation, streaming animation, catalogue films, anime, dessins animés, animation japonaise, Pixar, Disney, Studio Ghibli">
+    <title><?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Plateforme de découverte et gestion de films d\'animation' ?></title>
+    <meta name="description" content="<?= isset($pageDescription) ? $pageDescription : 'ANIMATECH est une application web complète dédiée aux films d\'animation. Catalogue interactif avec API TMDB, système d\'authentification, gestion de favoris, commentaires et notation. Architecture MVC en PHP natif avec base de données MySQL.' ?>">
+    <meta name="keywords" content="application web PHP, API TMDB, films animation, architecture MVC, base de données MySQL, authentification utilisateur, gestion favoris, système de commentaires, développement web, projet étudiant">
     <meta name="author" content="ANIMATECH">
     <meta property="og:title" content="<?= isset($pageTitle) ? $pageTitle : 'ANIMATECH - Films d\'Animation en Streaming' ?>">
     <meta property="og:description" content="<?= isset($pageDescription) ? $pageDescription : 'Plateforme dédiée aux films d\'animation avec catalogue complet, favoris et commentaires.' ?>">

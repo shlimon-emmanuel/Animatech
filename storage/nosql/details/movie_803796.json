@@ -2,33 +2,29 @@
     "key": "movie:803796",
     "data": {
         "adult": false,
-        "backdrop_path": "\/rJjhOuRFldNF0OWSuSk4PiCLmeA.jpg",
+        "backdrop_path": "\/l3ycQYwWmbz7p8otwbomFDXIEhn.jpg",
         "belongs_to_collection": null,
-        "budget": 0,
+        "budget": 100000000,
         "genres": [
             {
                 "id": 16,
                 "name": "Animation"
             },
             {
-                "id": 14,
-                "name": "Fantastique"
+                "id": 10402,
+                "name": "Musique"
             },
             {
                 "id": 28,
                 "name": "Action"
             },
             {
+                "id": 14,
+                "name": "Fantastique"
+            },
+            {
                 "id": 35,
                 "name": "Com\u00e9die"
-            },
-            {
-                "id": 10402,
-                "name": "Musique"
-            },
-            {
-                "id": 10751,
-                "name": "Familial"
             }
         ],
         "homepage": "https:\/\/www.netflix.com\/fr\/title\/81498621",
@@ -40,8 +36,8 @@
         "original_language": "en",
         "original_title": "KPop Demon Hunters",
         "overview": "Quand elles ne remplissent pas les stades, Rumi, Mira et Zoey, superstars de la K-pop, utilisent leurs pouvoirs secrets pour prot\u00e9ger leurs fans de menaces surnaturelles.",
-        "popularity": 216.3404,
-        "poster_path": "\/jfS5KEfiwsS35ieZvdUdJKkwLlZ.jpg",
+        "popularity": 177.9418,
+        "poster_path": "\/22AouvwlhlXbe3nrFcjzL24bvWH.jpg",
         "production_companies": [
             {
                 "id": 2251,
@@ -57,7 +53,7 @@
             }
         ],
         "release_date": "2025-06-20",
-        "revenue": 0,
+        "revenue": 18000000,
         "runtime": 96,
         "spoken_languages": [
             {
@@ -75,9 +71,9 @@
         "tagline": "",
         "title": "KPop Demon Hunters",
         "video": false,
-        "vote_average": 8.586,
-        "vote_count": 649
+        "vote_average": 8.404,
+        "vote_count": 1105
     },
-    "expiry": 1752954806,
-    "created_at": 1752868406
+    "expiry": 1756200021,
+    "created_at": 1756113621
 }

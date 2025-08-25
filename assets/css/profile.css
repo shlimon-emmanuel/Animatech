@@ -181,6 +181,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .movie-year {
@@ -223,15 +224,28 @@
     display: block;
 }
 
-/* Responsive */
+/* Responsive amélioré */
 @media (max-width: 768px) {
+    .profile-container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
     .profile-header {
         flex-direction: column;
         text-align: center;
+        padding: 15px;
+        gap: 15px;
     }
     
     .profile-avatar {
-        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 15px;
+    }
+    
+    .default-avatar {
+        font-size: 2.5rem;
     }
     
     .profile-info {
@@ -239,15 +253,187 @@
         margin-bottom: 20px;
     }
     
+    .profile-info h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .profile-joined {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .profile-actions .neon-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
     .profile-stats {
         width: 100%;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .stat-card {
+        min-width: 90px;
+        padding: 15px 10px;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    .profile-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 20px 0;
+    }
+    
+    .tab-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
     }
     
     .favorites-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+        padding: 0 5px;
     }
     
     .movie-poster {
         height: 200px;
+    }
+    
+    .movie-info h3 {
+        font-size: 0.9rem;
+        height: 2.6em;
+    }
+    
+    .movie-year {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .profile-header {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .default-avatar {
+        font-size: 2rem;
+    }
+    
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-joined {
+        font-size: 0.8rem;
+    }
+    
+    .profile-stats {
+        gap: 10px;
+    }
+    
+    .stat-card {
+        min-width: 70px;
+        padding: 10px 8px;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+    
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 0;
+    }
+    
+    .movie-poster {
+        height: 180px;
+    }
+    
+    .movie-info {
+        padding: 8px;
+    }
+    
+    .movie-info h3 {
+        font-size: 0.8rem;
+        height: 2.4em;
+    }
+    
+    .movie-rating {
+        top: 5px;
+        right: 5px;
+        padding: 3px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .profile-header {
+        padding: 8px;
+    }
+    
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .default-avatar {
+        font-size: 1.8rem;
+    }
+    
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+    
+    .stat-card {
+        min-width: 60px;
+        padding: 8px 6px;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+    }
+    
+    .movie-poster {
+        height: 150px;
     }
 } 

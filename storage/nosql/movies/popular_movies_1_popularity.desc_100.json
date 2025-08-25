@@ -22,8 +22,8 @@
                 "release_date": "2025-07-24",
                 "title": "Les Bad Guys 2",
                 "video": false,
-                "vote_average": 7.856,
-                "vote_count": 222
+                "vote_average": 7.866,
+                "vote_count": 224
             },
             {
                 "adult": false,
@@ -45,7 +45,7 @@
                 "title": "Elio",
                 "video": false,
                 "vote_average": 7,
-                "vote_count": 327
+                "vote_count": 328
             },
             {
                 "adult": false,
@@ -62,12 +62,12 @@
                 "original_title": "KPop Demon Hunters",
                 "overview": "Quand elles ne remplissent pas les stades, Rumi, Mira et Zoey, superstars de la K-pop, utilisent leurs pouvoirs secrets pour prot\u00e9ger leurs fans de menaces surnaturelles.",
                 "popularity": 177.9418,
-                "poster_path": "\/22AouvwlhlXbe3nrFcjzL24bvWH.jpg",
+                "poster_path": "\/b9rXAoMi0TdZkkegqRibexQnP4x.jpg",
                 "release_date": "2025-06-20",
                 "title": "KPop Demon Hunters",
                 "video": false,
-                "vote_average": 8.4,
-                "vote_count": 1106
+                "vote_average": 8.403,
+                "vote_count": 1112
             },
             {
                 "adult": false,
@@ -107,8 +107,28 @@
                 "release_date": "2025-01-29",
                 "title": "Ne Zha 2",
                 "video": false,
-                "vote_average": 8.016,
-                "vote_count": 317
+                "vote_average": 8,
+                "vote_count": 318
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    14
+                ],
+                "id": 129,
+                "original_language": "ja",
+                "original_title": "\u5343\u3068\u5343\u5c0b\u306e\u795e\u96a0\u3057",
+                "overview": "Chihiro, 10 ans, a tout d\u2019une petite fille capricieuse. Elle s\u2019appr\u00eate \u00e0 emm\u00e9nager avec ses parents dans une nouvelle demeure. Sur la route, la petite famille se retrouve face \u00e0 un immense b\u00e2timent rouge au centre duquel s\u2019ouvre un long tunnel. De l\u2019autre c\u00f4t\u00e9 du passage se dresse une ville fant\u00f4me. Les parents d\u00e9couvrent dans un restaurant d\u00e9sert de nombreux mets succulents et ne tardent pas \u00e0 se jeter dessus. Ils se retrouvent alors transform\u00e9s en cochons. Prise de panique, Chihiro s\u2019enfuit et se d\u00e9mat\u00e9rialise progressivement. L\u2019\u00e9nigmatique Haku se charge de lui expliquer le fonctionnement de l\u2019univers dans lequel elle vient de p\u00e9n\u00e9trer. Pour sauver ses parents, la fillette va devoir faire face \u00e0 la terrible sorci\u00e8re Yubaba, qui arbore les traits d\u2019une harpie m\u00e9phistoph\u00e9lique.",
+                "popularity": 64.9958,
+                "poster_path": "\/12TAqK0AUgdcYE9ZYZ9r7ASbH5Q.jpg",
+                "release_date": "2001-07-20",
+                "title": "Le Voyage de Chihiro",
+                "video": false,
+                "vote_average": 8.534,
+                "vote_count": 17409
             },
             {
                 "adult": false,
@@ -127,7 +147,7 @@
                 "release_date": "2019-07-26",
                 "title": "Ne Zha",
                 "video": false,
-                "vote_average": 7.902,
+                "vote_average": 7.9,
                 "vote_count": 620
             },
             {
@@ -171,7 +191,7 @@
                 "title": "Les Bad Guys",
                 "video": false,
                 "vote_average": 7.536,
-                "vote_count": 2279
+                "vote_count": 2280
             },
             {
                 "adult": false,
@@ -191,8 +211,8 @@
                 "release_date": "2024-06-20",
                 "title": "Moi, moche et m\u00e9chant 4",
                 "video": false,
-                "vote_average": 7.021,
-                "vote_count": 2891
+                "vote_average": 7,
+                "vote_count": 2890
             },
             {
                 "adult": false,
@@ -234,7 +254,7 @@
                 "title": "Predator : Killer of Killers",
                 "video": false,
                 "vote_average": 7.92,
-                "vote_count": 815
+                "vote_count": 816
             },
             {
                 "adult": false,
@@ -253,8 +273,72 @@
                 "release_date": "2024-12-18",
                 "title": "Mufasa : Le Roi Lion",
                 "video": false,
-                "vote_average": 7.361,
+                "vote_average": 7.365,
                 "vote_count": 2328
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+                "genre_ids": [
+                    16,
+                    878,
+                    10751
+                ],
+                "id": 1184918,
+                "original_language": "en",
+                "original_title": "The Wild Robot",
+                "overview": "L\u2019incroyable \u00e9pop\u00e9e d'un robot -- l'unit\u00e9 ROZZUM 7134 alias \"Roz\" -- qui apr\u00e8s avoir fait naufrage sur une \u00eele d\u00e9serte doit apprendre \u00e0 s'adapter \u00e0 un environnement hostile en nouant petit \u00e0 petit des relations avec les animaux de l'\u00eele. Il finit par adopter le petit d\u2019une oie, un oison, qui s'est retrouv\u00e9 orphelin.",
+                "popularity": 26.3432,
+                "poster_path": "\/2IUCa73cvvIgZSiJcNtPBf4L5iF.jpg",
+                "release_date": "2024-09-12",
+                "title": "Le Robot sauvage",
+                "video": false,
+                "vote_average": 8.319,
+                "vote_count": 5285
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/sRvXNDItGlWCqtO3j6wks52FmbD.jpg",
+                "genre_ids": [
+                    16,
+                    35,
+                    14,
+                    12,
+                    10751
+                ],
+                "id": 808,
+                "original_language": "en",
+                "original_title": "Shrek",
+                "overview": "Shrek, un ogre verd\u00e2tre, cynique et malicieux, a \u00e9lu domicile dans un mar\u00e9cage qu\u2019il croit \u00eatre un havre de paix. Un matin, alors qu\u2019il sort faire sa toilette, il d\u00e9couvre de petites cr\u00e9atures aga\u00e7antes qui errent dans son marais. Shrek se rend alors au ch\u00e2teau du seigneur Lord Farquaad, qui aurait soi\u2010disant expuls\u00e9 ces \u00eatres de son royaume. Ce dernier souhaite \u00e9pouser la princesse Fiona, mais celle\u2010ci est retenue prisonni\u00e8re par un abominable dragon. Il lui faut un chevalier assez brave pour secourir la belle. Shrek accepte d\u2019accomplir cette mission. En \u00e9change, le seigneur devra d\u00e9barrasser son mar\u00e9cage de ces cr\u00e9atures envahissantes. Or, la princesse Fiona cache un secret terrifiant qui va entra\u00eener Shrek et son compagnon l\u2019\u00e2ne dans une palpitante et p\u00e9rilleuse aventure.",
+                "popularity": 26.2603,
+                "poster_path": "\/5KwxfvSUz9JFFy4bZekjY8Kjoxs.jpg",
+                "release_date": "2001-05-18",
+                "title": "Shrek",
+                "video": false,
+                "vote_average": 7.753,
+                "vote_count": 17901
+            },
+            {
+                "adult": false,
+                "backdrop_path": "\/tLfQZkB4yBlO1h5WMIFLJgHYcZD.jpg",
+                "genre_ids": [
+                    16,
+                    10749,
+                    14,
+                    28,
+                    18
+                ],
+                "id": 390635,
+                "original_language": "ja",
+                "original_title": "\u5287\u5834\u7248\u300cFate\/stay night [Heaven\u2019s Feel]\u300d\u2162.spring song",
+                "overview": "Il s'agit du dernier film de la trilogie Fate\/stay night : Heaven's Feel.",
+                "popularity": 25.0909,
+                "poster_path": "\/btWv7Gxpz0GNCJZSSBZNGca2cIh.jpg",
+                "release_date": "2020-08-15",
+                "title": "Fate\/stay night: Heaven's Feel III. spring song",
+                "video": false,
+                "vote_average": 7.725,
+                "vote_count": 187
             },
             {
                 "adult": false,
@@ -281,70 +365,6 @@
             },
             {
                 "adult": false,
-                "backdrop_path": "\/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
-                "genre_ids": [
-                    16,
-                    878,
-                    10751
-                ],
-                "id": 1184918,
-                "original_language": "en",
-                "original_title": "The Wild Robot",
-                "overview": "L\u2019incroyable \u00e9pop\u00e9e d'un robot -- l'unit\u00e9 ROZZUM 7134 alias \"Roz\" -- qui apr\u00e8s avoir fait naufrage sur une \u00eele d\u00e9serte doit apprendre \u00e0 s'adapter \u00e0 un environnement hostile en nouant petit \u00e0 petit des relations avec les animaux de l'\u00eele. Il finit par adopter le petit d\u2019une oie, un oison, qui s'est retrouv\u00e9 orphelin.",
-                "popularity": 26.3432,
-                "poster_path": "\/2IUCa73cvvIgZSiJcNtPBf4L5iF.jpg",
-                "release_date": "2024-09-12",
-                "title": "Le Robot sauvage",
-                "video": false,
-                "vote_average": 8.318,
-                "vote_count": 5282
-            },
-            {
-                "adult": false,
-                "backdrop_path": "\/tLfQZkB4yBlO1h5WMIFLJgHYcZD.jpg",
-                "genre_ids": [
-                    16,
-                    10749,
-                    14,
-                    28,
-                    18
-                ],
-                "id": 390635,
-                "original_language": "ja",
-                "original_title": "\u5287\u5834\u7248\u300cFate\/stay night [Heaven\u2019s Feel]\u300d\u2162.spring song",
-                "overview": "Il s'agit du dernier film de la trilogie Fate\/stay night : Heaven's Feel.",
-                "popularity": 25.0909,
-                "poster_path": "\/btWv7Gxpz0GNCJZSSBZNGca2cIh.jpg",
-                "release_date": "2020-08-15",
-                "title": "Fate\/stay night: Heaven's Feel III. spring song",
-                "video": false,
-                "vote_average": 7.725,
-                "vote_count": 187
-            },
-            {
-                "adult": false,
-                "backdrop_path": "\/sRvXNDItGlWCqtO3j6wks52FmbD.jpg",
-                "genre_ids": [
-                    16,
-                    35,
-                    14,
-                    12,
-                    10751
-                ],
-                "id": 808,
-                "original_language": "en",
-                "original_title": "Shrek",
-                "overview": "Shrek, un ogre verd\u00e2tre, cynique et malicieux, a \u00e9lu domicile dans un mar\u00e9cage qu\u2019il croit \u00eatre un havre de paix. Un matin, alors qu\u2019il sort faire sa toilette, il d\u00e9couvre de petites cr\u00e9atures aga\u00e7antes qui errent dans son marais. Shrek se rend alors au ch\u00e2teau du seigneur Lord Farquaad, qui aurait soi\u2010disant expuls\u00e9 ces \u00eatres de son royaume. Ce dernier souhaite \u00e9pouser la princesse Fiona, mais celle\u2010ci est retenue prisonni\u00e8re par un abominable dragon. Il lui faut un chevalier assez brave pour secourir la belle. Shrek accepte d\u2019accomplir cette mission. En \u00e9change, le seigneur devra d\u00e9barrasser son mar\u00e9cage de ces cr\u00e9atures envahissantes. Or, la princesse Fiona cache un secret terrifiant qui va entra\u00eener Shrek et son compagnon l\u2019\u00e2ne dans une palpitante et p\u00e9rilleuse aventure.",
-                "popularity": 26.2603,
-                "poster_path": "\/5KwxfvSUz9JFFy4bZekjY8Kjoxs.jpg",
-                "release_date": "2001-05-18",
-                "title": "Shrek",
-                "video": false,
-                "vote_average": 7.753,
-                "vote_count": 17901
-            },
-            {
-                "adult": false,
                 "backdrop_path": "\/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
                 "genre_ids": [
                     16,
@@ -362,28 +382,7 @@
                 "title": "Spider-Man : Across the Spider-Verse",
                 "video": false,
                 "vote_average": 8.342,
-                "vote_count": 7813
-            },
-            {
-                "adult": false,
-                "backdrop_path": "\/pZfpUMEJzw9BZHtXuZzzOrRxtMa.jpg",
-                "genre_ids": [
-                    16,
-                    12,
-                    14,
-                    10751
-                ],
-                "id": 823219,
-                "original_language": "lv",
-                "original_title": "Straume",
-                "overview": "Un chat se r\u00e9veille dans un univers envahi par l\u2019eau o\u00f9 toute vie humaine semble avoir disparu. Il trouve refuge sur un bateau avec un groupe d\u2019autres animaux. Mais s\u2019entendre avec eux s\u2019av\u00e8re un d\u00e9fi encore plus grand que de surmonter sa peur de l'eau ! Tous devront d\u00e9sormais apprendre \u00e0 surmonter leurs diff\u00e9rences et \u00e0 s\u2019adapter au nouveau monde qui s\u2019impose \u00e0 eux.",
-                "popularity": 20.9646,
-                "poster_path": "\/zeinX0xt78GgtpCQjx7d2S6Gh7g.jpg",
-                "release_date": "2024-08-29",
-                "title": "Flow, le chat qui n'avait plus peur de l'eau",
-                "video": false,
-                "vote_average": 8.158,
-                "vote_count": 2239
+                "vote_count": 7815
             },
             {
                 "adult": false,
@@ -409,29 +408,29 @@
             },
             {
                 "adult": false,
-                "backdrop_path": "\/9tOkjBEiiGcaClgJFtwocStZvIT.jpg",
+                "backdrop_path": "\/pZfpUMEJzw9BZHtXuZzzOrRxtMa.jpg",
                 "genre_ids": [
                     16,
                     12,
-                    10751,
-                    35
+                    14,
+                    10751
                 ],
-                "id": 269149,
-                "original_language": "en",
-                "original_title": "Zootopia",
-                "overview": "Avec ses quartiers comme la tr\u00e8s chic Place du Sahara ou le glacial Toundraville, la m\u00e9tropole Zootopie, o\u00f9 ne vivent que des mammif\u00e8res, est un melting pot o\u00f9 toutes les esp\u00e8ces cohabitent. Qu\u2019on soit un \u00e9norme \u00e9l\u00e9phant ou une minuscule musaraigne, tout le monde y a sa place. Mais quand l\u2019optimiste agent Judy Hopps arrive en ville, elle d\u00e9couvre qu\u2019\u00eatre le premier lapin dans la police, au milieu d'animaux costauds, n\u2019est pas si simple. Pour faire ses preuves, elle d\u00e9cide de r\u00e9soudre une enqu\u00eate, m\u00eame si pour cela, elle doit faire \u00e9quipe avec Nick Wilde, un renard beau parleur et roi de l\u2019arnaque. Certaines s\u00e9quences ou certains motifs lumineux clignotants sont susceptibles d'affecter les t\u00e9l\u00e9spectateurs photosensibles.",
-                "popularity": 19.6308,
-                "poster_path": "\/xEx4dHi2IrTB0vkVPccrGrMcZQW.jpg",
-                "release_date": "2016-02-11",
-                "title": "Zootopie",
+                "id": 823219,
+                "original_language": "lv",
+                "original_title": "Straume",
+                "overview": "Un chat se r\u00e9veille dans un univers envahi par l\u2019eau o\u00f9 toute vie humaine semble avoir disparu. Il trouve refuge sur un bateau avec un groupe d\u2019autres animaux. Mais s\u2019entendre avec eux s\u2019av\u00e8re un d\u00e9fi encore plus grand que de surmonter sa peur de l'eau ! Tous devront d\u00e9sormais apprendre \u00e0 surmonter leurs diff\u00e9rences et \u00e0 s\u2019adapter au nouveau monde qui s\u2019impose \u00e0 eux.",
+                "popularity": 20.9646,
+                "poster_path": "\/zeinX0xt78GgtpCQjx7d2S6Gh7g.jpg",
+                "release_date": "2024-08-29",
+                "title": "Flow, le chat qui n'avait plus peur de l'eau",
                 "video": false,
-                "vote_average": 7.75,
-                "vote_count": 16871
+                "vote_average": 8.158,
+                "vote_count": 2239
             }
         ],
         "total_pages": 90,
         "total_results": 1790
     },
-    "expiry": 1756120053,
-    "created_at": 1756112853
+    "expiry": 1756153265,
+    "created_at": 1756146065
 }

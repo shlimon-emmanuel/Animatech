@@ -14,14 +14,19 @@
             background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
             color: #f8f9fa;
             font-family: 'Rajdhani', sans-serif;
-            padding-top: 80px;
+            padding-top: 70px;
             min-height: 100vh;
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
         
         .navbar {
             background: linear-gradient(135deg, var(--darker-bg) 0%, #1e1e2e 100%);
             box-shadow: 0 4px 20px rgba(0, 243, 255, 0.15);
             border-bottom: 1px solid var(--neon-blue);
+            padding: 12px 0;
+            min-height: 70px;
         }
         
         .navbar-brand {
@@ -47,17 +52,25 @@
         }
         
         .container {
-            max-width: 1200px;
-            padding: 0 20px;
+            max-width: 100%;
+            padding: 0 15px;
+            width: 100%;
+        }
+        
+        .admin-dashboard {
+            padding: 20px 15px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .admin-header {
             background: linear-gradient(135deg, var(--darker-bg) 0%, #2a2a3e 100%);
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 40px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
             border: 1px solid var(--neon-purple);
             box-shadow: 0 0 20px rgba(157, 78, 221, 0.2);
+            width: 100%;
         }
         
         .admin-header h1 {
@@ -77,8 +90,9 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            gap: 20px;
+            margin-bottom: 30px;
+            width: 100%;
         }
         
         .card {
@@ -86,9 +100,10 @@
             border: 1px solid var(--neon-purple);
             border-radius: 15px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             transition: all 0.3s ease;
             overflow: hidden;
+            width: 100%;
         }
         
         .card:hover {
@@ -220,9 +235,23 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            body {
+                padding-top: 65px;
+            }
+            
+            .navbar {
+                padding: 8px 0;
+                min-height: 65px;
+            }
+            
+            .admin-dashboard {
+                padding: 15px 10px;
+            }
+            
             .admin-header {
-                padding: 20px;
+                padding: 20px 15px;
                 text-align: center;
+                margin-bottom: 25px;
             }
             
             .admin-header h1 {
@@ -232,15 +261,57 @@
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
+                margin-bottom: 25px;
             }
             
             .stat-card {
                 padding: 20px 15px;
             }
             
+            .card {
+                margin-bottom: 15px;
+            }
+            
             .table-responsive {
                 border-radius: 10px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .navbar {
+                padding: 6px 0;
+                min-height: 60px;
+            }
+            
+            .admin-dashboard {
+                padding: 10px 5px;
+            }
+            
+            .admin-header {
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+            
+            .admin-header h1 {
+                font-size: 1.7rem;
+            }
+            
+            .stats-grid {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .stat-card {
+                padding: 15px 10px;
+            }
+            
+            .card {
+                margin-bottom: 12px;
             }
         }
     </style>
@@ -274,23 +345,28 @@
     </div>
 </nav>
 
-<div class="container mt-4">
-    <?php if (isset($_SESSION['success'])): ?>
-    <div class="alert alert-success">
-        <?= $_SESSION['success'] ?>
-    </div>
-    <?php unset($_SESSION['success']); ?>
-    <?php endif; ?>
+<!-- Messages de notification -->
+<?php if (isset($_SESSION['success']) || isset($_SESSION['error'])): ?>
+<div class="container">
+    <div style="padding: 10px 15px;">
+        <?php if (isset($_SESSION['success'])): ?>
+        <div class="alert alert-success">
+            <?= $_SESSION['success'] ?>
+        </div>
+        <?php unset($_SESSION['success']); ?>
+        <?php endif; ?>
 
-    <?php if (isset($_SESSION['error'])): ?>
-    <div class="alert alert-danger">
-        <?= $_SESSION['error'] ?>
+        <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger">
+            <?= $_SESSION['error'] ?>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
     </div>
-    <?php unset($_SESSION['error']); ?>
-    <?php endif; ?>
 </div>
+<?php endif; ?>
 
-<div class="container admin-dashboard">
+<div class="admin-dashboard">
     <!-- Header Section -->
     <div class="admin-header">
         <h1><i class="fas fa-user-shield"></i> Tableau de bord SuperAdmin</h1>
